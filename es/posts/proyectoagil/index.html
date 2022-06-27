@@ -1,0 +1,159 @@
+<!doctype html><html lang=es><head>
+<meta charset=utf-8>
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Mi Primer Proyecto Ágil - 🎨 Blog de @carlogilmar</title>
+<meta name=author content="carlogilmar">
+<meta property="og:title" content="Mi Primer Proyecto Ágil">
+<meta property="og:description" content="En una materia de mi carrera me pidieron armar un equipo y pensar en una idea a desarrollar&mldr; la materia es Construcción de Base de Datos.
+Como recientemente estoy introduciéndome al mundo ágil decidí que esta era la oportunidad de empezar a vivir la agilidad. El primer reto era convencer a mis dos compañeros de equipo que aprender Metodologías Ágiles sería una forma super padre de aprender y hacer algo chido.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://example.com/es/posts/proyectoagil/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2016-03-20T09:04:47-06:00">
+<meta property="article:modified_time" content="2016-03-20T09:04:47-06:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Mi Primer Proyecto Ágil">
+<meta name=twitter:description content="En una materia de mi carrera me pidieron armar un equipo y pensar en una idea a desarrollar&mldr; la materia es Construcción de Base de Datos.
+Como recientemente estoy introduciéndome al mundo ágil decidí que esta era la oportunidad de empezar a vivir la agilidad. El primer reto era convencer a mis dos compañeros de equipo que aprender Metodologías Ágiles sería una forma super padre de aprender y hacer algo chido.">
+<link rel=stylesheet href=/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
+<script>localStorage.theme==='dark'||!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches?document.documentElement.setAttribute("data-theme","dark"):document.documentElement.setAttribute("data-theme","light")</script>
+<script defer src=/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js integrity="sha512-eioQnsN4LFe60DMrZi+KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
+<script defer src=/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
+<script defer src=/js/search-es.64db908cde868e00f376c3c9f689195d9ce0ae2aa0899cc3c009c492c55778efcd4fe312f0130a6d436752744619102b1fc90777faf20d4a357803771b75dfee.js integrity="sha512-ZNuQjN6GjgDzdsPJ9okZXZzgriqgiZzDwAnEksVXeO/NT+MS8BMKbUNnUnRGGRArH8kHd/ryDUo1eAN3G3Xf7g=="></script>
+</head><body>
+<main><header>
+<div class=brand>
+<div id=sidebar_btn>
+<svg id="menu_icon" width="26" height="26" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></svg>
+</div>
+<div>
+<a href=/es/>@carlogilmar</a>
+</div>
+</div>
+<div class=toolbox>
+<div id=theme_tool>
+<svg id="dark_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></svg>
+<svg id="light_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></svg>
+</div>
+<div id=search_tool>
+<svg id="search_btn" class="toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></svg><div id=search_menu_wrapper class=hidden>
+<div id=search_menu>
+<div id=search_menu_toolbar>
+<div id=search_menu_input_wrapper>
+<input id=search_menu_input type=text placeholder="Search Posts">
+</div>
+<div id=search_menu_close_btn>
+<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></svg>
+</div>
+</div>
+<div id=search_menu_results>
+</div>
+</div>
+</div>
+</div>
+<div id=translation_tool class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
+<ul class=pure-menu-list>
+<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+<div class="dropdown-btn pure-menu-link">
+<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3.0 014 10 15.3 15.3.0 01-4 10A15.3 15.3.0 018 12a15.3 15.3.0 014-10z"/></svg></svg>
+<span class=dropdown-desc>Spanish</span>
+</div>
+<ul class=pure-menu-children>
+<li class=pure-menu-item>
+<a href=https://example.com/ class=pure-menu-link>English</a>
+</li>
+<li class=pure-menu-item>
+<a href=https://example.com/es/ class=pure-menu-link>Spanish</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</header>
+<nav id=navbar class=pure-menu><ul class=pure-menu-list><li class="navbar-item pure-menu-item insection">
+<a href=/es/posts/ class=pure-menu-link>⭐️ Contenido</a>
+</li></ul>
+</nav>
+<div id=sidebar_canvas_overlay class=hidden></div>
+<div id=sidebar class=close>
+<ul><li>
+<a href=/es/posts/>⭐️ Contenido</a>
+</li></ul>
+</div><div id=content class=content-margin>
+<div class=collapsible-menu-wrapper><div class=collapsible-menu-type><span>Table of contents</span></div><div class=collapsible-menu>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#planeando-una-idea>PLANEANDO UNA IDEA</a></li>
+</ul>
+</li>
+<li><a href=#proyecto-ipnetwork>PROYECTO IPNetwork</a></li>
+<li><a href=#nuevas-ideas>Nuevas ideas</a></li>
+<li><a href=#continuando-con-el-proyecto>Continuando con el Proyecto&mldr;</a>
+<ul>
+<li><a href=#planning-poker>PLANNING POKER</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div></div>
+<div class=content-margin>
+<article>
+<p>En una materia de mi carrera me pidieron armar un equipo y pensar en una idea a desarrollar&mldr; la materia es Construcción de Base de Datos.</p>
+<p>Como recientemente estoy introduciéndome al mundo ágil decidí que esta era la oportunidad de empezar a vivir la agilidad. El primer reto era convencer a mis dos compañeros de equipo que aprender Metodologías Ágiles sería una forma super padre de aprender y hacer algo chido. No tuve mayor problema, confiaron en mi.</p>
+<p>El primer día de clases cuando ya teníamos a los tres integrantes del equipo, la profesora nos pidió entregarle dentro de dos días un cronograma de actividades y el objetivo de nuestro proyecto. Troné. No sabía cómo hacer para planificar una idea desde cero, y entregar un cronograma perfecto, entonces empezamos como equipo a plantear lo que íbamos a realizar.</p>
+<h3 id=planeando-una-idea>PLANEANDO UNA IDEA</h3>
+<p>Al principio ocurrió lo que creo que pasa comúnmente: pensar en términos de tecnología. ¿Qué quieren hacer? &ldquo;hagámos una base de datos en mysql enlazada con java&rdquo; e ideas como esas surgieron, pero consideré que no era lo mejor, así que propusé un cambio de visión a través de pensar en un proyecto como una solución a un problema desde el lenguaje coloquial, las palabras que usamos normalmente, sin terminología tecnológica ni nada de eso. El objetivo era sacar una idea general de una solución a un problema, y aún así saltaron las ideas que siempre he escuchado en la mayoría de mis compañeros upiicsianos: &ldquo;hagámos el inventario de una ferretería, el sistema de ventas de una zapatería, el almacén de una tienda de abarrotes, etc&mldr;&rdquo;.</p>
+<p>Bien, esta fue nuestra idea&mldr;</p>
+<h2 id=proyecto-ipnetwork>PROYECTO IPNetwork</h2>
+<p><strong>Objetivo:</strong> Mejorar la comunicación entre los compañeros de clase a través de una plataforma donde puedan compartir los aprendizajes de su carrera.</p>
+<p><strong>Contexto:</strong> Por lo regular los alumnos en una clase escolar realizan varias investigaciones y proyectos, que en la mayoría de las ocasiones son archivados. Creemos que si como alumnos compartiéramos nuestro archivo de conocimiento por medio de una plataforma que permitiera además dar una retroalimentación, podríamos mejorar el proceso de aprendizaje para quien acceda al recurso, como para quien lo facilita.</p>
+<p>Una vez que tuvimos &ldquo;medio&rdquo; clara la idea, debímos pasar a la planeación, una de las cosas que considero más difícultosas.</p>
+<h2 id=nuevas-ideas>Nuevas ideas</h2>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/project/uno.jpg alt></p>
+<p>El pasado 15 de Marzo tuve la oportunidad de ir al evento mensual del grupo Ágiles México, sobre Facilitación Gráfica con Fernando Guajardo. Aprendí muchas cosas interesantes.</p>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/project/dos.jpg alt></p>
+<p>Una de ellas es que mediante la expresión gráfica es más facil comunicar ideas por la implicación de los sentidos humanos. No es lo mismo ver una idea representada en un dibujo con colores y formas, que verla escrita en una minuta.</p>
+<p>Lo que hicimos en el taller fue primero armar un equipo, y que alguien hiciera muchos rayones. Después entre todos debíamos hallar cosas enmedio de los rayones. Esto fomenta la creatividad.</p>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/project/seis.jpg alt></p>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/project/cuatro.jpg alt></p>
+<p>La siguiente actividad fue jugar basta entre todos, el típico juego que todos hemos jugado pero con la particularidad de que ahora con la letra elegida debíamos dibujar la mayor cantidad de objetos. Este fue un buen reto.</p>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/project/tres.jpg alt></p>
+<p>Nos dieron una Historia de Usuario, el siguiente reto consistía en dibujarla. Creo que mucho de lo que hicimos y nos explicó Fernando G. aterrizaba aquí. Leer una historia de usuario es diferente a verla.</p>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/project/cinco.jpg alt></p>
+<p>Aquí comenzó a brincar mi ardilla mental: si dibujas algo, y plasmas tu idea general vas a poder comunicarla mucho mejor, de tal modo que la comunicación es oro, y por medio del dibujo lo haces de una forma muy creativa y fácil de explicar.</p>
+<p>(Cosas del destino: No alcancé registro en el MeetUp porque los lugares volaron como pan caliente, aún así fui esperanzado de entrar y cuando llegue al lugar no me dejaron pasar por no estar en lista. No perdí la fe y me quede cerca del lugar mientras le mandaba un tweet a uno de los organizadores para ver si no habían ido las 100 personas registradas y había algún lugarcito disponible. No contestaba. Ya cuando me íba recibí el tweet de que fuera. Por poquito y no llego.)</p>
+<h2 id=continuando-con-el-proyecto>Continuando con el Proyecto&mldr;</h2>
+<p>Para mi planeación decidí usar lo que había aprendido en días anteriores con la facilitación gráfica. He aquí mi planificación como historia:</p>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/project/siete.jpg alt></p>
+<p>Esto fue un dibujo para mí, para saber qué iba a hacer para planear la planeación de mi proyecto junto con mi equipo. Amo las redundancias porque me hacen saber que las cosas no son tan fáciles. Mi tarea era hacer realidad la historia que ya había dibujado:
+1.- Ya tenía mi equipo conformado.
+2.- Pláticamos sobre los alcances de este proyecto más allá de una materia de la escuela, y concordamos en que si nos apoyabamos podíamos aprender mucho en cuestión técnica, humana, organizacional, y hacer un producto que sirviera para algo.</p>
+<p>Y llegamos a la parte de definir el proyecto.</p>
+<p>Les propuse lo siguiente: Dibujar nuestra visión de la solución que íbamos a hacer realidad. Aquí empezaba la alquimia, entonces tomé las plumas de color que tenía a la mano y dibujé lo que quería solucionar: un alumno que tiene un archivo que alguien más puede consult&mldr;bla bla bla.</p>
+<p>Mis compañeros quedaron medio en shock, y de inmediato alguien dijo que no estaba de acuerdo con mi visión del proyecto, pero les expliqué que realmente el ejercicio trataba de sumar ideas sobre la visión general e ideal, que no discutieramos, aunque no pensaramos lo mismo, que sólo pusieramos nuestras ideas y erigieramos al mismísimo mounstro de Frankenstein. Esto fue lo que resultó&mldr; Aquí nuestro mounstruo ideal.</p>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/project/ocho.jpg alt></p>
+<p>Ahora teníamos nuestro mapa general de lo que era nuestro proyecto a realizar con la visión de los tres. Acto seguido pasamos a escribir cada función en una Historia de Usuario; algo así como hacer un rompecabezas de nuestro dibujo, cada partecita es una Historia de usuario.</p>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/project/nueve.jpg alt></p>
+<p>(Como no tenemos un lugar en la escuela, puse a mis compañeros en un ventanal de la Upiicsa ja, ja, mientras se nos quedaban viendo con cara de &ldquo;estos cabrones qué chingados hacen&rdquo;)</p>
+<p>Entonces hasta aquí ya teníamos la visión general de lo que íbamos a hacer&mldr; y también ya teníamos las funcionalidades en forma de Historias de Usuario&mldr; ahora faltaba ponderar cada Historia.</p>
+<h3 id=planning-poker>PLANNING POKER</h3>
+<p>En el blog de <strong>proyectosagiles.org</strong> encontré una entrada a esta metodología para ponderar:</p>
+<p>Consta de un mazo de cartas que deberá tener cada miembro del equipo, un mazo que es una serie fibonacci que puede variar pero va del 0, 1/2, 1, 3, 5, 8, 13, 20, 40, 100, una con un signo de ?, y otra con un infinito.</p>
+<p>Entendí que se debe elegir como será la escala si en horas ideales, tamaño de la tarea, o complejidad. Una vez elegido, se va una por una, cada Historia de Usuario y cada integrante elige la carta con la ponderación que él le da, se pone boca abajo, y se revela cuando todos hayan elegido la suya. Lo que hice aquí fue darle un mazo a cada persona, y decidimos ponderar por importancia, 0 era el menor y 100 el mayor. Pasamos cada historia de usuario, y elegiamos una carta, escribimos la sumatoria de todas las cartas en su historia de usuario y así sucesivamente. Al final obtuvimos las historias de usuario ya ponderadas por nivel de importancia. Surgió algo interesante, mientras para mi una función valía 5, para mis compañeros valía 100; mientras para mí y para otro colega valía 100, para nuestra compañera valía 0, o al revés cuando a dos de nosotros le dábamos 1, alguien le daba 100. Para eso entendí que era el Planning Poker, es decir, para llegar efectivamente al consenso.</p>
+<p>Una vez que tuvimos nuestras Historias de Usuario hechas y ponderadas. Decidimos cuáles íbamos a hacer para nuestro primer demo y así llegamos a nuestro Backlog que después capture en Trello ¡Ay que felicidad implementar todo lo que he aprendido!</p>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/project/diez.png alt></p>
+<p>Y hasta aquí mi reporte joaquín&mldr; Algunas notas mentales&mldr;</p>
+<p>Por supuesto que mentímos con el cronograma que habíamos entregado a la maestra. Mis colegas al principio estaban medio escépticos con lo que les mostraba, pero al final me agradecieron el aprendizaje que les compartí y concluyeron que esta forma estuvo super fácil para hacer la planeación. Y yo estoy super feliz de haber compartido lo que estuve aprendiendo&mldr; " nada para mí que no sea para los demás"</p>
+<p>Gracias por leer, Carlo.</p>
+</article>
+</div>
+</div>
+<footer>
+<article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
+</footer>
+</main>
+</body>
+</html>

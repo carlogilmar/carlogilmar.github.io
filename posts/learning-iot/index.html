@@ -1,0 +1,323 @@
+<!doctype html><html lang=en><head>
+<meta charset=utf-8>
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Learning IoT: First Steps with Elixir - 🎨 Blog de @carlogilmar</title>
+<meta name=author content="carlogilmar">
+<meta property="og:title" content="Learning IoT: First Steps with Elixir">
+<meta property="og:description" content="Recently I have the opportunity to give a conference in the Startup Week in Mexico City. So I decided talk about Internet of things, because I was learning this using an Arduino and a Raspberry Pi.
+DEMO Connect Everything! The project is create a simple web application for create distribuid music. I was inspired in the Launchpad App and the Smartphone Symphony.
+I planned make this using Phoenix Framework, and connect an Arduino for play the music.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://example.com/posts/learning-iot/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2018-09-12T00:00:00+00:00">
+<meta property="article:modified_time" content="2018-09-12T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Learning IoT: First Steps with Elixir">
+<meta name=twitter:description content="Recently I have the opportunity to give a conference in the Startup Week in Mexico City. So I decided talk about Internet of things, because I was learning this using an Arduino and a Raspberry Pi.
+DEMO Connect Everything! The project is create a simple web application for create distribuid music. I was inspired in the Launchpad App and the Smartphone Symphony.
+I planned make this using Phoenix Framework, and connect an Arduino for play the music.">
+<link rel=stylesheet href=/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
+<link rel=stylesheet href=/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn+PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
+<script>localStorage.theme==='dark'||!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches?document.documentElement.setAttribute("data-theme","dark"):document.documentElement.setAttribute("data-theme","light")</script>
+<script defer src=/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js integrity="sha512-eioQnsN4LFe60DMrZi+KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
+<script defer src=/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
+<script defer src=/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt+erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
+<script defer src=/js/search-en.677e05c714f837051483647d736c45051126c22a2696ca5f981b59da962d48962f3ea71150f559ba84884fd1aadf1c7aadce55bb31a3e5b75c0f173b763c109a.js integrity="sha512-Z34FxxT4NwUUg2R9c2xFBREmwiomlspfmBtZ2pYtSJYvPqcRUPVZuoSIT9Gq3xx6rc5VuzGj5bdcDxc7djwQmg=="></script>
+</head><body>
+<main><header>
+<div class=brand>
+<div id=sidebar_btn>
+<svg id="menu_icon" width="26" height="26" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></svg>
+</div>
+<div>
+<a href=/>@carlogilmar</a>
+</div>
+</div>
+<div class=toolbox>
+<div id=theme_tool>
+<svg id="dark_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></svg>
+<svg id="light_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></svg>
+</div>
+<div id=search_tool>
+<svg id="search_btn" class="toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></svg><div id=search_menu_wrapper class=hidden>
+<div id=search_menu>
+<div id=search_menu_toolbar>
+<div id=search_menu_input_wrapper>
+<input id=search_menu_input type=text placeholder="Search Posts">
+</div>
+<div id=search_menu_close_btn>
+<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></svg>
+</div>
+</div>
+<div id=search_menu_results>
+</div>
+</div>
+</div>
+</div>
+<div id=translation_tool class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
+<ul class=pure-menu-list>
+<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+<div class="dropdown-btn pure-menu-link">
+<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3.0 014 10 15.3 15.3.0 01-4 10A15.3 15.3.0 018 12a15.3 15.3.0 014-10z"/></svg></svg>
+<span class=dropdown-desc>English</span>
+</div>
+<ul class=pure-menu-children>
+<li class=pure-menu-item>
+<a href=https://example.com/ class=pure-menu-link>English</a>
+</li>
+<li class=pure-menu-item>
+<a href=https://example.com/es/ class=pure-menu-link>Spanish</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</header>
+<nav id=navbar class=pure-menu><ul class=pure-menu-list><li class="navbar-item pure-menu-item insection">
+<a href=/posts/ class=pure-menu-link>Posts</a>
+</li></ul>
+</nav>
+<div id=sidebar_canvas_overlay class=hidden></div>
+<div id=sidebar class=close>
+<ul><li>
+<a href=/posts/>Posts</a>
+</li></ul>
+</div><div id=content class=content-margin>
+<div class=collapsible-menu-wrapper><div class=collapsible-menu-type><span>Table of contents</span></div><div class=collapsible-menu>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#demohttpswwwyoutubecomwatchvme1tffhmppmfeatureyoutube><a href="https://www.youtube.com/watch?v=me1TFfHmpPM&feature=youtu.be">DEMO</a></a></li>
+</ul>
+</li>
+<li><a href=#connect-everything>Connect Everything!</a></li>
+<li><a href=#the-arduino>The Arduino</a></li>
+<li><a href=#the-raspberry-pi>The Raspberry-Pi</a></li>
+<li><a href=#elixir>Elixir</a>
+<ul>
+<li><a href=#installing-elixir>Installing Elixir</a></li>
+</ul>
+</li>
+<li><a href=#phoenix-app>Phoenix App</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href=#connect-the-arduino-and-the-raspberry-pi-nerves-uart>Connect the Arduino and the Raspberry Pi: Nerves UART</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href=#bonus-telegram>Bonus: Telegram</a></li>
+<li><a href=#finally>Finally</a>
+<ul>
+<li><a href=#features>Features:</a></li>
+</ul>
+</li>
+<li><a href=#thanks-for-reading>Thanks for reading!</a>
+<ul>
+<li><a href=#dont-forget-see-the-demo>Don&rsquo;t forget see the demo!!</a></li>
+<li><a href=#demohttpswwwyoutubecomwatchvme1tffhmppmfeatureyoutube-1><a href="https://www.youtube.com/watch?v=me1TFfHmpPM&feature=youtu.be">DEMO</a></a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div></div>
+<div class=content-margin>
+<article>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/iot/uno.png alt></p>
+<p>Recently I have the opportunity to give a conference in the <a href=https://techstarsstartupweekmexicoc2018.sched.com/event/G1Kh/internet-of-things-primeros-pasos>Startup Week in Mexico City</a>. So I decided talk about Internet of things, because I was learning this using an <strong>Arduino</strong> and a <strong>Raspberry Pi</strong>.</p>
+<h3 id=demohttpswwwyoutubecomwatchvme1tffhmppmfeatureyoutube><a href="https://www.youtube.com/watch?v=me1TFfHmpPM&feature=youtu.be">DEMO</a></h3>
+<h2 id=connect-everything>Connect Everything!</h2>
+<p>The project is create a simple web application for create distribuid music. I was inspired in the <strong>Launchpad App</strong> and the <a href="https://www.youtube.com/watch?v=lEMG7ZayU48">Smartphone Symphony.</a></p>
+<p>I planned make this using <strong>Phoenix Framework</strong>, and connect an <strong>Arduino</strong> for play the music.</p>
+<h2 id=the-arduino>The Arduino</h2>
+<p>I use the arduino for built a circuit based on receipt and send signals using the serial port. This means that, for example, I send a message when I press a key from the membrane switch, or when the photo-resistance validate the light intensity.</p>
+<p>And when the circuit receives a signal, they could do something: turn on leds, etc. I used the <strong>Arduino IDE</strong> for test this circuit, for send and receive signals.</p>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/iot/dos.png alt></p>
+<h2 id=the-raspberry-pi>The Raspberry-Pi</h2>
+<p>Although the <strong>Raspberry Pi</strong> have a <strong>GPIO</strong>, I think that is more convenient use with the <strong>Arduino</strong>, because It has more usability (analog pins, more digital pins). The greatest part about Raspberry is that you could have an entire SO!</p>
+<p>So I used the <strong>Raspbian SO</strong> for get a <strong>Linux SO</strong>. When you have a Linux you know that impossible is nothing.</p>
+<h2 id=elixir>Elixir</h2>
+<p>I decided to choose <strong>elixir</strong> for programming over the Raspberry Pi because I was learning elixir, and this could be a great opportunity for improve my skills using an embedded systems.</p>
+<h3 id=installing-elixir>Installing Elixir</h3>
+<p>Raspbian SO have a simple way to install elixir, although you will have the version 1.3 I used other package installer ASD for install the most recent version.</p>
+<p><a href=https://github.com/asdf-vm/asdf>ASD GitHub Repository</a></p>
+<h2 id=phoenix-app>Phoenix App</h2>
+<h4 id=genserver-implementation-for-get-a-sound>GenServer implementation for get a sound</h4>
+<p>The web app has planned for assign a different sound per user. For this I used the Channels for create sockets connections and I created a simple gen server for get the sound.</p>
+<pre class="mc-prism hide language-text"><code class=language-Ruby>defmodule Chatter.Director do
+
+  use GenServer
+
+	# The sounds
+  @songs [
+    %{&quot;song&quot; =&gt; &quot;http://carlogilmar.me/uno.m4a&quot;, &quot;category&quot; =&gt; &quot;A&quot;},
+    %{&quot;song&quot; =&gt; &quot;http://carlogilmar.me/dos.m4a&quot;, &quot;category&quot; =&gt; &quot;B&quot;},
+    %{&quot;song&quot; =&gt; &quot;http://carlogilmar.me/tres.m4a&quot;, &quot;category&quot; =&gt; &quot;C&quot;},
+    %{&quot;song&quot; =&gt; &quot;http://carlogilmar.me/cuatro.m4a&quot;, &quot;category&quot; =&gt; &quot;D&quot;},
+    %{&quot;song&quot; =&gt; &quot;http://carlogilmar.me/cinco.m4a&quot;, &quot;category&quot; =&gt; &quot;E&quot;},
+    %{&quot;song&quot; =&gt; &quot;http://carlogilmar.me/seis.m4a&quot;, &quot;category&quot; =&gt; &quot;F&quot;},
+    %{&quot;song&quot; =&gt; &quot;http://carlogilmar.me/siete.m4a&quot;, &quot;category&quot; =&gt; &quot;G&quot;},
+    %{&quot;song&quot; =&gt; &quot;http://carlogilmar.me/ocho.m4a&quot;, &quot;category&quot; =&gt; &quot;H&quot;}
+  ]
+
+  def start_link() do
+    GenServer.start_link(__MODULE__, [], [name: __MODULE__])
+  end
+
+	# I have to call this function for get a sound
+  def suscribe() do
+    GenServer.call( __MODULE__, :suscribe)
+  end
+
+  def init(_) do
+		# Start the counter in 0 for serve the first sound
+    {:ok, {:counter, 0} }
+  end
+
+  def handle_call( :suscribe, _, {:counter, counter} ) do
+		# I serve the song and update the counter
+    { counter, song, next_counter } = suscribe_song( counter )
+    {:reply, {counter, song}, {:counter, next_counter}}
+  end
+
+	# The counter cannot be more greater than 7
+
+  def suscribe_song( 8 ) do
+    [ first_song | _ ] = @songs
+    { 0, first_song, 1 }
+  end
+
+  def suscribe_song( current_counter ) do
+    song = Enum.at( @songs, current_counter)
+    { current_counter, song, current_counter + 1 }
+  end
+
+end
+</code></pre>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/iot/tres.png alt></p>
+<h4 id=getting-a-sound-per-user-connected>Getting a sound per user connected</h4>
+<p>I used the channels because It has a function handle_join when somebody create a new connection, so it’s easy identify this moment.</p>
+<pre class="mc-prism hide language-text"><code>  def join(&quot;room:lobby&quot;, _, socket) do
+    Logger.info &quot;:: Join to room:lobby ::&quot;, ansi_color: :green
+    { _, current_user} = Director.suscribe() # I get the sound and send to the client
+    {:ok, current_user, socket}
+  end
+</code></pre>
+<p>For know more about Sockets in Phoenix you could visit my <a href=http://carlogilmar.me/post/phoenix-sockets/>last post</a></p>
+<h4 id=client-side>Client side</h4>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/iot/seis.png alt></p>
+<p>For play and stop music I implement the Howler JS library in the client side from Phoenix. When a user is getting connected, the app assign a sound.</p>
+<p>Using the broadcast messaging I could send strings, and in the client side I play different actions:</p>
+<ul>
+<li><strong>Start</strong>: Start to play every sound in every user connection</li>
+<li><strong>Play</strong>: Put the volume in 1.</li>
+<li><strong>Stop</strong>: Put the volume in 0.</li>
+<li><strong>Reload</strong>: Reload the browser.</li>
+<li><strong>Current Letter</strong>: Play only a sound.</li>
+</ul>
+<h5 id=note-i-have-one-trouble-using-phoenix-in-the-raspberry-pi-that-was-installing-node-js>NOTE: I have one trouble using Phoenix in the Raspberry Pi, that was installing Node JS.</h5>
+<h2 id=connect-the-arduino-and-the-raspberry-pi-nerves-uart>Connect the Arduino and the Raspberry Pi: Nerves UART</h2>
+<p>So, at this point I have a simple circuit running on the <strong>Arduino</strong>, and a <strong>Phoenix Web App</strong>. The next step is connect both. For this purpose I used <a href=https://github.com/nerves-project/nerves_uart>Nerves UART Projet</a>.</p>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/iot/cuatro.png alt></p>
+<p>For understand how it works, read the documentation is enough.</p>
+<h4 id=nerves-uart>Nerves UART</h4>
+<pre class="mc-prism hide language-text"><code>iex&gt; Nerves.UART.enumerate
+%{&quot;COM14&quot; =&gt; %{description: &quot;USB Serial Port&quot;, manufacturer: &quot;FTDI&quot;, product_id: 24577,
+    vendor_id: 1027},
+  &quot;COM5&quot; =&gt; %{description: &quot;Prolific USB-to-Serial Comm Port&quot;,
+    manufacturer: &quot;Prolific&quot;, product_id: 8963, vendor_id: 1659},
+  &quot;COM16&quot; =&gt; %{description: &quot;Arduino Uno&quot;,
+    manufacturer: &quot;Arduino LLC (www.arduino.cc)&quot;, product_id: 67, vendor_id: 9025}}
+
+iex&gt; {:ok, pid} = Nerves.UART.start_link
+{:ok, #PID&lt;0.132.0&gt;}
+
+iex&gt; Nerves.UART.open(pid, &quot;COM14&quot;, speed: 115200, active: false)
+:ok
+
+iex&gt; Nerves.UART.write(pid, &quot;Hello there\r\n&quot;)
+:ok
+
+iex&gt; Nerves.UART.read(pid, 60000)
+{:ok, &quot;Hi&quot;}
+</code></pre>
+<p><strong>Nerves UART</strong> help to build the communication bridge between the arduino and the elixir app.</p>
+<h5 id=note-i-have-some-troubles-connecting-the-arduino-with-my-macos-so-i-tested-it-directly-in-the-raspberry-pi-and-it-works>NOTE: I have some troubles connecting the arduino with my MacOS. So I tested it directly in the raspberry pi and It works.</h5>
+<p>So, the interesting part about this was implement the <strong>UART</strong> with the <strong>Phoenix app</strong>. For this I implemented a <strong>GenServer</strong> for get the port pidm.</p>
+<h4 id=uart-genserver>UART GenServer</h4>
+<p>I created a GenServer for get the pidm from the opened port, so in the <strong>init</strong> function I open the port and keep the port as the state. With this pidm I could send messages to this port using the UART write function.</p>
+<pre class="mc-prism hide language-text"><code class=language-ruby>def init(_) do
+	{:ok, uart_pid} = Nerves.UART.start_link
+	port = Nerves.UART.open( uart_pid, &quot;ttyACM0&quot;, speed: 9600, active: false)
+	Nerves.UART.configure(uart_pid, framing: {Nerves.UART.Framing.Line, separator: &quot;\r\n&quot;})
+	loop()
+	{:ok, uart_pid}
+end
+
+
+def handle_call( :get_uart, _, state ) do
+	# state is the uart_pid
+	{:reply, state, state}
+end
+</code></pre>
+<h4 id=read-the-serial-port-with-uart>Read the Serial Port with UART</h4>
+<p>The main idea is send messages, as strings, from the arduino to the phoenix app. For make this possible I had to read the serial port for receive the signals, and send as broadcast to every socket connection.</p>
+<p>For this I created a <strong>loop function</strong> for read every second the serial port, and send the signal as broadcast to the channels.</p>
+<pre class="mc-prism hide language-text"><code class=language-ruby> defp loop() do
+   send self(), :loop
+ end
+
+def handle_info(:loop, state) do
+  {:ok, message_from_arduino} = Nerves.UART.read( state, 1000 )
+  RoomChannel.send_broadcast( message_from_arduino )
+  loop()
+  {:noreply, state}
+end
+</code></pre>
+<p>With all of this I could connect everything and make the little demo. I built a simple device connecting all of this as a example of how IoT works.</p>
+<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/iot/cinco.png alt></p>
+<h2 id=bonus-telegram>Bonus: Telegram</h2>
+<p>I used <a href=https://github.com/rockneurotiko/ex_gram>Telegram Bot API</a> for connect a Telegram Bot for send messages to the sockets connections.</p>
+<h2 id=finally>Finally</h2>
+<p>At the end of the day I want to use the <strong>Arduino</strong> for send signals to the web application built with Phoenix. Installing this framework in the Raspberry Pi is so great, because you could implement everything that you know, as an example, I connected Telegram as other device for send messages.</p>
+<p>The web app is simple: create distribuited music melody based on 8 sounds from Launchpad.</p>
+<h3 id=features>Features:</h3>
+<h4 id=start>Start</h4>
+<ul>
+<li>Every user has a different sound.</li>
+<li>When a user enter to the webapp, the arduino start to play the leds.</li>
+</ul>
+<h4 id=photo-resistance>Photo-resistance</h4>
+<ul>
+<li>When turn-off the light, all devices start to play their sound.</li>
+<li>When turn-off the light, start to turn-on the leds.</li>
+<li>When turn-on the light, all devices stop their sound.</li>
+</ul>
+<h4 id=membrance-module>Membrance module</h4>
+<ul>
+<li>When touch a letter in the membrance module, all devices with this letter start to play their sound.</li>
+<li>When touch the play button in the membrance module, all devices start to play their sound.</li>
+<li>When touch the stop button in the membrance module, all devices stop their sound.</li>
+<li>When touch the reload button in the membrance module, all devices reload their connection and get a new letter.</li>
+</ul>
+<h4 id=telegram>Telegram</h4>
+<ul>
+<li>Send a message for start to play all sounds, stop, reload, and play every sound.</li>
+</ul>
+<h2 id=thanks-for-reading>Thanks for reading!</h2>
+<h3 id=dont-forget-see-the-demo>Don&rsquo;t forget see the demo!!</h3>
+<h3 id=demohttpswwwyoutubecomwatchvme1tffhmppmfeatureyoutube-1><a href="https://www.youtube.com/watch?v=me1TFfHmpPM&feature=youtu.be">DEMO</a></h3>
+</article>
+</div>
+</div>
+<footer>
+<article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
+</footer>
+</main>
+</body>
+</html>

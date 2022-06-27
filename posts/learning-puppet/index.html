@@ -1,0 +1,200 @@
+<!doctype html><html lang=en><head>
+<meta charset=utf-8>
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Learning Puppet - 🎨 Blog de @carlogilmar</title>
+<meta name=author content="carlogilmar">
+<meta property="og:title" content="Learning Puppet">
+<meta property="og:description" content="Learning Puppet Hi! Recently I was reviewing two courses about Jenkins, so I had to use Vagrant for configure my environment, also I used other tools as Puppet.
+In the developer day is very common configure linux servers for a lot of things: install a Jenkins, prepare the deploy environments, etc… Well, Puppet can help us to configure this servers, as a improve script shell. In this post I’m going to talk about the first steps for use Puppet.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://example.com/posts/learning-puppet/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2018-05-07T00:00:00+00:00">
+<meta property="article:modified_time" content="2018-05-07T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Learning Puppet">
+<meta name=twitter:description content="Learning Puppet Hi! Recently I was reviewing two courses about Jenkins, so I had to use Vagrant for configure my environment, also I used other tools as Puppet.
+In the developer day is very common configure linux servers for a lot of things: install a Jenkins, prepare the deploy environments, etc… Well, Puppet can help us to configure this servers, as a improve script shell. In this post I’m going to talk about the first steps for use Puppet.">
+<link rel=stylesheet href=/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
+<link rel=stylesheet href=/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn+PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
+<script>localStorage.theme==='dark'||!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches?document.documentElement.setAttribute("data-theme","dark"):document.documentElement.setAttribute("data-theme","light")</script>
+<script defer src=/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js integrity="sha512-eioQnsN4LFe60DMrZi+KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
+<script defer src=/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
+<script defer src=/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt+erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
+<script defer src=/js/search-en.677e05c714f837051483647d736c45051126c22a2696ca5f981b59da962d48962f3ea71150f559ba84884fd1aadf1c7aadce55bb31a3e5b75c0f173b763c109a.js integrity="sha512-Z34FxxT4NwUUg2R9c2xFBREmwiomlspfmBtZ2pYtSJYvPqcRUPVZuoSIT9Gq3xx6rc5VuzGj5bdcDxc7djwQmg=="></script>
+</head><body>
+<main><header>
+<div class=brand>
+<div id=sidebar_btn>
+<svg id="menu_icon" width="26" height="26" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></svg>
+</div>
+<div>
+<a href=/>@carlogilmar</a>
+</div>
+</div>
+<div class=toolbox>
+<div id=theme_tool>
+<svg id="dark_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></svg>
+<svg id="light_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></svg>
+</div>
+<div id=search_tool>
+<svg id="search_btn" class="toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></svg><div id=search_menu_wrapper class=hidden>
+<div id=search_menu>
+<div id=search_menu_toolbar>
+<div id=search_menu_input_wrapper>
+<input id=search_menu_input type=text placeholder="Search Posts">
+</div>
+<div id=search_menu_close_btn>
+<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></svg>
+</div>
+</div>
+<div id=search_menu_results>
+</div>
+</div>
+</div>
+</div>
+<div id=translation_tool class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
+<ul class=pure-menu-list>
+<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+<div class="dropdown-btn pure-menu-link">
+<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3.0 014 10 15.3 15.3.0 01-4 10A15.3 15.3.0 018 12a15.3 15.3.0 014-10z"/></svg></svg>
+<span class=dropdown-desc>English</span>
+</div>
+<ul class=pure-menu-children>
+<li class=pure-menu-item>
+<a href=https://example.com/ class=pure-menu-link>English</a>
+</li>
+<li class=pure-menu-item>
+<a href=https://example.com/es/ class=pure-menu-link>Spanish</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</header>
+<nav id=navbar class=pure-menu><ul class=pure-menu-list><li class="navbar-item pure-menu-item insection">
+<a href=/posts/ class=pure-menu-link>Posts</a>
+</li></ul>
+</nav>
+<div id=sidebar_canvas_overlay class=hidden></div>
+<div id=sidebar class=close>
+<ul><li>
+<a href=/posts/>Posts</a>
+</li></ul>
+</div><div id=content class=content-margin>
+<div class=collapsible-menu-wrapper><div class=collapsible-menu-type><span>Table of contents</span></div><div class=collapsible-menu>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#benefits-of-use-puppet-for-configure-servers>Benefits of use Puppet for configure servers</a></li>
+<li><a href=#installing-puppet>Installing Puppet</a></li>
+<li><a href=#starting-with-puppet>Starting With Puppet</a></li>
+<li><a href=#install-packages>Install Packages</a></li>
+<li><a href=#running-services>Running Services</a></li>
+<li><a href=#resources-for-learn-more>Resources for learn more:</a></li>
+</ul>
+</li>
+<li><a href=#thanks-for-reading>Thanks for reading!</a></li>
+</ul>
+</nav>
+</div></div>
+<div class=content-margin>
+<article>
+<h1 id=learning-puppet>Learning Puppet</h1>
+<p>Hi! Recently I was reviewing two courses about Jenkins, so I had to use Vagrant for configure my environment, also I used other tools as Puppet.</p>
+<p>In the developer day is very common configure linux servers for a lot of things: install a Jenkins, prepare the deploy environments, etc… Well, Puppet can help us to configure this servers, as a improve script shell. In this post I’m going to talk about the first steps for use Puppet.</p>
+<blockquote>
+<p>I recommend start to learning using Vagrant for create virtual machines ( By default Vagrant machines have installed an old Puppet version), you can know more in the Making Devs Blog: <a href=http://blog.makingdevs.com/2017/06/01/creating-virtual-machines-with-vagrant/>Creating virtual machines with Vagrant · Blog de Making Devs</a></p>
+</blockquote>
+<h3 id=benefits-of-use-puppet-for-configure-servers>Benefits of use Puppet for configure servers</h3>
+<ul>
+<li>Keeping the configuration synchronized</li>
+<li>Repeating changes across many servers</li>
+<li>Self-updating documentation</li>
+<li>Version Control</li>
+</ul>
+<p>Puppet is a great tool for make this, instead of use manual configuration, shell scripts (fragile, hard to maintain, very specific), or use container as Docker (require more configuration management).</p>
+<p>Puppet is more! Puppet is a language and an engine for applies configuration and managements.</p>
+<h3 id=installing-puppet>Installing Puppet</h3>
+<p>The most easy way for install puppet is download the TAR version <a href=http://downloads.puppetlabs.com/puppet/>here</a> and run the ruby script.</p>
+<p>For install Puppet 5.5.0 in ubuntu:</p>
+<pre class="mc-prism hide language-text"><code>$ wget http://downloads.puppetlabs.com/puppet/puppet-5.5.0.tar.gz
+$ tar -xzf puppet-5.5.0.tar.gz
+$ cd puppet-5.5.0/
+$ sudo ./install.rb
+$ puppet --version
+5.5.0
+</code></pre>
+<h3 id=starting-with-puppet>Starting With Puppet</h3>
+<p>Puppet can manage three basic resource types:</p>
+<ul>
+<li>Package: for install software.</li>
+<li>File: for deploy configuration files.</li>
+<li>Service: for runs software itself.</li>
+</ul>
+<p>I’m going to create my hello world example. For this I created the follow script:</p>
+<p><strong>hello-world.pp</strong></p>
+<pre class="mc-prism hide language-text"><code>file { '/tmp/hello.txt':
+  ensure  =&gt; file,
+  content =&gt; &quot;hello, world Vagrant with Puppet!!!\n&quot;,
+}
+</code></pre>
+<p>For run this in the empty server:</p>
+<blockquote>
+<p>sudo puppet apply hello-world.pp</p>
+</blockquote>
+<pre class="mc-prism hide language-text"><code>vagrant@vagrant-ubuntu-trusty-64:~$ sudo puppet apply puppet1.pp
+
+Warning: Could not retrieve fact fqdn
+Notice: Compiled catalog for vagrant-ubuntu-trusty-64 in environment production in 0.05 seconds
+Notice: /Stage[main]/Main/File[/tmp/hello.txt]/ensure: defined content as '{md5}4f4e8edd5c7cd9dc6c2d3aaca1baf2c1'
+Notice: Finished catalog run in 0.01 seconds
+
+vagrant@vagrant-ubuntu-trusty-64:~$ cat /tmp/hello.txt
+hello, world Vagrant with Puppet!!!
+</code></pre>
+<p>The term <strong>File</strong> is a puppet declaration, <strong>ensure</strong> is for specify the resource type, and <strong>content</strong> is an attribute for set the content in the file.</p>
+<h3 id=install-packages>Install Packages</h3>
+<p>We can create a puppet script for install packages, it’s very easy:</p>
+<p><strong>package.pp</strong></p>
+<pre class="mc-prism hide language-text"><code>package { 'fish':
+	ensure =&gt; installed,
+}
+</code></pre>
+<pre class="mc-prism hide language-text"><code>vagrant@vagrant-ubuntu-trusty-64:~$ sudo puppet apply package.pp
+Warning: Could not retrieve fact fqdn
+Notice: Compiled catalog for vagrant-ubuntu-trusty-64 in environment production in 0.09 seconds
+Notice: /Stage[main]/Main/Package[fish]/ensure: ensure changed 'purged' to 'present'
+Notice: Finished catalog run in 7.97 seconds
+</code></pre>
+<h3 id=running-services>Running Services</h3>
+<p>We can start services too:</p>
+<p><strong>puppet3.pp</strong></p>
+<pre class="mc-prism hide language-text"><code>service { 'jenkins':
+  ensure =&gt; running,
+  enable =&gt; true,
+}
+</code></pre>
+<pre class="mc-prism hide language-text"><code>vagrant@vagrant-ubuntu-trusty-64 ~&gt; sudo puppet apply service.pp
+Warning: Could not retrieve fact fqdn
+Notice: Compiled catalog for vagrant-ubuntu-trusty-64 in environment production in 0.06 seconds
+Notice: Finished catalog run in 0.06 seconds
+</code></pre>
+<h3 id=resources-for-learn-more>Resources for learn more:</h3>
+<ul>
+<li><a href=https://www.packtpub.com/virtualization-and-cloud/infrastructure-code-iac-cookbook>Infrastructure as Code (IAC) Cookbook | PACKT Books</a></li>
+<li><a href=https://www.packtpub.com/networking-and-servers/puppet-5-beginner%E2%80%99s-guide-third-edition>Puppet 5 Beginner’s Guide - Third Edition | PACKT Books</a></li>
+</ul>
+<h2 id=thanks-for-reading>Thanks for reading!</h2>
+<p>This are the basic uses with this tool. I hope write more about this.</p>
+</article>
+</div>
+</div>
+<footer>
+<article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
+</footer>
+</main>
+</body>
+</html>

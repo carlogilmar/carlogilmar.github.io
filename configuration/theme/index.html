@@ -1,0 +1,279 @@
+<!doctype html><html lang=en><head>
+<meta charset=utf-8>
+<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Theme Settings - 🎨 Blog de @carlogilmar</title>
+<meta name=author content="carlogilmar">
+<meta property="og:title" content="Theme Settings">
+<meta property="og:description" content="Theme Configuration These values are inside your toml config file.
+Navbar title HTML is available.
+[params] navbar_title = &#34;Monochrome&#34; # default: site's `title`  Footer HTML is available.
+[params] footer = &#34;Copyright © 2021 by kaiiiz&#34; # default: None  Table of Contents TOC global settings.
+[params] enable_toc = true # default: true  Collapsible Menu Collapsible global settings.
+[params] enable_collapsible_toc = false # default: false enable_collapsible_changelogs = false # default: false  Navbar menu Monochrome uses built-in menu system supported by hugo itself.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://example.com/configuration/theme/"><meta property="article:section" content="configuration">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Theme Settings">
+<meta name=twitter:description content="Theme Configuration These values are inside your toml config file.
+Navbar title HTML is available.
+[params] navbar_title = &#34;Monochrome&#34; # default: site's `title`  Footer HTML is available.
+[params] footer = &#34;Copyright © 2021 by kaiiiz&#34; # default: None  Table of Contents TOC global settings.
+[params] enable_toc = true # default: true  Collapsible Menu Collapsible global settings.
+[params] enable_collapsible_toc = false # default: false enable_collapsible_changelogs = false # default: false  Navbar menu Monochrome uses built-in menu system supported by hugo itself.">
+<link rel=stylesheet href=/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
+<link rel=stylesheet href=/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn+PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
+<script>localStorage.theme==='dark'||!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches?document.documentElement.setAttribute("data-theme","dark"):document.documentElement.setAttribute("data-theme","light")</script>
+<script defer src=/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js integrity="sha512-eioQnsN4LFe60DMrZi+KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
+<script defer src=/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
+<script defer src=/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt+erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
+<script defer src=/js/search-en.677e05c714f837051483647d736c45051126c22a2696ca5f981b59da962d48962f3ea71150f559ba84884fd1aadf1c7aadce55bb31a3e5b75c0f173b763c109a.js integrity="sha512-Z34FxxT4NwUUg2R9c2xFBREmwiomlspfmBtZ2pYtSJYvPqcRUPVZuoSIT9Gq3xx6rc5VuzGj5bdcDxc7djwQmg=="></script>
+</head><body>
+<main><header>
+<div class=brand>
+<div id=sidebar_btn>
+<svg id="menu_icon" width="26" height="26" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></svg>
+</div>
+<div>
+<a href=/>@carlogilmar</a>
+</div>
+</div>
+<div class=toolbox>
+<div id=theme_tool>
+<svg id="dark_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></svg>
+<svg id="light_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></svg>
+</div>
+<div id=search_tool>
+<svg id="search_btn" class="toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></svg><div id=search_menu_wrapper class=hidden>
+<div id=search_menu>
+<div id=search_menu_toolbar>
+<div id=search_menu_input_wrapper>
+<input id=search_menu_input type=text placeholder="Search Posts">
+</div>
+<div id=search_menu_close_btn>
+<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></svg>
+</div>
+</div>
+<div id=search_menu_results>
+</div>
+</div>
+</div>
+</div>
+<div id=translation_tool class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
+<ul class=pure-menu-list>
+<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+<div class="dropdown-btn pure-menu-link">
+<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3.0 014 10 15.3 15.3.0 01-4 10A15.3 15.3.0 018 12a15.3 15.3.0 014-10z"/></svg></svg>
+<span class=dropdown-desc>English</span>
+</div>
+<ul class=pure-menu-children>
+<li class=pure-menu-item>
+<a href=https://example.com/ class=pure-menu-link>English</a>
+</li>
+<li class=pure-menu-item>
+<a href=https://example.com/es/ class=pure-menu-link>Spanish</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</header>
+<nav id=navbar class=pure-menu><ul class=pure-menu-list><li class="navbar-item pure-menu-item">
+<a href=/posts/ class=pure-menu-link>Posts</a>
+</li></ul>
+</nav>
+<div id=sidebar_canvas_overlay class=hidden></div>
+<div id=sidebar class=close>
+<ul><li>
+<a href=/posts/>Posts</a>
+</li></ul>
+</div><div id=content class=content-margin>
+<div class=collapsible-menu-wrapper><div class=collapsible-menu-type><span>Table of contents</span></div><div class=collapsible-menu>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#navbar-title>Navbar title</a></li>
+<li><a href=#footer>Footer</a></li>
+<li><a href=#table-of-contents>Table of Contents</a></li>
+<li><a href=#collapsible-menu>Collapsible Menu</a></li>
+<li><a href=#navbar-menu>Navbar menu</a>
+<ul>
+<li><a href=#navbar-settings-in-config>Navbar settings in config</a></li>
+</ul>
+</li>
+<li><a href=#list-layout>List Layout</a></li>
+<li><a href=#external-library>External Library</a>
+<ul>
+<li><a href=#mathjax>MathJax</a></li>
+<li><a href=#zoomingjs>Zooming.js</a></li>
+<li><a href=#site-search>Site Search</a></li>
+</ul>
+</li>
+<li><a href=#syntax-highlighting>Syntax Highlighting</a>
+<ul>
+<li><a href=#using-chroma-server-side>Using Chroma (server-side)</a></li>
+<li><a href=#using-prismjs-client-side>Using Prism.js (client-side)</a></li>
+</ul>
+</li>
+<li><a href=#seo>SEO</a>
+<ul>
+<li><a href=#author>Author</a></li>
+<li><a href=#open-graph>Open Graph</a></li>
+<li><a href=#twitter-cards>Twitter Cards</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div></div>
+<div class=content-margin>
+<article>
+<h1 id=theme-configuration>Theme Configuration</h1>
+<p>These values are inside your toml config file.</p>
+<h2 id=navbar-title>Navbar title</h2>
+<p>HTML is available.</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[params]
+navbar_title = &quot;Monochrome&quot; # default: site's `title`
+</code></pre>
+<h2 id=footer>Footer</h2>
+<p>HTML is available.</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[params]
+footer = &quot;Copyright © 2021 by kaiiiz&quot; # default: None
+</code></pre>
+<h2 id=table-of-contents>Table of Contents</h2>
+<p>TOC global settings.</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[params]
+enable_toc = true # default: true
+</code></pre>
+<h2 id=collapsible-menu>Collapsible Menu</h2>
+<p>Collapsible global settings.</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[params]
+enable_collapsible_toc = false # default: false
+enable_collapsible_changelogs = false # default: false
+</code></pre>
+<h2 id=navbar-menu>Navbar menu</h2>
+<p>Monochrome uses built-in menu system supported by hugo itself. (Checkout <a href=https://gohugo.io/content-management/menus>document</a> for more deatil.) By default, the menu called <code>navbar</code> is used to decide which item need to be rendered on the navbar.</p>
+<p>So you can simply add the following code to your page front-matter, and the menu info will be handled by hugo out of the box. (<a href=https://gohugo.io/content-management/menus#simple>simple method mentioned in document</a>)</p>
+<pre class="mc-prism hide language-text"><code class=language-yaml>---
+menu: navbar
+---
+</code></pre>
+<p>Also, weighted value is supported out of the box, you can explicit assign the weight of the navbar entry, hugo will first sort the menu using weight, if there has two entries shared the same weight, the <a href=https://gohugo.io/templates/lists/#order-content>default order</a> will be applied.</p>
+<pre class="mc-prism hide language-text"><code class=language-yaml>---
+menu:
+  navbar:
+    weight: -99
+---
+</code></pre>
+<h3 id=navbar-settings-in-config>Navbar settings in config</h3>
+<p>If you try to put entry that aren&rsquo;t attached to a piece of content, or you want to organize your navbar into a single file, checkout <a href=https://gohugo.io/content-management/menus#add-non-content-entries-to-a-menu>Add Non-content Entries to a Menu</a> or <a href=https://github.com/kaiiiz/hugo-theme-monochrome/tree/main/exampleSite/config/_default/menus>Configuration file of demo site</a> and set these values in your toml settings file.</p>
+<p>toml example:</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[[menu.navbar]]
+identifier = &quot;about&quot;
+name = &quot;about&quot;
+title = &quot;about&quot;
+url = &quot;/about/&quot;
+weight = 100
+
+[[menu.navbar]]
+identifier = &quot;series&quot;
+name = &quot;series&quot;
+url = &quot;/series/&quot;
+weight = -100
+
+[[menu.navbar]]
+identifier = &quot;categories&quot;
+name = &quot;categories&quot;
+url = &quot;/categories/&quot;
+weight = 80
+</code></pre>
+<p>yaml example:</p>
+<pre class="mc-prism hide language-text"><code class=language-yaml>menu:
+  navbar:
+  - identifier: about
+    name: about
+    title: about
+    url: /about/
+    weight: 100
+  - identifier: series
+    name: series
+    url: /series/
+    weight: -100
+  - identifier: categories
+    name: categories
+    url: /categories/
+    weight: 80
+</code></pre>
+<h2 id=list-layout>List Layout</h2>
+<pre class="mc-prism hide language-text"><code class=language-toml>[params]
+  [params.list_layout]
+  enable_group_by_year = true # default: true
+  enable_show_date = true # default: true
+  enable_pagination = false # default: false
+</code></pre>
+<h2 id=external-library>External Library</h2>
+<h3 id=mathjax>MathJax</h3>
+<p>Use <code>$</code> to create inline result, <code>$$</code> to create block result.</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[params]
+enable_math = true # default: false
+</code></pre>
+<h3 id=zoomingjs>Zooming.js</h3>
+<p>Zooming.js global setting.</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[params]
+enable_zooming_js = false # default: true
+</code></pre>
+<h3 id=site-search>Site Search</h3>
+<p>Add the following settings to config.toml:</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[outputs]
+home = [&quot;HTML&quot;, &quot;RSS&quot;, &quot;JSON&quot;]
+</code></pre>
+<p>Enable site search</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[params]
+enable_site_search = true # default: false
+</code></pre>
+<h2 id=syntax-highlighting>Syntax Highlighting</h2>
+<h3 id=using-chroma-server-side>Using Chroma (server-side)</h3>
+<p>See <a href=https://gohugo.io/content-management/syntax-highlighting>Syntax Highlighting</a> for more details.</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[param]
+  [param.syntax_highlight]
+  lib = &quot;builtin&quot; # &quot;builtin&quot; | &quot;prism.js&quot; (default: &quot;builtin&quot;)
+    [param.syntax_highlight.builtin]
+    enable_code_copy = true # default: true
+</code></pre>
+<h3 id=using-prismjs-client-side>Using Prism.js (client-side)</h3>
+<p>Disable markup highlight feature</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[markup.highlight]
+codeFences = false
+lineNos = false
+</code></pre>
+<p>Enable Prism.js</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[param]
+  [params.syntax_highlight]
+  lib = &quot;prism.js&quot; # &quot;builtin&quot; | &quot;prism.js&quot; (default: &quot;builtin&quot;)
+    [params.syntax_highlight.prism]
+    enable_code_copy = true # default: true
+    enable_line_no = true # default: true
+</code></pre>
+<h2 id=seo>SEO</h2>
+<h3 id=author>Author</h3>
+<pre class="mc-prism hide language-text"><code class=language-toml>[params]
+author = &quot;kaiiiz&quot; # default: no author `meta` tag
+</code></pre>
+<h3 id=open-graph>Open Graph</h3>
+<p>A flag to render open graph internal template. See <a href=https://gohugo.io/templates/internal#open-graph>Open Graph</a> for additional settings.</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[params]
+enable_open_graph = false # default: true
+</code></pre>
+<h3 id=twitter-cards>Twitter Cards</h3>
+<p>A flag to render open twitter cards template. See <a href=https://gohugo.io/templates/internal#twitter-cards>Twitter Cards</a> for additional settings.</p>
+<pre class="mc-prism hide language-text"><code class=language-toml>[params]
+enable_twitter_cards = false # default: true
+</code></pre>
+</article>
+</div>
+</div>
+<footer>
+<article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
+</footer>
+</main>
+</body>
+</html>
