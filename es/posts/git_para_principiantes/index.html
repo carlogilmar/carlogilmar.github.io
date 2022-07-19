@@ -1,131 +1,239 @@
-<!doctype html><html lang=es><head>
-<meta charset=utf-8>
-<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Git para Principiantes - 🎨 Blog de @carlogilmar</title>
-<meta name=author content="carlogilmar">
-<meta property="og:title" content="Git para Principiantes">
-<meta property="og:description" content="Para iniciar&mldr; Recientemente he descubierto el gran y amplio mundo que implica el uso de la herramienta Git para proyectos de software.
-Aún buscando entre tutoriales, y libros, el primer acercamiento es algo similar a lanzarse a un mar sin saber nadar, por ello mismo lo primero que hice fue hacer uso de la Facilitación Gráfica para poder contar con una historia que era Git y cómo funcionaba. Aquí va la primera entrega de lo que espero sean muchas.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://carlogilmar.xyz/es/posts/git_para_principiantes/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2016-09-26T21:22:27-05:00">
-<meta property="article:modified_time" content="2016-09-26T21:22:27-05:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Git para Principiantes">
-<meta name=twitter:description content="Para iniciar&mldr; Recientemente he descubierto el gran y amplio mundo que implica el uso de la herramienta Git para proyectos de software.
-Aún buscando entre tutoriales, y libros, el primer acercamiento es algo similar a lanzarse a un mar sin saber nadar, por ello mismo lo primero que hice fue hacer uso de la Facilitación Gráfica para poder contar con una historia que era Git y cómo funcionaba. Aquí va la primera entrega de lo que espero sean muchas.">
-<link rel=stylesheet href=/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
-<link rel=stylesheet href=/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn+PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-CJXJL083W7','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<script>localStorage.theme==='dark'||!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches?document.documentElement.setAttribute("data-theme","dark"):document.documentElement.setAttribute("data-theme","light")</script>
-<script defer src=/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js integrity="sha512-eioQnsN4LFe60DMrZi+KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
-<script defer src=/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
-<script defer src=/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt+erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
-<script defer src=/js/search-es.64db908cde868e00f376c3c9f689195d9ce0ae2aa0899cc3c009c492c55778efcd4fe312f0130a6d436752744619102b1fc90777faf20d4a357803771b75dfee.js integrity="sha512-ZNuQjN6GjgDzdsPJ9okZXZzgriqgiZzDwAnEksVXeO/NT+MS8BMKbUNnUnRGGRArH8kHd/ryDUo1eAN3G3Xf7g=="></script>
-</head><body>
-<main><header>
-<div class=brand>
-<div id=sidebar_btn>
-<svg id="menu_icon" width="26" height="26" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='es'><head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Git para Principiantes - 🎨 Blog de @carlogilmar</title>
+
+    
+
+    
+
+    
+    <meta name="author" content="carlogilmar" />
+    
+
+    
+        <meta property="og:title" content="Git para Principiantes" />
+<meta property="og:description" content="Para iniciar&hellip; Recientemente he descubierto el gran y amplio mundo que implica el uso de la herramienta Git para proyectos de software.
+Aún buscando entre tutoriales, y libros, el primer acercamiento es algo similar a lanzarse a un mar sin saber nadar, por ello mismo lo primero que hice fue hacer uso de la Facilitación Gráfica para poder contar con una historia que era Git y cómo funcionaba. Aquí va la primera entrega de lo que espero sean muchas." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://carlogilmar.xyz/es/posts/git_para_principiantes/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-09-26T21:22:27-05:00" />
+<meta property="article:modified_time" content="2016-09-26T21:22:27-05:00" />
+
+
+    
+
+    
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git para Principiantes"/>
+<meta name="twitter:description" content="Para iniciar&hellip; Recientemente he descubierto el gran y amplio mundo que implica el uso de la herramienta Git para proyectos de software.
+Aún buscando entre tutoriales, y libros, el primer acercamiento es algo similar a lanzarse a un mar sin saber nadar, por ello mismo lo primero que hice fue hacer uso de la Facilitación Gráfica para poder contar con una historia que era Git y cómo funcionaba. Aquí va la primera entrega de lo que espero sean muchas."/>
+
+    <link rel="stylesheet" href="/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css" integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
+
+
+
+    <link rel="stylesheet" href="/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css" integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn&#43;PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
+
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJXJL083W7"></script>
+    <script>
+        console.log("::Visual Partner-Ship::");
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CJXJL083W7');
+    </script>
+    
+
+    
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+<script defer src="/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js" integrity="sha512-eioQnsN4LFe60DMrZi&#43;KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
+
+
+
+    <script defer src="/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js" integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
+
+
+
+
+
+
+
+    
+        
+
+        
+        
+
+        
+        
+            
+        
+
+        <script defer src="/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js" integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt&#43;erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
+    
+
+
+
+    
+    
+    
+    <script defer src="/js/search-es.64db908cde868e00f376c3c9f689195d9ce0ae2aa0899cc3c009c492c55778efcd4fe312f0130a6d436752744619102b1fc90777faf20d4a357803771b75dfee.js" integrity="sha512-ZNuQjN6GjgDzdsPJ9okZXZzgriqgiZzDwAnEksVXeO/NT&#43;MS8BMKbUNnUnRGGRArH8kHd/ryDUo1eAN3G3Xf7g=="></script>
+
+
+
+
+</head>
+<body>
+        <main><header>
+    <div class="brand">
+        <div id="sidebar_btn">
+            <svg id="menu_icon" width="26px" height="26px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></svg>
+        </div>
+
+        <div>
+            <a href="/es/">@carlogilmar</a>
+        </div>
+    </div>
+
+    <div class="toolbox">
+        <div id="theme_tool">
+            <svg id="dark_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></svg>
+            <svg id="light_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></svg>
+        </div>
+
+        
+            <div id="search_tool">
+                <svg id="search_btn" class="toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></svg><div id="search_menu_wrapper" class="hidden">
+    <div id="search_menu">
+        <div id="search_menu_toolbar">
+            <div id="search_menu_input_wrapper">
+                <input id="search_menu_input" type="text" placeholder='Search Posts'>
+            </div>
+            <div id="search_menu_close_btn">
+                <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></svg>
+            </div>
+        </div>
+        <div id="search_menu_results">
+        </div>
+    </div>
 </div>
-<div>
-<a href=/es/>@carlogilmar</a>
 </div>
-</div>
-<div class=toolbox>
-<div id=theme_tool>
-<svg id="dark_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></svg>
-<svg id="light_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></svg>
-</div>
-<div id=search_tool>
-<svg id="search_btn" class="toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></svg><div id=search_menu_wrapper class=hidden>
-<div id=search_menu>
-<div id=search_menu_toolbar>
-<div id=search_menu_input_wrapper>
-<input id=search_menu_input type=text placeholder="Search Posts">
-</div>
-<div id=search_menu_close_btn>
-<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></svg>
-</div>
-</div>
-<div id=search_menu_results>
-</div>
-</div>
-</div>
-</div>
-<div id=translation_tool class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
-<ul class=pure-menu-list>
-<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-<div class="dropdown-btn pure-menu-link">
-<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3.0 014 10 15.3 15.3.0 01-4 10A15.3 15.3.0 018 12a15.3 15.3.0 014-10z"/></svg></svg>
-<span class=dropdown-desc>Spanish</span>
-</div>
-<ul class=pure-menu-children>
-<li class=pure-menu-item>
-<a href=https://carlogilmar.xyz/ class=pure-menu-link>English</a>
-</li>
-<li class=pure-menu-item>
-<a href=https://carlogilmar.xyz/es/ class=pure-menu-link>Spanish</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+        
+
+        
+            <div id="translation_tool" class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                        <div class="dropdown-btn pure-menu-link">
+                            <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></svg>
+                            <span class="dropdown-desc">Spanish</span>
+                        </div>
+                        <ul class="pure-menu-children">
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/" class="pure-menu-link">English</a>
+                            </li>
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/es/" class="pure-menu-link">Spanish</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </div>
 </header>
-<nav id=navbar class=pure-menu><ul class=pure-menu-list><li class="navbar-item pure-menu-item insection">
-<a href=/es/posts/ class=pure-menu-link>⭐️ Contenido</a>
-</li></ul>
+<nav id="navbar" class="pure-menu"><ul class="pure-menu-list"><li class="navbar-item pure-menu-item insection">
+                    
+                        <a href="/es/posts/" class="pure-menu-link">⭐️ Contenido</a>
+                    
+                </li></ul>
 </nav>
-<div id=sidebar_canvas_overlay class=hidden></div>
-<div id=sidebar class=close>
-<ul><li>
-<a href=/es/posts/>⭐️ Contenido</a>
-</li></ul>
-</div><div id=content class=content-margin>
-<div class=content-margin>
-<article>
-<hr>
-<h1 id=para-iniciar>Para iniciar&mldr;</h1>
+<div id="sidebar_canvas_overlay" class="hidden"></div>
+<div id="sidebar" class="close">
+    <ul><li>
+                    <a href="/es/posts/">⭐️ Contenido</a>
+                </li></ul>
+</div><div id="content" class="content-margin">
+                
+
+
+    <div class="content-margin">
+
+<article >
+    
+    
+        
+        
+    
+    <hr>
+<h1 id="para-iniciar">Para iniciar&hellip;</h1>
 <p>Recientemente he descubierto el gran y amplio mundo que implica el uso de la herramienta Git para proyectos de software.</p>
 <p>Aún buscando entre tutoriales, y libros, el primer acercamiento es algo similar a lanzarse a un mar sin saber nadar, por ello mismo lo primero que hice fue hacer uso de la Facilitación Gráfica para poder contar con una historia que era Git y cómo funcionaba. Aquí va la primera entrega de lo que espero sean muchas.</p>
 <p>Este querido amigo nos servirá para monitorear los archivos de un proyecto, y así controlar las versiones y avances.</p>
 <p>Les presento al R2D2-Git y las funciones básicas para tenerlo funcionando en un proyecto.</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/uno.jpg alt="Hola Git"></p>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/uno.jpg" alt="Hola Git"></p>
 <p>Git se ejecuta dentro de la carpeta principal de nuestro proyecto y reconoce TODO lo qué hay dentro.</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/dos.jpg alt="Git init"></p>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/dos.jpg" alt="Git init"></p>
 <p>Entonces, a partir de ese momento ya no estarás solo en el desarrollo del proyecto, porque Git estará para apoyarte.</p>
 <p>Git verá todos los archivos, pero es necesario indicarle los archivos que deseamos versionar.</p>
 <p>Veamos como ir usando Git poco a poco.</p>
 <hr>
-<h1 id=estado-de-los-archivos-que-monitorea-git>ESTADO DE LOS ARCHIVOS QUE MONITOREA GIT</h1>
+<h1 id="estado-de-los-archivos-que-monitorea-git">ESTADO DE LOS ARCHIVOS QUE MONITOREA GIT</h1>
 <p>Primero debemos preguntarle qué ve en nuestro proyecto el pequeño amigo Git, el hablara con la verdad y dirá cada archivo qué hay que no este monitoreando.</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/tres.jpg alt=Status></p>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/tres.jpg" alt="Status"></p>
 <hr>
-<h1 id=dile-a-git-donde-poner-el-ojo>DILE A GIT DONDE PONER EL OJO</h1>
+<h1 id="dile-a-git-donde-poner-el-ojo">DILE A GIT DONDE PONER EL OJO</h1>
 <p>Una vez que sabemos el estado de aquello que no está monitoreando, podemos indicarle a Git qué archivo debe monitorear, podemos iniciar por uno.</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/cuatro.jpg alt=Add></p>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/cuatro.jpg" alt="Add"></p>
 <p>Si volvemos a pedirle el STATUS, verás que ya no cuenta el archivo agregado.</p>
 <hr>
-<h1 id=al-confesionario-con-git>AL CONFESIONARIO CON GIT</h1>
+<h1 id="al-confesionario-con-git">AL CONFESIONARIO CON GIT</h1>
 <p>Una vez que Git ya está monitoreando el archivo, habrá que indicarle una descripción corta de qué es el archivo, qué se modificó, etc.</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/cinco.jpg alt=Commit></p>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/cinco.jpg" alt="Commit"></p>
 <hr>
-<h1 id=repetir>REPETIR</h1>
+<h1 id="repetir">REPETIR</h1>
 <p>Si agregamos un archivo (ADD) dentro del proyecto, y le damos un COMMIT, entonces estará siendo monitoreado por Git. Es necesario ir agregando cada archivo a Git mediante el ADD-COMMIT.</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/siete.jpg alt=Rutine>
-<img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/ocho.jpg alt="Rutine 2"></p>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/siete.jpg" alt="Rutine">
+<img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/ocho.jpg" alt="Rutine 2"></p>
 <p>Una vez que el STATUS no muestre ningún archivo, tendremos nuestro proyecto versionado bajo la mirada y el monitor de Git.</p>
 <p>Si modificaramos un archivo, automáticamente el STATUS mostrará que hubo un cambio e indicará el archivo, de igual forma lo hará si se añaden nuevos archivos al proyecto.</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/seis.jpg alt=Diff></p>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/legacy/seis.jpg" alt="Diff"></p>
 <p>Es posible identificar las diferencias existentes en un archivo, bastará con indicarle a git.</p>
 <p>Y finalmente aplicaremos el ADD y COMMIT para monitorearlo por Git.</p>
 <p>Notarán que Git irá diciendo que está funcionando sobre algo llamado &ldquo;Master&rdquo;, que es la rama principal, y creada por defecto, que será tema para otra entrega.</p>
-<h1 id=review>Review</h1>
+<h1 id="review">Review</h1>
 <p>Comandos de esta publicación de Git</p>
-<pre class="mc-prism hide language-text"><code>git init //Para iniciar Git en tu proyecto
+<pre  class="mc-prism hide language-text" ><code>git init //Para iniciar Git en tu proyecto
 
 git status //Para ver los archivos no monitoreados
 
@@ -136,12 +244,19 @@ git commit -m &quot;Descripcion&quot; //Indicarle una descripcion del archivo ag
 git diff file.sm //Git te mostrará las modificaciones
 
 </code></pre>
+
 </article>
 </div>
-</div>
+
+
+                
+                    
+                
+            </div>
 <footer>
-<article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
+    <article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
 </footer>
+
 </main>
-</body>
+    </body>
 </html>

@@ -1,118 +1,230 @@
-<!doctype html><html lang=en><head>
-<meta charset=utf-8>
-<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Phoenix Live Views - 🎨 Blog de @carlogilmar</title>
-<meta name=author content="carlogilmar">
-<meta property="og:title" content="Phoenix Live Views">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='en'><head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phoenix Live Views - 🎨 Blog de @carlogilmar</title>
+
+    
+
+    
+
+    
+    <meta name="author" content="carlogilmar" />
+    
+
+    
+        <meta property="og:title" content="Phoenix Live Views" />
 <meta property="og:description" content="The content below was generated for prepare a talk for the Elixir Meetup in CDMX 🇲🇽
 All the drawings were drew my me.
 The Phoenix Live Views is an open-source project created since last October, 2018. The core maintainers are Chris McCord, Jose Valim, Alex Garibay, Gary Rennie and Scott Newcomer. Join to the Elixir Community Slack!
-In the next sections I&rsquo;ll explain what is and how I understood that this works 😅.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://carlogilmar.xyz/posts/live_views/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2019-09-06T00:00:00+00:00">
-<meta property="article:modified_time" content="2019-09-06T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Phoenix Live Views">
-<meta name=twitter:description content="The content below was generated for prepare a talk for the Elixir Meetup in CDMX 🇲🇽
+In the next sections I&rsquo;ll explain what is and how I understood that this works 😅." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://carlogilmar.xyz/posts/live_views/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-06T00:00:00+00:00" />
+
+
+    
+
+    
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Phoenix Live Views"/>
+<meta name="twitter:description" content="The content below was generated for prepare a talk for the Elixir Meetup in CDMX 🇲🇽
 All the drawings were drew my me.
 The Phoenix Live Views is an open-source project created since last October, 2018. The core maintainers are Chris McCord, Jose Valim, Alex Garibay, Gary Rennie and Scott Newcomer. Join to the Elixir Community Slack!
-In the next sections I&rsquo;ll explain what is and how I understood that this works 😅.">
-<link rel=stylesheet href=/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
-<link rel=stylesheet href=/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn+PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-CJXJL083W7','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<script>localStorage.theme==='dark'||!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches?document.documentElement.setAttribute("data-theme","dark"):document.documentElement.setAttribute("data-theme","light")</script>
-<script defer src=/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js integrity="sha512-eioQnsN4LFe60DMrZi+KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
-<script defer src=/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
-<script defer src=/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt+erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
-<script defer src=/js/search-en.677e05c714f837051483647d736c45051126c22a2696ca5f981b59da962d48962f3ea71150f559ba84884fd1aadf1c7aadce55bb31a3e5b75c0f173b763c109a.js integrity="sha512-Z34FxxT4NwUUg2R9c2xFBREmwiomlspfmBtZ2pYtSJYvPqcRUPVZuoSIT9Gq3xx6rc5VuzGj5bdcDxc7djwQmg=="></script>
-</head><body>
-<main><header>
-<div class=brand>
-<div id=sidebar_btn>
-<svg id="menu_icon" width="26" height="26" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></svg>
+In the next sections I&rsquo;ll explain what is and how I understood that this works 😅."/>
+
+    <link rel="stylesheet" href="/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css" integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
+
+
+
+    <link rel="stylesheet" href="/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css" integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn&#43;PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
+
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJXJL083W7"></script>
+    <script>
+        console.log("::Visual Partner-Ship::");
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CJXJL083W7');
+    </script>
+    
+
+    
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+<script defer src="/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js" integrity="sha512-eioQnsN4LFe60DMrZi&#43;KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
+
+
+
+    <script defer src="/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js" integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
+
+
+
+
+
+
+
+    
+        
+
+        
+        
+
+        
+        
+            
+        
+
+        <script defer src="/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js" integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt&#43;erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
+    
+
+
+
+    
+    
+    
+    <script defer src="/js/search-en.677e05c714f837051483647d736c45051126c22a2696ca5f981b59da962d48962f3ea71150f559ba84884fd1aadf1c7aadce55bb31a3e5b75c0f173b763c109a.js" integrity="sha512-Z34FxxT4NwUUg2R9c2xFBREmwiomlspfmBtZ2pYtSJYvPqcRUPVZuoSIT9Gq3xx6rc5VuzGj5bdcDxc7djwQmg=="></script>
+
+
+
+
+</head>
+<body>
+        <main><header>
+    <div class="brand">
+        <div id="sidebar_btn">
+            <svg id="menu_icon" width="26px" height="26px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></svg>
+        </div>
+
+        <div>
+            <a href="/">@carlogilmar</a>
+        </div>
+    </div>
+
+    <div class="toolbox">
+        <div id="theme_tool">
+            <svg id="dark_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></svg>
+            <svg id="light_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></svg>
+        </div>
+
+        
+            <div id="search_tool">
+                <svg id="search_btn" class="toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></svg><div id="search_menu_wrapper" class="hidden">
+    <div id="search_menu">
+        <div id="search_menu_toolbar">
+            <div id="search_menu_input_wrapper">
+                <input id="search_menu_input" type="text" placeholder='Search Posts'>
+            </div>
+            <div id="search_menu_close_btn">
+                <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></svg>
+            </div>
+        </div>
+        <div id="search_menu_results">
+        </div>
+    </div>
 </div>
-<div>
-<a href=/>@carlogilmar</a>
 </div>
-</div>
-<div class=toolbox>
-<div id=theme_tool>
-<svg id="dark_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></svg>
-<svg id="light_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></svg>
-</div>
-<div id=search_tool>
-<svg id="search_btn" class="toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></svg><div id=search_menu_wrapper class=hidden>
-<div id=search_menu>
-<div id=search_menu_toolbar>
-<div id=search_menu_input_wrapper>
-<input id=search_menu_input type=text placeholder="Search Posts">
-</div>
-<div id=search_menu_close_btn>
-<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></svg>
-</div>
-</div>
-<div id=search_menu_results>
-</div>
-</div>
-</div>
-</div>
-<div id=translation_tool class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
-<ul class=pure-menu-list>
-<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-<div class="dropdown-btn pure-menu-link">
-<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3.0 014 10 15.3 15.3.0 01-4 10A15.3 15.3.0 018 12a15.3 15.3.0 014-10z"/></svg></svg>
-<span class=dropdown-desc>English</span>
-</div>
-<ul class=pure-menu-children>
-<li class=pure-menu-item>
-<a href=https://carlogilmar.xyz/ class=pure-menu-link>English</a>
-</li>
-<li class=pure-menu-item>
-<a href=https://carlogilmar.xyz/es/ class=pure-menu-link>Spanish</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+        
+
+        
+            <div id="translation_tool" class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                        <div class="dropdown-btn pure-menu-link">
+                            <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></svg>
+                            <span class="dropdown-desc">English</span>
+                        </div>
+                        <ul class="pure-menu-children">
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/" class="pure-menu-link">English</a>
+                            </li>
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/es/" class="pure-menu-link">Spanish</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </div>
 </header>
-<nav id=navbar class=pure-menu><ul class=pure-menu-list><li class="navbar-item pure-menu-item insection">
-<a href=/posts/ class=pure-menu-link>Posts</a>
-</li></ul>
+<nav id="navbar" class="pure-menu"><ul class="pure-menu-list"><li class="navbar-item pure-menu-item insection">
+                    
+                        <a href="/posts/" class="pure-menu-link">Posts</a>
+                    
+                </li></ul>
 </nav>
-<div id=sidebar_canvas_overlay class=hidden></div>
-<div id=sidebar class=close>
-<ul><li>
-<a href=/posts/>Posts</a>
-</li></ul>
-</div><div id=content class=content-margin>
-<div class=collapsible-menu-wrapper><div class=collapsible-menu-type><span>Table of contents</span></div><div class=collapsible-menu>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#a-live-view>A live view</a></li>
-<li><a href=#features-and-use-cases>Features and use cases</a></li>
-<li><a href=#life-cycle>Life Cycle</a></li>
-<li><a href=#a-live-view-anatomy>A Live View Anatomy</a></li>
-<li><a href=#live-view-setup>Live View Setup</a></li>
-<li><a href=#exploring-the-repository>Exploring the repository</a></li>
-<li><a href=#client-live-view>Client Live View</a></li>
-<li><a href=#elixir-meetup-cdmx>Elixir Meetup CDMX</a></li>
-</ul>
+<div id="sidebar_canvas_overlay" class="hidden"></div>
+<div id="sidebar" class="close">
+    <ul><li>
+                    <a href="/posts/">Posts</a>
+                </li></ul>
+</div><div id="content" class="content-margin">
+                
+    
+    <div class="collapsible-menu-wrapper"><div class="collapsible-menu-type"><span>Table of contents</span></div><div class="collapsible-menu">
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#a-live-view">A live view</a></li>
+    <li><a href="#features-and-use-cases">Features and use cases</a></li>
+    <li><a href="#life-cycle">Life Cycle</a></li>
+    <li><a href="#a-live-view-anatomy">A Live View Anatomy</a></li>
+    <li><a href="#live-view-setup">Live View Setup</a></li>
+    <li><a href="#exploring-the-repository">Exploring the repository</a></li>
+    <li><a href="#client-live-view">Client Live View</a></li>
+    <li><a href="#elixir-meetup-cdmx">Elixir Meetup CDMX</a></li>
+  </ul>
 </nav>
-</div></div>
-<div class=content-margin>
-<article>
-<p><strong>The content below was generated for prepare a talk for the Elixir Meetup in CDMX 🇲🇽</strong></p>
+        
+    </div></div>
+
+
+
+    <div class="content-margin">
+
+<article >
+    
+    
+        
+        
+    
+    <p><strong>The content below was generated for prepare a talk for the Elixir Meetup in CDMX 🇲🇽</strong></p>
 <p><em>All the drawings were drew my me.</em></p>
-<p>The <strong>Phoenix Live Views</strong> is an open-source project created since last October, 2018. The core maintainers are <strong>Chris McCord, Jose Valim, Alex Garibay, Gary Rennie and Scott Newcomer</strong>. <a href=https://elixir-slackin.herokuapp.com/>Join to the Elixir Community Slack!</a></p>
+<p>The <strong>Phoenix Live Views</strong> is an open-source project created since last October, 2018. The core maintainers are <strong>Chris McCord, Jose Valim, Alex Garibay, Gary Rennie and Scott Newcomer</strong>. <a href="https://elixir-slackin.herokuapp.com/">Join to the Elixir Community Slack!</a></p>
 <p>In the next sections I&rsquo;ll explain what is and how I understood that this works 😅.</p>
-<h2 id=a-live-view>A live view</h2>
-<p><img src=https://res.cloudinary.com/carlogilmar/image/upload/v1567807754/carlogilmar/ElixirLiveViews_2_nfpzjy.png alt></p>
+<h2 id="a-live-view">A live view</h2>
+<p><img src="https://res.cloudinary.com/carlogilmar/image/upload/v1567807754/carlogilmar/ElixirLiveViews_2_nfpzjy.png" alt=""></p>
 <p>A <strong>live view</strong> could be understood as a process, this process keep an state, and modify his state if an event happens. Keep an eye here.</p>
-<h2 id=features-and-use-cases>Features and use cases</h2>
+<h2 id="features-and-use-cases">Features and use cases</h2>
 <p>If you read the documentation you&rsquo;ll see similar content illustrated here.</p>
 <p>A Live View:</p>
 <ul>
@@ -122,10 +234,10 @@ In the next sections I&rsquo;ll explain what is and how I understood that this w
 <li>Identify static and dynamic content</li>
 <li>React faster</li>
 </ul>
-<p><img src=https://res.cloudinary.com/carlogilmar/image/upload/v1567807755/carlogilmar/ElixirLiveViews_3_vmuoxl.png alt></p>
-<p><img src=https://res.cloudinary.com/carlogilmar/image/upload/v1567807755/carlogilmar/ElixirLiveViews_5_qktpnl.png alt></p>
-<p><img src=https://res.cloudinary.com/carlogilmar/image/upload/v1567807755/carlogilmar/ElixirLiveViews_4_i6ei5k.png alt></p>
-<h2 id=life-cycle>Life Cycle</h2>
+<p><img src="https://res.cloudinary.com/carlogilmar/image/upload/v1567807755/carlogilmar/ElixirLiveViews_3_vmuoxl.png" alt=""></p>
+<p><img src="https://res.cloudinary.com/carlogilmar/image/upload/v1567807755/carlogilmar/ElixirLiveViews_5_qktpnl.png" alt=""></p>
+<p><img src="https://res.cloudinary.com/carlogilmar/image/upload/v1567807755/carlogilmar/ElixirLiveViews_4_i6ei5k.png" alt=""></p>
+<h2 id="life-cycle">Life Cycle</h2>
 <p>When we are opening an url in the browser for show our <strong>Live View</strong> there happening many things:</p>
 <ol>
 <li>A regular <code>HTTP Request</code> is sent</li>
@@ -134,15 +246,15 @@ In the next sections I&rsquo;ll explain what is and how I understood that this w
 <li>This <strong>session data</strong> is stored on the client</li>
 <li>When the client is connected it&rsquo;s time to back to the server</li>
 </ol>
-<p><img src=https://res.cloudinary.com/carlogilmar/image/upload/v1567807756/carlogilmar/ElixirLiveViews_7_d3s8zv.png alt></p>
-<ol start=6>
+<p><img src="https://res.cloudinary.com/carlogilmar/image/upload/v1567807756/carlogilmar/ElixirLiveViews_7_d3s8zv.png" alt=""></p>
+<ol start="6">
 <li>Inside the Live View the <code>mount/2</code> function is called, in this function we could assign the data for render our view</li>
 <li><code>render/1</code> function is called and it&rsquo;ll send regular HTML to the client</li>
 <li>Our <strong>Live View</strong> will be completed and ready.</li>
 <li>If any event happens, the same flow will be called: 1) <code>mount/2</code> and then <code>render/1</code></li>
 </ol>
-<p><img src=https://res.cloudinary.com/carlogilmar/image/upload/v1567807756/carlogilmar/ElixirLiveViews_8_cfbftx.png alt></p>
-<h2 id=a-live-view-anatomy>A Live View Anatomy</h2>
+<p><img src="https://res.cloudinary.com/carlogilmar/image/upload/v1567807756/carlogilmar/ElixirLiveViews_8_cfbftx.png" alt=""></p>
+<h2 id="a-live-view-anatomy">A Live View Anatomy</h2>
 <p>With this we could model the anatomy of a live view as:</p>
 <ul>
 <li>An Elixir Module</li>
@@ -154,41 +266,41 @@ In the next sections I&rsquo;ll explain what is and how I understood that this w
 </li>
 <li>It&rsquo;ll be render the content identified by the sigil <code>~L</code> or by a template <code>.leex</code>(remember that a template needs a view for works)</li>
 </ul>
-<p><img src=https://res.cloudinary.com/carlogilmar/image/upload/v1567807756/carlogilmar/ElixirLiveViews_9_pn8of2.png alt></p>
-<h2 id=live-view-setup>Live View Setup</h2>
+<p><img src="https://res.cloudinary.com/carlogilmar/image/upload/v1567807756/carlogilmar/ElixirLiveViews_9_pn8of2.png" alt=""></p>
+<h2 id="live-view-setup">Live View Setup</h2>
 <p>For make the setup you&rsquo;ll have to follow some steps: create your live view module, config a signing salt, create the socket <code>live</code> in your <code>Endpoint</code>, set as route in the <code>Router</code> or invoke in normal views, and finally connect the socket from the client in <code>JS</code>, you&rsquo;ll use JavaScript for only this step.</p>
-<p><img src=https://res.cloudinary.com/carlogilmar/image/upload/v1567807755/carlogilmar/ElixirLiveViews_10_bcq6ma.png alt></p>
+<p><img src="https://res.cloudinary.com/carlogilmar/image/upload/v1567807755/carlogilmar/ElixirLiveViews_10_bcq6ma.png" alt=""></p>
 <p>When I was learning how to implement Live Views I followed many tutorials availables in the web, and I decided to use my Learning Drive Development flow using my version control, so while I&rsquo;m following the tutorial and I was doing the setup step by step I created a git commit per step, with this way I&rsquo;ll be able to remember the steps and the code enough for every step. 😎</p>
-<p>At the end of the day I write this commits:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>* 192c3cd  Step <span style=color:#ae81ff>9</span> Import live css
+<p>At the end of the  day I write this commits:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">* 192c3cd  Step <span style="color:#ae81ff">9</span> Import live css
 * 011d500  Step 8: Enable live reload in dev mode
 * 5907daa  Step 7: Connecting the socket in app.js
 * f02fdaf  Step 6: Adding JS live view dependency
-* c493485  Step <span style=color:#ae81ff>5</span> Adding websocket in endpoint
+* c493485  Step <span style="color:#ae81ff">5</span> Adding websocket in endpoint
 * 196edd9  Step 4: Adding imports in main Web file
 * 979d855  Step 3: Adding plugs in router
-* 942aff2  Step <span style=color:#ae81ff>2</span> Adding signing salt and engine template
+* 942aff2  Step <span style="color:#ae81ff">2</span> Adding signing salt and engine template
 * ecb8c8d  Step 1: Adding live view dep
 * 124a1bd  First commit</code></pre></div>
-<p>If you want to follow this setup you have to clone my repo or see on GitHub and make a <code>git show</code> of every commit, or only see the commit content: <a href=https://github.com/carlogilmar/live_view_demo/commits/master>GitHub Repository</a></p>
-<p>I learned this after read the documentation. I drew all the illustrations for understand better, this is my method for learn something, actually I opened an <a href=https://github.com/phoenixframework/phoenix_live_view/issues/316>Issue</a> on the official repo at GitHub for try to become this images as open source contribution.</p>
-<h2 id=exploring-the-repository>Exploring the repository</h2>
+<p>If you want to follow this setup you have to clone my repo or see on GitHub and make a <code>git show</code> of every commit, or only see the commit content: <a href="https://github.com/carlogilmar/live_view_demo/commits/master">GitHub Repository</a></p>
+<p>I learned this after read the documentation. I drew all the illustrations for understand better, this is my method for learn something, actually I opened an <a href="https://github.com/phoenixframework/phoenix_live_view/issues/316">Issue</a> on the official repo at GitHub for try to become this images as open source contribution.</p>
+<h2 id="exploring-the-repository">Exploring the repository</h2>
 <p>When I&rsquo;m learning a new <strong>open source technology</strong> I learned to explore the repository, create a fork, and try to understand what&rsquo;s happening there. With Elixir this practice is more funny because you have the <strong>IEx Shell!</strong> So I was very interested in discover how people as <strong>Jose Valim and Chris</strong> are creating elixir applications, so I decided to explore the <strong>git commit history</strong> and try to understand when and how the Live View project was developed. <strong>This experience is so valuable because with this way you&rsquo;re understanding how the authors created a piece of software, and then you&rsquo;re learning how they are writting software.</strong> And also using a tool as <strong>git</strong> you&rsquo;re able to discover some behaviours and patterns in the way of how a project was developed based on his version control history.</p>
 <p>Exploring the commit history I found something like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>* efb06a8  hace <span style=color:#ae81ff>9</span> meses Chris McCord Blur the focused input on form submits to ensure updates. Closes <span style=color:#75715e>#6</span>
-* 40cd244  hace <span style=color:#ae81ff>9</span> meses Chris McCord Fix focus and click bugs
-* 631f379  hace <span style=color:#ae81ff>9</span> meses GitHub Fix typo in live_view.js
-* 2584eec  hace <span style=color:#ae81ff>9</span> meses GitHub Fix typos in phoenix_live_view.ex docs
-* 2d16e59  hace <span style=color:#ae81ff>9</span> meses Chris McCord Fix keypress bug
-* 86ec0a1  hace <span style=color:#ae81ff>9</span> meses José Valim Remove unused deps from lock
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">* efb06a8  hace <span style="color:#ae81ff">9</span> meses Chris McCord Blur the focused input on form submits to ensure updates. Closes <span style="color:#75715e">#6</span>
+* 40cd244  hace <span style="color:#ae81ff">9</span> meses Chris McCord Fix focus and click bugs
+* 631f379  hace <span style="color:#ae81ff">9</span> meses GitHub Fix typo in live_view.js
+* 2584eec  hace <span style="color:#ae81ff">9</span> meses GitHub Fix typos in phoenix_live_view.ex docs
+* 2d16e59  hace <span style="color:#ae81ff">9</span> meses Chris McCord Fix keypress bug
+* 86ec0a1  hace <span style="color:#ae81ff">9</span> meses José Valim Remove unused deps from lock
 
-* 411ca1d  hace <span style=color:#ae81ff>9</span> meses José Valim Add live_eex &lt;-- 😯
+* 411ca1d  hace <span style="color:#ae81ff">9</span> meses José Valim Add live_eex &lt;-- 😯
 
-* b362612  hace <span style=color:#ae81ff>9</span> meses Chris McCord Fix binding bug
-* fca9fdc  hace <span style=color:#ae81ff>9</span> meses Chris McCord Set probable active element to fix safari focus issue
-* 24f0853  hace <span style=color:#ae81ff>9</span> meses Chris McCord Move to new socket change tracking
-* ae84de7  hace <span style=color:#ae81ff>9</span> meses Chris McCord Improve diff tests
-* 805edbf  hace <span style=color:#ae81ff>9</span> meses Chris McCord Fix diff tests</code></pre></div>
+* b362612  hace <span style="color:#ae81ff">9</span> meses Chris McCord Fix binding bug
+* fca9fdc  hace <span style="color:#ae81ff">9</span> meses Chris McCord Set probable active element to fix safari focus issue
+* 24f0853  hace <span style="color:#ae81ff">9</span> meses Chris McCord Move to new socket change tracking
+* ae84de7  hace <span style="color:#ae81ff">9</span> meses Chris McCord Improve diff tests
+* 805edbf  hace <span style="color:#ae81ff">9</span> meses Chris McCord Fix diff tests</code></pre></div>
 <p>And the first commit of <strong>Jose Valim</strong> makes me feel curious about how much code contains? Well, for my surprise the first commit contains the Live View Engine and about 600 lines of code.</p>
 <p>This file allow me to understand something about the process implemented by a Live View, which contains tree modules:</p>
 <ul>
@@ -196,42 +308,42 @@ In the next sections I&rsquo;ll explain what is and how I understood that this w
 <li>Phoenix.LiveView.Rendered</li>
 <li>Phoenix.LiveView.Engine</li>
 </ul>
-<p>The <code>Phoenix.LiveView.Rendered</code> is a struct which contains the <strong>dynamic</strong> and the <strong>static</strong> part of the view.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ruby data-lang=ruby><span style=color:#f92672>%</span><span style=color:#66d9ef>Phoenix</span><span style=color:#f92672>.</span>LiveView<span style=color:#f92672>.</span>Rendered{
-  <span style=color:#e6db74>static</span>: <span style=color:#f92672>[</span><span style=color:#e6db74>&#34;foo&#34;</span>, <span style=color:#e6db74>&#34;bar&#34;</span>, <span style=color:#e6db74>&#34;baz&#34;</span><span style=color:#f92672>]</span>,
-  <span style=color:#e6db74>dynamic</span>: <span style=color:#f92672>[</span><span style=color:#e6db74>&#34;left&#34;</span>, <span style=color:#e6db74>&#34;right&#34;</span><span style=color:#f92672>]</span>
+<p>The <code>Phoenix.LiveView.Rendered</code> is a struct  which contains the <strong>dynamic</strong> and the <strong>static</strong> part of the view.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">%</span><span style="color:#66d9ef">Phoenix</span><span style="color:#f92672">.</span>LiveView<span style="color:#f92672">.</span>Rendered{
+  <span style="color:#e6db74">static</span>: <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>, <span style="color:#e6db74">&#34;baz&#34;</span><span style="color:#f92672">]</span>,
+  <span style="color:#e6db74">dynamic</span>: <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;left&#34;</span>, <span style="color:#e6db74">&#34;right&#34;</span><span style="color:#f92672">]</span>
 }</code></pre></div>
 <p>It&rsquo;s important to mention that the Live View have another struct for consider a comprension:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ruby data-lang=ruby>  <span style=color:#f92672>&lt;</span><span style=color:#e6db74>%= for point &lt;- @points do %&gt;
-</span><span style=color:#e6db74>    x: &lt;%=</span> point<span style=color:#f92672>.</span>x <span style=color:#e6db74>%&gt;
-</span><span style=color:#e6db74>    y: &lt;%= point.y %&gt;</span>
-  <span style=color:#f92672>&lt;</span><span style=color:#e6db74>% end </span> <span style=color:#f92672>%&gt;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">  <span style="color:#f92672">&lt;</span><span style="color:#e6db74">%= for point &lt;- @points do %&gt;
+</span><span style="color:#e6db74">    x: &lt;%=</span> point<span style="color:#f92672">.</span>x <span style="color:#e6db74">%&gt;
+</span><span style="color:#e6db74">    y: &lt;%= point.y %&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#e6db74">% end </span> <span style="color:#f92672">%&gt;</span></code></pre></div>
 <p>The engine will process this as a <code>Phoenix.LiveView.Comprehension</code></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ruby data-lang=ruby>  <span style=color:#f92672>%</span><span style=color:#66d9ef>Phoenix</span><span style=color:#f92672>.</span>LiveView<span style=color:#f92672>.</span>Comprehension{
-    <span style=color:#e6db74>static</span>:
-  <span style=color:#f92672>[</span><span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>  x: &#34;</span>, <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>  y: &#34;</span>, <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span><span style=color:#f92672>]</span>,
-    <span style=color:#e6db74>dynamics</span>:
-  <span style=color:#f92672>[</span>
-      	<span style=color:#f92672>[</span><span style=color:#e6db74>&#34;1&#34;</span>, <span style=color:#e6db74>&#34;2&#34;</span><span style=color:#f92672>]</span>,
-      	<span style=color:#f92672>[</span><span style=color:#e6db74>&#34;3&#34;</span>, <span style=color:#e6db74>&#34;4&#34;</span><span style=color:#f92672>]</span>
-    	<span style=color:#f92672>]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">  <span style="color:#f92672">%</span><span style="color:#66d9ef">Phoenix</span><span style="color:#f92672">.</span>LiveView<span style="color:#f92672">.</span>Comprehension{
+    <span style="color:#e6db74">static</span>:
+  <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  x: &#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  y: &#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>,
+    <span style="color:#e6db74">dynamics</span>:
+  <span style="color:#f92672">[</span>
+      	<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#e6db74">&#34;2&#34;</span><span style="color:#f92672">]</span>,
+      	<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;3&#34;</span>, <span style="color:#e6db74">&#34;4&#34;</span><span style="color:#f92672">]</span>
+    	<span style="color:#f92672">]</span>
   }</code></pre></div>
 <p>The <code>Live View Engine</code> is the module which generate this structs then to process a <code>.leex</code> file. This flow allow to identify which parts will be dynamic and sent to the client for update the view.</p>
 <p>If we see how the Engine works, we have to execute the compiler from the iEX for
-<code>Phoenix.LiveView.Engine.compile "path/to/your/file.leex", 0</code>, we can test simple templates:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ruby data-lang=ruby>  <span style=color:#66d9ef>Hola</span> mundo! <span style=color:#f92672>&lt;%=</span> name <span style=color:#f92672>%&gt;</span></code></pre></div>
+<code>Phoenix.LiveView.Engine.compile &quot;path/to/your/file.leex&quot;, 0</code>, we can test simple templates:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">  <span style="color:#66d9ef">Hola</span> mundo! <span style="color:#f92672">&lt;%=</span> name <span style="color:#f92672">%&gt;</span></code></pre></div>
 <p>And then we&rsquo;ll see a tuple with Elixir syntax tree which represents the template compiled and ready to update in the client, in some part of this you&rsquo;ll see something like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ruby data-lang=ruby>  {<span style=color:#e6db74>:%</span>, <span style=color:#f92672>[]</span>,
-   <span style=color:#f92672>[</span>
-     {<span style=color:#e6db74>:__aliases__</span>, <span style=color:#f92672>[</span><span style=color:#66d9ef>alias</span>: <span style=color:#66d9ef>false</span><span style=color:#f92672>]</span>, <span style=color:#f92672>[</span><span style=color:#e6db74>:Phoenix</span>, <span style=color:#e6db74>:LiveView</span>, <span style=color:#e6db74>:Rendered</span><span style=color:#f92672>]</span>},
-     {<span style=color:#e6db74>:%</span>{}, <span style=color:#f92672>[]</span>,
-      <span style=color:#f92672>[</span>
-        <span style=color:#e6db74>static</span>: <span style=color:#f92672>[</span><span style=color:#e6db74>&#34;Hola mundo! &#34;</span>, <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span><span style=color:#f92672>]</span>,
-        <span style=color:#e6db74>dynamic</span>: <span style=color:#f92672>[</span>{<span style=color:#e6db74>:arg0</span>, <span style=color:#f92672>[]</span>, <span style=color:#66d9ef>Phoenix</span><span style=color:#f92672>.</span>LiveView<span style=color:#f92672>.</span>Engine}<span style=color:#f92672>]</span>,
-        <span style=color:#e6db74>fingerprint</span>: <span style=color:#ae81ff>120129061871015969357813258734644514847</span>
-      <span style=color:#f92672>]</span>}
-   <span style=color:#f92672>]</span>}</code></pre></div>
-<h2 id=client-live-view>Client Live View</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">  {<span style="color:#e6db74">:%</span>, <span style="color:#f92672">[]</span>,
+   <span style="color:#f92672">[</span>
+     {<span style="color:#e6db74">:__aliases__</span>, <span style="color:#f92672">[</span><span style="color:#66d9ef">alias</span>: <span style="color:#66d9ef">false</span><span style="color:#f92672">]</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">:Phoenix</span>, <span style="color:#e6db74">:LiveView</span>, <span style="color:#e6db74">:Rendered</span><span style="color:#f92672">]</span>},
+     {<span style="color:#e6db74">:%</span>{}, <span style="color:#f92672">[]</span>,
+      <span style="color:#f92672">[</span>
+        <span style="color:#e6db74">static</span>: <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;Hola mundo! &#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>,
+        <span style="color:#e6db74">dynamic</span>: <span style="color:#f92672">[</span>{<span style="color:#e6db74">:arg0</span>, <span style="color:#f92672">[]</span>, <span style="color:#66d9ef">Phoenix</span><span style="color:#f92672">.</span>LiveView<span style="color:#f92672">.</span>Engine}<span style="color:#f92672">]</span>,
+        <span style="color:#e6db74">fingerprint</span>: <span style="color:#ae81ff">120129061871015969357813258734644514847</span>
+      <span style="color:#f92672">]</span>}
+   <span style="color:#f92672">]</span>}</code></pre></div>
+<h2 id="client-live-view">Client Live View</h2>
 <p>This project contains some code wrote in Javascript, although you only have to connect the socket for implement a Live View, there are three goals:</p>
 <ol>
 <li>Store the session signed, and manage the socket connection</li>
@@ -239,22 +351,29 @@ In the next sections I&rsquo;ll explain what is and how I understood that this w
 <li>Bind the events for connect with the server through events</li>
 </ol>
 <p>You will see a div which contains the session:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>data-phx-session</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;SFMyNTY.g3cFAluBC0buY7Iw....&#34;</span>
-<span style=color:#a6e22e>data-phx-view</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;CounterWeb.CounterLive&#34;</span>
-<span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;phx-gR6+DLO3&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;phx-connected&#34;</span>&gt;</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">data-phx-session</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SFMyNTY.g3cFAluBC0buY7Iw....&#34;</span>
+<span style="color:#a6e22e">data-phx-view</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CounterWeb.CounterLive&#34;</span>
+<span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;phx-gR6+DLO3&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;phx-connected&#34;</span>&gt;</code></pre></div>
 <p>If you see how the Live View are working, you have to open the HTML Elements tab in your browser and see how only the dynamic parts of the template are updating.</p>
-<iframe src="https://share.getcloudapp.com/mXuEQRYx?branding=true&embed=true&title=true" width=575 height=400 style=border:none frameborder=0 allowtransparency=true allowfullscreen></iframe>
+<iframe src="https://share.getcloudapp.com/mXuEQRYx?branding=true&amp;embed=true&amp;title=true" width="575" height="400" style="border:none" frameborder="0" allowtransparency="true" allowfullscreen="true">              </iframe>
 <p>For make this possible Live Views are using a project MorphDOM, a JS library for update the DOM without a Virtual DOM.</p>
-<h2 id=elixir-meetup-cdmx>Elixir Meetup CDMX</h2>
+<h2 id="elixir-meetup-cdmx">Elixir Meetup CDMX</h2>
 <p>All of this content was created for share it in the local Elixir Meetup at CDMX 🇲🇽</p>
-<iframe src=//www.slideshare.net/slideshow/embed_code/key/G2oKSjHNTlNe5d width=595 height=485 frameborder=0 marginwidth=0 marginheight=0 scrolling=no style="border:1px solid #ccc;border-width:1px;margin-bottom:5px;max-width:100%" allowfullscreen></iframe>
-<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fingresuelve%2Fvideos%2F611754096017791%2F&show_text=1&width=560" width=560 height=382 style=border:none;overflow:hidden scrolling=no frameborder=0 allowtransparency=true allow=encrypted-media allowfullscreen></iframe>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/G2oKSjHNTlNe5d" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fingresuelve%2Fvideos%2F611754096017791%2F&show_text=1&width=560" width="560" height="382" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media" allowFullScreen="true"></iframe>
+
 </article>
 </div>
-</div>
+
+
+                
+                    
+                
+            </div>
 <footer>
-<article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
+    <article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
 </footer>
+
 </main>
-</body>
+    </body>
 </html>

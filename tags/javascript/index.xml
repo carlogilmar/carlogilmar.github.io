@@ -1,6 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>javascript on 🎨 Blog de @carlogilmar</title><link>https://carlogilmar.xyz/tags/javascript/</link><description>Recent content in javascript on 🎨 Blog de @carlogilmar</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://carlogilmar.xyz/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>Ember 2018 Roadmap: A call for blog post</title><link>https://carlogilmar.xyz/posts/ember-call/</link><pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate><guid>https://carlogilmar.xyz/posts/ember-call/</guid><description>This blog post is a response to Ember’s 2018 Roadmap: A Call for Blog Posts Last November 2017 I had to build an application for make exams to evaluate teachers from a popular university. In the beginning this project was considered only for one person (me), so we decide learn Ember JS for this project.
-The Beginning My previous experiences making front-end projects was using simple javascript and coffee script. I used to implement libraries as Handlebars, Director, Moment, SockJS, etc.</description></item><item><title>Ember JS First Steps</title><link>https://carlogilmar.xyz/posts/ember-first/</link><pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate><guid>https://carlogilmar.xyz/posts/ember-first/</guid><description>In the last post Learning Ember I talk about how to start with Ember.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on 🎨 Blog de @carlogilmar</title>
+    <link>https://carlogilmar.xyz/tags/javascript/</link>
+    <description>Recent content in javascript on 🎨 Blog de @carlogilmar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 14 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://carlogilmar.xyz/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ember 2018 Roadmap: A call for blog post</title>
+      <link>https://carlogilmar.xyz/posts/ember-call/</link>
+      <pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://carlogilmar.xyz/posts/ember-call/</guid>
+      <description>This blog post is a response to Ember’s 2018 Roadmap: A Call for Blog Posts Last November 2017 I had to build an application for make exams to evaluate teachers from a popular university. In the beginning this project was considered only for one person (me), so we decide learn Ember JS for this project.
+The Beginning My previous experiences making front-end projects was using simple javascript and coffee script. I used to implement libraries as Handlebars, Director, Moment, SockJS, etc.</description>
+    </item>
+    
+    <item>
+      <title>Ember JS First Steps</title>
+      <link>https://carlogilmar.xyz/posts/ember-first/</link>
+      <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://carlogilmar.xyz/posts/ember-first/</guid>
+      <description>In the last post Learning Ember I talk about how to start with Ember.
 Now, after nights studying Ember I think that learning this framework is difficult because it require think first in Ember Concepts.
-After nights studying Ember I can say that learning this framework is difficult because you have to think first in their main concepts, and if you have some experience with other frameworks or transpilers ( coffee script, typescript, elm) probably you will be confused.</description></item><item><title>Learning Ember JS</title><link>https://carlogilmar.xyz/posts/learning-ember/</link><pubDate>Wed, 11 Apr 2018 00:00:00 +0000</pubDate><guid>https://carlogilmar.xyz/posts/learning-ember/</guid><description>Follow with learning more about Ember Js as our JS framework, I have to talk about my learning experience.
+After nights studying Ember I can say that learning this framework is difficult because you have to think first in their main concepts, and if you have some experience with other frameworks or transpilers ( coffee script, typescript, elm) probably you will be confused.</description>
+    </item>
+    
+    <item>
+      <title>Learning Ember JS</title>
+      <link>https://carlogilmar.xyz/posts/learning-ember/</link>
+      <pubDate>Wed, 11 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://carlogilmar.xyz/posts/learning-ember/</guid>
+      <description>Follow with learning more about Ember Js as our JS framework, I have to talk about my learning experience.
 When I was searching about Ember I found a lot of resources: posts, books, videos, courses and more. Everything looks good, until I had to start my first projects.
-Before to start I think that is good to know the context about it. Ember JS was born as a fork from SproutCore Framework.</description></item></channel></rss>
+Before to start  I think that is good to know the context about it. Ember JS was born as a fork from SproutCore Framework.</description>
+    </item>
+    
+  </channel>
+</rss>

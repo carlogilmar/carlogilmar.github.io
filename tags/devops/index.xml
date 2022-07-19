@@ -1,3 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devops on 🎨 Blog de @carlogilmar</title><link>https://carlogilmar.xyz/tags/devops/</link><description>Recent content in devops on 🎨 Blog de @carlogilmar</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://carlogilmar.xyz/tags/devops/index.xml" rel="self" type="application/rss+xml"/><item><title>PacktPub Review: Effective Jenkins</title><link>https://carlogilmar.xyz/posts/effectivejenkins/</link><pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate><guid>https://carlogilmar.xyz/posts/effectivejenkins/</guid><description>Recently, I reviewed a video course from Packt Publishing: “Effective Jenkins: Improving Quality in the Delivery Pipeline with Jenkins”
-Thanks to Packt Publishing for this opportunity, and thanks to Dwayne D&amp;rsquo;Souza for the collaboration! So, I want to talk about the content of this course.
-Before to Start This course is for people who know the basics about Jenkins. If you don’t, I would recommend learning about this from their previous courses:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devops on 🎨 Blog de @carlogilmar</title>
+    <link>https://carlogilmar.xyz/tags/devops/</link>
+    <description>Recent content in devops on 🎨 Blog de @carlogilmar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://carlogilmar.xyz/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PacktPub Review: Effective Jenkins</title>
+      <link>https://carlogilmar.xyz/posts/effectivejenkins/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://carlogilmar.xyz/posts/effectivejenkins/</guid>
+      <description>Recently, I reviewed a video course from Packt Publishing: “Effective Jenkins: Improving Quality in the Delivery Pipeline with Jenkins”
+ Thanks to Packt Publishing for this opportunity, and thanks to Dwayne D&amp;rsquo;Souza for the collaboration!  So, I want to talk about the content of this course.
+Before to Start This course is for people who know the basics about Jenkins. If you don’t, I would recommend learning about this from their previous courses:</description>
+    </item>
+    
+  </channel>
+</rss>

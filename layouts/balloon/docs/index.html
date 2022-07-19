@@ -1,215 +1,334 @@
-<!doctype html><html lang=en><head>
-<meta charset=utf-8>
-<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Balloon Layout Document - 🎨 Blog de @carlogilmar</title>
-<meta name=author content="carlogilmar">
-<meta property="og:title" content="Balloon Layout Document">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='en'><head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Balloon Layout Document - 🎨 Blog de @carlogilmar</title>
+
+    
+
+    
+
+    
+    <meta name="author" content="carlogilmar" />
+    
+
+    
+        <meta property="og:title" content="Balloon Layout Document" />
 <meta property="og:description" content="Balloon Layout Document Balloon is useful for demonstrating information step-by-step.
  This layout can be used on both section page (_index.md) and regular post (xxx.md).
- Configuration --- type: 'balloon' ---   Specify type in front-matter will change the template lookup order.
+ Configuration --- type: &#39;balloon&#39; ---   Specify type in front-matter will change the template lookup order.
  balloon_resources Content resources. URL can be an absolute path (with / prefix, relative to base URL), or relative path (without /, relative to current path)
- Hugo will handle multilingual scenario out of the box">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://carlogilmar.xyz/layouts/balloon/docs/"><meta property="article:section" content="layouts">
-<meta property="article:published_time" content="2022-03-29T00:00:00+00:00">
-<meta property="article:modified_time" content="2022-03-29T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Balloon Layout Document">
-<meta name=twitter:description content="Balloon Layout Document Balloon is useful for demonstrating information step-by-step.
+ Hugo will handle multilingual scenario out of the box" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://carlogilmar.xyz/layouts/balloon/docs/" /><meta property="article:section" content="layouts" />
+<meta property="article:published_time" content="2022-03-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-03-29T00:00:00+00:00" />
+
+
+    
+
+    
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Balloon Layout Document"/>
+<meta name="twitter:description" content="Balloon Layout Document Balloon is useful for demonstrating information step-by-step.
  This layout can be used on both section page (_index.md) and regular post (xxx.md).
- Configuration --- type: 'balloon' ---   Specify type in front-matter will change the template lookup order.
+ Configuration --- type: &#39;balloon&#39; ---   Specify type in front-matter will change the template lookup order.
  balloon_resources Content resources. URL can be an absolute path (with / prefix, relative to base URL), or relative path (without /, relative to current path)
- Hugo will handle multilingual scenario out of the box">
-<link rel=stylesheet href=/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
-<link rel=stylesheet href=/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn+PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-CJXJL083W7','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<script>localStorage.theme==='dark'||!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches?document.documentElement.setAttribute("data-theme","dark"):document.documentElement.setAttribute("data-theme","light")</script>
-<script defer src=/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js integrity="sha512-eioQnsN4LFe60DMrZi+KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
-<script defer src=/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
-<script defer src=/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt+erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
-<script defer src=/js/search-en.677e05c714f837051483647d736c45051126c22a2696ca5f981b59da962d48962f3ea71150f559ba84884fd1aadf1c7aadce55bb31a3e5b75c0f173b763c109a.js integrity="sha512-Z34FxxT4NwUUg2R9c2xFBREmwiomlspfmBtZ2pYtSJYvPqcRUPVZuoSIT9Gq3xx6rc5VuzGj5bdcDxc7djwQmg=="></script>
-</head><body>
-<main><header>
-<div class=brand>
-<div id=sidebar_btn>
-<svg id="menu_icon" width="26" height="26" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></svg>
+ Hugo will handle multilingual scenario out of the box"/>
+
+    <link rel="stylesheet" href="/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css" integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
+
+
+
+    <link rel="stylesheet" href="/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css" integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn&#43;PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
+
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJXJL083W7"></script>
+    <script>
+        console.log("::Visual Partner-Ship::");
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CJXJL083W7');
+    </script>
+    
+
+    
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+<script defer src="/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js" integrity="sha512-eioQnsN4LFe60DMrZi&#43;KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
+
+
+
+    <script defer src="/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js" integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
+
+
+
+
+
+
+
+    
+        
+
+        
+        
+
+        
+        
+            
+        
+
+        <script defer src="/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js" integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt&#43;erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
+    
+
+
+
+    
+    
+    
+    <script defer src="/js/search-en.677e05c714f837051483647d736c45051126c22a2696ca5f981b59da962d48962f3ea71150f559ba84884fd1aadf1c7aadce55bb31a3e5b75c0f173b763c109a.js" integrity="sha512-Z34FxxT4NwUUg2R9c2xFBREmwiomlspfmBtZ2pYtSJYvPqcRUPVZuoSIT9Gq3xx6rc5VuzGj5bdcDxc7djwQmg=="></script>
+
+
+
+
+</head>
+<body>
+        <main><header>
+    <div class="brand">
+        <div id="sidebar_btn">
+            <svg id="menu_icon" width="26px" height="26px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></svg>
+        </div>
+
+        <div>
+            <a href="/">@carlogilmar</a>
+        </div>
+    </div>
+
+    <div class="toolbox">
+        <div id="theme_tool">
+            <svg id="dark_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></svg>
+            <svg id="light_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></svg>
+        </div>
+
+        
+            <div id="search_tool">
+                <svg id="search_btn" class="toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></svg><div id="search_menu_wrapper" class="hidden">
+    <div id="search_menu">
+        <div id="search_menu_toolbar">
+            <div id="search_menu_input_wrapper">
+                <input id="search_menu_input" type="text" placeholder='Search Posts'>
+            </div>
+            <div id="search_menu_close_btn">
+                <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></svg>
+            </div>
+        </div>
+        <div id="search_menu_results">
+        </div>
+    </div>
 </div>
-<div>
-<a href=/>@carlogilmar</a>
 </div>
-</div>
-<div class=toolbox>
-<div id=theme_tool>
-<svg id="dark_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></svg>
-<svg id="light_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></svg>
-</div>
-<div id=search_tool>
-<svg id="search_btn" class="toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></svg><div id=search_menu_wrapper class=hidden>
-<div id=search_menu>
-<div id=search_menu_toolbar>
-<div id=search_menu_input_wrapper>
-<input id=search_menu_input type=text placeholder="Search Posts">
-</div>
-<div id=search_menu_close_btn>
-<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></svg>
-</div>
-</div>
-<div id=search_menu_results>
-</div>
-</div>
-</div>
-</div>
-<div id=translation_tool class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
-<ul class=pure-menu-list>
-<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-<div class="dropdown-btn pure-menu-link">
-<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3.0 014 10 15.3 15.3.0 01-4 10A15.3 15.3.0 018 12a15.3 15.3.0 014-10z"/></svg></svg>
-<span class=dropdown-desc>English</span>
-</div>
-<ul class=pure-menu-children>
-<li class=pure-menu-item>
-<a href=https://carlogilmar.xyz/ class=pure-menu-link>English</a>
-</li>
-<li class=pure-menu-item>
-<a href=https://carlogilmar.xyz/es/ class=pure-menu-link>Spanish</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+        
+
+        
+            <div id="translation_tool" class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                        <div class="dropdown-btn pure-menu-link">
+                            <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></svg>
+                            <span class="dropdown-desc">English</span>
+                        </div>
+                        <ul class="pure-menu-children">
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/" class="pure-menu-link">English</a>
+                            </li>
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/es/" class="pure-menu-link">Spanish</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </div>
 </header>
-<nav id=navbar class=pure-menu><ul class=pure-menu-list><li class="navbar-item pure-menu-item">
-<a href=/posts/ class=pure-menu-link>Posts</a>
-</li></ul>
+<nav id="navbar" class="pure-menu"><ul class="pure-menu-list"><li class="navbar-item pure-menu-item ">
+                    
+                        <a href="/posts/" class="pure-menu-link">Posts</a>
+                    
+                </li></ul>
 </nav>
-<div id=sidebar_canvas_overlay class=hidden></div>
-<div id=sidebar class=close>
-<ul><li>
-<a href=/posts/>Posts</a>
-</li></ul>
-</div><div id=content class=content-margin>
-<div class=collapsible-menu-wrapper><div class=collapsible-menu-type><span>Table of contents</span></div><div class=collapsible-menu>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#configuration>Configuration</a>
-<ul>
-<li><a href=#balloon_resources>balloon_resources</a></li>
-<li><a href=#balloon_img_src>balloon_img_src</a></li>
-<li><a href=#balloon_img_src_dark>balloon_img_src_dark</a></li>
-<li><a href=#balloon_circle>balloon_circle</a></li>
-</ul>
-</li>
-<li><a href=#resouces-configuration>Resouces Configuration</a>
-<ul>
-<li><a href=#title>title</a></li>
-<li><a href=#weight>weight</a></li>
-</ul>
-</li>
-<li><a href=#headless-bundle>Headless Bundle</a></li>
-</ul>
+<div id="sidebar_canvas_overlay" class="hidden"></div>
+<div id="sidebar" class="close">
+    <ul><li>
+                    <a href="/posts/">Posts</a>
+                </li></ul>
+</div><div id="content" class="content-margin">
+                
+    
+    <div class="collapsible-menu-wrapper"><div class="collapsible-menu-type"><span>Table of contents</span></div><div class="collapsible-menu">
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#configuration">Configuration</a>
+      <ul>
+        <li><a href="#balloon_resources">balloon_resources</a></li>
+        <li><a href="#balloon_img_src">balloon_img_src</a></li>
+        <li><a href="#balloon_img_src_dark">balloon_img_src_dark</a></li>
+        <li><a href="#balloon_circle">balloon_circle</a></li>
+      </ul>
+    </li>
+    <li><a href="#resouces-configuration">Resouces Configuration</a>
+      <ul>
+        <li><a href="#title">title</a></li>
+        <li><a href="#weight">weight</a></li>
+      </ul>
+    </li>
+    <li><a href="#headless-bundle">Headless Bundle</a></li>
+  </ul>
 </nav>
-</div></div>
-<div class=content-margin>
-<article>
-<h1 id=balloon-layout-document>Balloon Layout Document</h1>
+        
+    </div></div>
+
+
+
+    <div class="content-margin">
+
+<article >
+    
+    
+        
+        
+    
+    <h1 id="balloon-layout-document">Balloon Layout Document</h1>
 <p>Balloon is useful for demonstrating information step-by-step.</p>
 <blockquote>
 <p>This layout can be used on both section page (<code>_index.md</code>) and regular post (<code>xxx.md</code>).</p>
 </blockquote>
-<h2 id=configuration>Configuration</h2>
-<pre class="mc-prism hide language-text"><code class=language-yaml>---
+<h2 id="configuration">Configuration</h2>
+<pre  class="mc-prism hide language-text" ><code class="language-yaml">---
 type: 'balloon'
 ---
 </code></pre>
 <blockquote>
 <p>Specify <code>type</code> in front-matter will change the template lookup order.</p>
 </blockquote>
-<h3 id=balloon_resources>balloon_resources</h3>
+<h3 id="balloon_resources">balloon_resources</h3>
 <p>Content resources. URL can be an absolute path (with <code>/</code> prefix, relative to base URL), or relative path (without <code>/</code>, relative to current path)</p>
 <blockquote>
 <p>Hugo will handle multilingual scenario out of the box</p>
 </blockquote>
 <p>For example:</p>
-<pre class="mc-prism hide language-text"><code>https://kaiiiz.github.io/hugo-theme-monochrome/about
+<pre  class="mc-prism hide language-text" ><code>https://kaiiiz.github.io/hugo-theme-monochrome/about
         \____________________________________/\____/
                     base URL           balloon_resources
 </code></pre>
-<pre class="mc-prism hide language-text"><code class=language-yaml>---
+<pre  class="mc-prism hide language-text" ><code class="language-yaml">---
 balloon_resources: &quot;/about&quot;
 ---
 </code></pre>
 <blockquote>
 <p>default: error will occur in page</p>
 </blockquote>
-<h3 id=balloon_img_src>balloon_img_src</h3>
+<h3 id="balloon_img_src">balloon_img_src</h3>
 <p>Balloon head image URL. URL must be relative to base URL. (without <code>/</code> prefix)</p>
 <p>For example:</p>
-<pre class="mc-prism hide language-text"><code>https://kaiiiz.github.io/hugo-theme-monochrome/thanks.jpg
+<pre  class="mc-prism hide language-text" ><code>https://kaiiiz.github.io/hugo-theme-monochrome/thanks.jpg
         \_____________________________________/\________/
                     base URL                 balloon_img_src
 </code></pre>
-<pre class="mc-prism hide language-text"><code class=language-yaml>---
+<pre  class="mc-prism hide language-text" ><code class="language-yaml">---
 balloon_img_src: 'thanks.jpg'
 ---
 </code></pre>
 <blockquote>
 <p>default: fallback to balloon_img_src_dark, if failed, image become dot</p>
 </blockquote>
-<h3 id=balloon_img_src_dark>balloon_img_src_dark</h3>
+<h3 id="balloon_img_src_dark">balloon_img_src_dark</h3>
 <p>Balloon head image URL for dark mode. URL must be relative to base URL. (without <code>/</code> prefix)</p>
 <p>For example:</p>
-<pre class="mc-prism hide language-text"><code>https://kaiiiz.github.io/hugo-theme-monochrome/thanks.jpg
+<pre  class="mc-prism hide language-text" ><code>https://kaiiiz.github.io/hugo-theme-monochrome/thanks.jpg
         \_____________________________________/\________/
                     base URL              balloon_img_src
 </code></pre>
-<pre class="mc-prism hide language-text"><code class=language-yaml>---
+<pre  class="mc-prism hide language-text" ><code class="language-yaml">---
 balloon_img_src_dark: 'thanks.jpg'
 ---
 </code></pre>
 <blockquote>
 <p>default: fallback to balloon_img_src, if failed, image become dot</p>
 </blockquote>
-<h3 id=balloon_circle>balloon_circle</h3>
+<h3 id="balloon_circle">balloon_circle</h3>
 <p>balloon head shape can be square or circle.</p>
-<pre class="mc-prism hide language-text"><code class=language-yaml>---
+<pre  class="mc-prism hide language-text" ><code class="language-yaml">---
 balloon_circle: true
 ---
 </code></pre>
 <blockquote>
 <p>default: true</p>
 </blockquote>
-<h2 id=resouces-configuration>Resouces Configuration</h2>
+<h2 id="resouces-configuration">Resouces Configuration</h2>
 <p>These settings are under the resource specified in <code>balloon_resources</code>.</p>
-<h3 id=title>title</h3>
+<h3 id="title">title</h3>
 <p>Title of content card.</p>
-<pre class="mc-prism hide language-text"><code class=language-yaml>---
+<pre  class="mc-prism hide language-text" ><code class="language-yaml">---
 title: 'Story before hugo'
 ---
 </code></pre>
 <blockquote>
 <p>default: no title</p>
 </blockquote>
-<h3 id=weight>weight</h3>
-<pre class="mc-prism hide language-text"><code class=language-yaml>---
+<h3 id="weight">weight</h3>
+<pre  class="mc-prism hide language-text" ><code class="language-yaml">---
 weight: 3
 ---
 </code></pre>
 <blockquote>
-<p>default: <a href=https://gohugo.io/templates/lists/#order-content>default order</a></p>
+<p>default: <a href="https://gohugo.io/templates/lists/#order-content">default order</a></p>
 </blockquote>
-<h2 id=headless-bundle>Headless Bundle</h2>
+<h2 id="headless-bundle">Headless Bundle</h2>
 <p>Hugo supports an amazing feature called <strong>Headless Bundle</strong>, which elegantly resolved the resouces publish issue.</p>
 <p>For example, if you don&rsquo;t want to publish the resouces of the balloon layout, you can create a leaf bundle and specified <code>headless = true</code> in <code>index.md</code>&rsquo;s front-matter. These resources will only be used during rendering process. In other word, no file will be generated to <code>/public</code> folder.</p>
-<p>Checkout <a href=https://gohugo.io/content-management/page-bundles/#headless-bundle>Headless Bundle</a> for more details.</p>
+<p>Checkout <a href="https://gohugo.io/content-management/page-bundles/#headless-bundle">Headless Bundle</a> for more details.</p>
+
 </article>
 </div>
-</div>
+
+
+                
+                    
+                
+            </div>
 <footer>
-<article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
+    <article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
 </footer>
+
 </main>
-</body>
+    </body>
 </html>

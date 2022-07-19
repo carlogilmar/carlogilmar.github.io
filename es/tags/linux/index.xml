@@ -1,1 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on 🎨 Blog de @carlogilmar</title><link>https://carlogilmar.xyz/es/tags/linux/</link><description>Recent content in Linux on 🎨 Blog de @carlogilmar</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sun, 18 Sep 2016 19:52:16 -0500</lastBuildDate><atom:link href="https://carlogilmar.xyz/es/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Cuando abandoné Windows, y llegué a Linux</title><link>https://carlogilmar.xyz/es/posts/prueba/</link><pubDate>Sun, 18 Sep 2016 19:52:16 -0500</pubDate><guid>https://carlogilmar.xyz/es/posts/prueba/</guid><description>Como llegue a Linux Es importante entender que en la vida siempre se puede escoger, y en el caso de la tecnología también. Quizá sea el hecho de que casi cualquier laptop o equipo de escritorio tengan por defecto Windows en sus muchas versiones, la paquetería de Office, el magnífico Paint y el buscaminas; y pareciera que nuestra elección se cierra a una búsqueda en Google que diga &amp;ldquo;programas gratis para Windows&amp;rdquo;.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on 🎨 Blog de @carlogilmar</title>
+    <link>https://carlogilmar.xyz/es/tags/linux/</link>
+    <description>Recent content in Linux on 🎨 Blog de @carlogilmar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 18 Sep 2016 19:52:16 -0500</lastBuildDate><atom:link href="https://carlogilmar.xyz/es/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cuando abandoné Windows, y llegué a Linux</title>
+      <link>https://carlogilmar.xyz/es/posts/prueba/</link>
+      <pubDate>Sun, 18 Sep 2016 19:52:16 -0500</pubDate>
+      
+      <guid>https://carlogilmar.xyz/es/posts/prueba/</guid>
+      <description>Como llegue a Linux Es importante entender que en la vida siempre se puede escoger, y en el caso de la tecnología también. Quizá sea el hecho de que casi cualquier laptop o equipo de escritorio tengan por defecto Windows en sus muchas versiones, la paquetería de Office, el magnífico Paint y el buscaminas; y pareciera que nuestra elección se cierra a una búsqueda en Google que diga &amp;ldquo;programas gratis para Windows&amp;rdquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

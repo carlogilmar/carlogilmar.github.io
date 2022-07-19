@@ -1,112 +1,207 @@
-<!doctype html><html lang=es><head>
-<meta charset=utf-8>
-<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Cuando abandoné Windows, y llegué a Linux - 🎨 Blog de @carlogilmar</title>
-<meta name=description content="De cómo deje de usar windows, y comencé a usar linux">
-<meta name=author content="carlogilmar">
-<meta property="og:title" content="Cuando abandoné Windows, y llegué a Linux">
-<meta property="og:description" content="De cómo deje de usar windows, y comencé a usar linux">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://carlogilmar.xyz/es/posts/prueba/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2016-09-18T19:52:16-05:00">
-<meta property="article:modified_time" content="2016-09-18T19:52:16-05:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Cuando abandoné Windows, y llegué a Linux">
-<meta name=twitter:description content="De cómo deje de usar windows, y comencé a usar linux">
-<link rel=stylesheet href=/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-CJXJL083W7','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<script>localStorage.theme==='dark'||!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches?document.documentElement.setAttribute("data-theme","dark"):document.documentElement.setAttribute("data-theme","light")</script>
-<script defer src=/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js integrity="sha512-eioQnsN4LFe60DMrZi+KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
-<script defer src=/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
-<script defer src=/js/search-es.64db908cde868e00f376c3c9f689195d9ce0ae2aa0899cc3c009c492c55778efcd4fe312f0130a6d436752744619102b1fc90777faf20d4a357803771b75dfee.js integrity="sha512-ZNuQjN6GjgDzdsPJ9okZXZzgriqgiZzDwAnEksVXeO/NT+MS8BMKbUNnUnRGGRArH8kHd/ryDUo1eAN3G3Xf7g=="></script>
-</head><body>
-<main><header>
-<div class=brand>
-<div id=sidebar_btn>
-<svg id="menu_icon" width="26" height="26" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='es'><head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cuando abandoné Windows, y llegué a Linux - 🎨 Blog de @carlogilmar</title>
+
+    
+    <meta name="description" content="De cómo deje de usar windows, y comencé a usar linux" />
+    
+
+    
+
+    
+    <meta name="author" content="carlogilmar" />
+    
+
+    
+        <meta property="og:title" content="Cuando abandoné Windows, y llegué a Linux" />
+<meta property="og:description" content="De cómo deje de usar windows, y comencé a usar linux" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://carlogilmar.xyz/es/posts/prueba/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-09-18T19:52:16-05:00" />
+<meta property="article:modified_time" content="2016-09-18T19:52:16-05:00" />
+
+
+    
+
+    
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cuando abandoné Windows, y llegué a Linux"/>
+<meta name="twitter:description" content="De cómo deje de usar windows, y comencé a usar linux"/>
+
+    <link rel="stylesheet" href="/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css" integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
+
+
+
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJXJL083W7"></script>
+    <script>
+        console.log("::Visual Partner-Ship::");
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CJXJL083W7');
+    </script>
+    
+
+    
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+<script defer src="/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js" integrity="sha512-eioQnsN4LFe60DMrZi&#43;KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
+
+
+
+    <script defer src="/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js" integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    <script defer src="/js/search-es.64db908cde868e00f376c3c9f689195d9ce0ae2aa0899cc3c009c492c55778efcd4fe312f0130a6d436752744619102b1fc90777faf20d4a357803771b75dfee.js" integrity="sha512-ZNuQjN6GjgDzdsPJ9okZXZzgriqgiZzDwAnEksVXeO/NT&#43;MS8BMKbUNnUnRGGRArH8kHd/ryDUo1eAN3G3Xf7g=="></script>
+
+
+
+
+</head>
+<body>
+        <main><header>
+    <div class="brand">
+        <div id="sidebar_btn">
+            <svg id="menu_icon" width="26px" height="26px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></svg>
+        </div>
+
+        <div>
+            <a href="/es/">@carlogilmar</a>
+        </div>
+    </div>
+
+    <div class="toolbox">
+        <div id="theme_tool">
+            <svg id="dark_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></svg>
+            <svg id="light_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></svg>
+        </div>
+
+        
+            <div id="search_tool">
+                <svg id="search_btn" class="toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></svg><div id="search_menu_wrapper" class="hidden">
+    <div id="search_menu">
+        <div id="search_menu_toolbar">
+            <div id="search_menu_input_wrapper">
+                <input id="search_menu_input" type="text" placeholder='Search Posts'>
+            </div>
+            <div id="search_menu_close_btn">
+                <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></svg>
+            </div>
+        </div>
+        <div id="search_menu_results">
+        </div>
+    </div>
 </div>
-<div>
-<a href=/es/>@carlogilmar</a>
 </div>
-</div>
-<div class=toolbox>
-<div id=theme_tool>
-<svg id="dark_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></svg>
-<svg id="light_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></svg>
-</div>
-<div id=search_tool>
-<svg id="search_btn" class="toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></svg><div id=search_menu_wrapper class=hidden>
-<div id=search_menu>
-<div id=search_menu_toolbar>
-<div id=search_menu_input_wrapper>
-<input id=search_menu_input type=text placeholder="Search Posts">
-</div>
-<div id=search_menu_close_btn>
-<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></svg>
-</div>
-</div>
-<div id=search_menu_results>
-</div>
-</div>
-</div>
-</div>
-<div id=translation_tool class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
-<ul class=pure-menu-list>
-<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-<div class="dropdown-btn pure-menu-link">
-<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3.0 014 10 15.3 15.3.0 01-4 10A15.3 15.3.0 018 12a15.3 15.3.0 014-10z"/></svg></svg>
-<span class=dropdown-desc>Spanish</span>
-</div>
-<ul class=pure-menu-children>
-<li class=pure-menu-item>
-<a href=https://carlogilmar.xyz/ class=pure-menu-link>English</a>
-</li>
-<li class=pure-menu-item>
-<a href=https://carlogilmar.xyz/es/ class=pure-menu-link>Spanish</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+        
+
+        
+            <div id="translation_tool" class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                        <div class="dropdown-btn pure-menu-link">
+                            <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></svg>
+                            <span class="dropdown-desc">Spanish</span>
+                        </div>
+                        <ul class="pure-menu-children">
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/" class="pure-menu-link">English</a>
+                            </li>
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/es/" class="pure-menu-link">Spanish</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </div>
 </header>
-<nav id=navbar class=pure-menu><ul class=pure-menu-list><li class="navbar-item pure-menu-item insection">
-<a href=/es/posts/ class=pure-menu-link>⭐️ Contenido</a>
-</li></ul>
+<nav id="navbar" class="pure-menu"><ul class="pure-menu-list"><li class="navbar-item pure-menu-item insection">
+                    
+                        <a href="/es/posts/" class="pure-menu-link">⭐️ Contenido</a>
+                    
+                </li></ul>
 </nav>
-<div id=sidebar_canvas_overlay class=hidden></div>
-<div id=sidebar class=close>
-<ul><li>
-<a href=/es/posts/>⭐️ Contenido</a>
-</li></ul>
-</div><div id=content class=content-margin>
-<div class=content-margin>
-<article>
-<h1 id=como-llegue-a-linux>Como llegue a Linux</h1>
+<div id="sidebar_canvas_overlay" class="hidden"></div>
+<div id="sidebar" class="close">
+    <ul><li>
+                    <a href="/es/posts/">⭐️ Contenido</a>
+                </li></ul>
+</div><div id="content" class="content-margin">
+                
+
+
+    <div class="content-margin">
+
+<article >
+    
+    
+        
+        
+    
+    <h1 id="como-llegue-a-linux">Como llegue a Linux</h1>
 <p>Es importante entender que en la vida siempre se puede escoger, y en el caso de la tecnología también. Quizá sea el hecho de que casi cualquier laptop o equipo de escritorio tengan por defecto Windows en sus muchas versiones, la paquetería de Office, el magnífico Paint y el buscaminas; y pareciera que nuestra elección se cierra a una búsqueda en Google que diga &ldquo;programas gratis para Windows&rdquo;.
 El asunto es que por alguna razón siempre mis equipos terminaban alentándose demasiado, de pronto se congelaba, me pedía actualizaciones, y cada instalación de algún programa era también una preocupación de no saber que virus o banner en el navegador pudiera instalar.</p>
 <p>Así que algún día escuché sobre un sistema operativo diferente: Linux. Aunque encontré a una que otra persona que usara alguna distribución Linux, no encontré a alguna que únicamente usará Linux en su equipo.</p>
 <p>Así que frustrado por la lentitud de Windows en mis equipos, decidí emprender una nueva aventura.</p>
-<h1 id=primeros-pasos-linux>Primeros pasos Linux</h1>
+<h1 id="primeros-pasos-linux">Primeros pasos Linux</h1>
 <p>Temeroso de haber usado siempre Windows, instale en una partición la distribución Debían 8. La instalación fue sencilla, pero la configuración no. Afortunadamente todo lo podía buscar en Google; y aunque encontraba los pasos que solucionaban mis problemas siempre me dejaba un mal sabor de boca no saber qué demonios hacía con la consola.</p>
 <p>La principal diferencia que notaba era el rendimiento: mi equipo iniciaba y se apagaba más rápido, abría el navegador con mayor rapidez, y contaba con una paquetería ofimática que aunque era básica contaba con todo lo indispensable.</p>
 <p>Mi búsqueda por un mejor rendimiento me llevaba a dar una conclusión: Linux exige saber cómo opera, pero vale la pena.</p>
-<h1 id=primeros-rounds>Primeros Rounds</h1>
+<h1 id="primeros-rounds">Primeros Rounds</h1>
 <p>Con la camiseta puesta, y decidido por encontrar el SO que mejor me acomodara, instalé Ubuntu en mi equipo.</p>
 <p>La primera batalla fue la instalación, y para mí se convirtió en el paso de la muerte porque temía dañar mi partición de respaldo, no comprendía porque necesitaba tantas particiones y porque no se instalaba solo.</p>
-<p>El segundo round fue la configuración que requería instalar Java, y poner al día las famosas variables de entorno&mldr; Pero desde la consola.</p>
+<p>El segundo round fue la configuración que requería instalar Java, y poner al día las famosas variables de entorno&hellip; Pero desde la consola.</p>
 <p>Uno más fue la configuración de la impresora, la mía afortunadamente es una HP, pero la solución requería de ejecutar scripts en la consola.</p>
 <p>Y otro doloroso: en aquel tiempo usaba un iPhone, y no hay iTunes para ambientes Linux, por lo que me llevó a resucitar a Windows del mundo de los muertos pero en una máquina virtual, otro gran round.</p>
 <p>Un golpe más al hígado: no se reconocen los drivers de todos los componentes como el que maneja el brillo de la pantalla. Esto requería de una buena guía y mucha suerte para que funcionara.</p>
-<h1 id=hallando-la-luz>Hallando la luz</h1>
+<h1 id="hallando-la-luz">Hallando la luz</h1>
 <p>Sin embargo a pesar de recibir los primeros golpes, poco a poco fui entiendo el ritmo de la batalla:</p>
 <p>Para instalar por ejemplo Chrome ya no tenía que ir a su página, descargar, descomprimir, instalar, siguiente, siguiente, siguiente, aceptar; sino que bastaba con a lo más tres líneas de comandos en la consola para realizarlo, y eso ahorra mucho tiempo.</p>
 <p>El entorno gráfico que instala Ubuntu por defecto (Unity) era muy pesado para mi equipo, pero para mi sorpresa pude instalar otros entornos mucho más ligeros como Gnome con los que el rendimiento aumentaba.</p>
 <p>Conforme fui conociendo un poco más del SO, su sistema de ficheros, la configuración, y el uso de la consola, fui aprendiendo a sacarle mayor provecho.</p>
 <p>Aprendí después sobre el uso de las diferentes shell ( zsh, fish, bash) y la gran rapidez que se puede ganar con el uso de la consola con algunas vitaminas como tmux, git y vim, y también a través de scripts.</p>
-<h1 id=del-amor-y-el-desamor>Del amor y el desamor</h1>
+<h1 id="del-amor-y-el-desamor">Del amor y el desamor</h1>
 <p>Finalmente puedo decir que al día de hoy soy muy feliz con Linux, y he llegado a las siguientes conclusiones:</p>
 <ul>
 <li>
@@ -128,12 +223,19 @@ El asunto es que por alguna razón siempre mis equipos terminaban alentándose d
 <p>Para mí que debía escribir muchos archivos de texto, navegar en internet, para cumplir con las tareas de sociología, pero además que debía instalar compiladores, entornos de desarrollo y editores de texto para programar, Linux me trato bien.</p>
 <p>Eso sí, tiene problemas que no son tan sencillos de resolver si eres un usuario normal de Windows, que requieren de un entendimiento más profundo para poder resolverse.</p>
 <p>A final de cuentas llevo 9 meses totalmente migrado a ambientes Linux, y a pesar de los malos ratos puedo decir que todo ha valido la pena.</p>
+
 </article>
 </div>
-</div>
+
+
+                
+                    
+                
+            </div>
 <footer>
-<article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
+    <article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
 </footer>
+
 </main>
-</body>
+    </body>
 </html>

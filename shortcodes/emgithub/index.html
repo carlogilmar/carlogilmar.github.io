@@ -1,154 +1,355 @@
-<!doctype html><html lang=en><head>
-<meta charset=utf-8>
-<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Embed github - 🎨 Blog de @carlogilmar</title>
-<meta name=author content="carlogilmar">
-<meta property="og:title" content="Embed github">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='en'><head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Embed github - 🎨 Blog de @carlogilmar</title>
+
+    
+
+    
+
+    
+    <meta name="author" content="carlogilmar" />
+    
+
+    
+        <meta property="og:title" content="Embed github" />
 <meta property="og:description" content="Embed github Directly embed github source code like gist with Prism.js syntax highlight.
-Usage {{< emgithub target=&#34;&#34; lang=&#34;&#34; hl=&#34;&#34; tab_size=&#34;&#34; />}}  Paramters:
- target (required): A valid github file url, for example:  https://github.com/torvalds/linux/blob/v5.4/README https://github.com/torvalds/linux/blob/v5.4/README#L1 https://github.com/torvalds/linux/blob/v5.4/README#L1-L7   lang (optional): Which language should use for syntax highlighting? text will be applied by default. hl (optional): Line highlight settings. For details, please refer Prism.js Line Highlight Plugin tab_size (optional): Default setting is 4 characters.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://carlogilmar.xyz/shortcodes/emgithub/"><meta property="article:section" content="shortcodes">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Embed github">
-<meta name=twitter:description content="Embed github Directly embed github source code like gist with Prism.js syntax highlight.
-Usage {{< emgithub target=&#34;&#34; lang=&#34;&#34; hl=&#34;&#34; tab_size=&#34;&#34; />}}  Paramters:
- target (required): A valid github file url, for example:  https://github.com/torvalds/linux/blob/v5.4/README https://github.com/torvalds/linux/blob/v5.4/README#L1 https://github.com/torvalds/linux/blob/v5.4/README#L1-L7   lang (optional): Which language should use for syntax highlighting? text will be applied by default. hl (optional): Line highlight settings. For details, please refer Prism.js Line Highlight Plugin tab_size (optional): Default setting is 4 characters.">
-<link rel=stylesheet href=/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
-<link rel=stylesheet href=/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn+PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-CJXJL083W7','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<script>localStorage.theme==='dark'||!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches?document.documentElement.setAttribute("data-theme","dark"):document.documentElement.setAttribute("data-theme","light")</script>
-<script defer src=/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js integrity="sha512-eioQnsN4LFe60DMrZi+KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
-<script defer src=/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
-<script defer src=/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt+erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
-<script defer src=/js/search-en.677e05c714f837051483647d736c45051126c22a2696ca5f981b59da962d48962f3ea71150f559ba84884fd1aadf1c7aadce55bb31a3e5b75c0f173b763c109a.js integrity="sha512-Z34FxxT4NwUUg2R9c2xFBREmwiomlspfmBtZ2pYtSJYvPqcRUPVZuoSIT9Gq3xx6rc5VuzGj5bdcDxc7djwQmg=="></script>
-<script defer src=/js/emgithub-prism.5fa45050fe1c2ef69805405b29adfff90fc26de3d7e5dfdd7eb41005f074efa76cf0ff40ba6b64ea6a013c19fa3c63809f2c445cea94de2c0a529f096c6a4d8c.js integrity="sha512-X6RQUP4cLvaYBUBbKa3/+Q/CbePX5d/dfrQQBfB076ds8P9Aumtk6moBPBn6PGOAnyxEXOqU3iwKUp8JbGpNjA==" data-manual></script>
-</head><body>
-<main><header>
-<div class=brand>
-<div id=sidebar_btn>
-<svg id="menu_icon" width="26" height="26" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></svg>
+Usage {{&lt; emgithub target=&quot;&quot; lang=&quot;&quot; hl=&quot;&quot; tab_size=&quot;&quot; /&gt;}}  Paramters:
+ target (required): A valid github file url, for example:  https://github.com/torvalds/linux/blob/v5.4/README https://github.com/torvalds/linux/blob/v5.4/README#L1 https://github.com/torvalds/linux/blob/v5.4/README#L1-L7   lang (optional): Which language should use for syntax highlighting? text will be applied by default. hl (optional): Line highlight settings. For details, please refer Prism.js Line Highlight Plugin tab_size (optional): Default setting is 4 characters." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://carlogilmar.xyz/shortcodes/emgithub/" /><meta property="article:section" content="shortcodes" />
+
+
+
+
+    
+
+    
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Embed github"/>
+<meta name="twitter:description" content="Embed github Directly embed github source code like gist with Prism.js syntax highlight.
+Usage {{&lt; emgithub target=&quot;&quot; lang=&quot;&quot; hl=&quot;&quot; tab_size=&quot;&quot; /&gt;}}  Paramters:
+ target (required): A valid github file url, for example:  https://github.com/torvalds/linux/blob/v5.4/README https://github.com/torvalds/linux/blob/v5.4/README#L1 https://github.com/torvalds/linux/blob/v5.4/README#L1-L7   lang (optional): Which language should use for syntax highlighting? text will be applied by default. hl (optional): Line highlight settings. For details, please refer Prism.js Line Highlight Plugin tab_size (optional): Default setting is 4 characters."/>
+
+    <link rel="stylesheet" href="/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css" integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
+
+
+
+    <link rel="stylesheet" href="/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css" integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn&#43;PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
+
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJXJL083W7"></script>
+    <script>
+        console.log("::Visual Partner-Ship::");
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CJXJL083W7');
+    </script>
+    
+
+    
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+<script defer src="/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js" integrity="sha512-eioQnsN4LFe60DMrZi&#43;KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
+
+
+
+    <script defer src="/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js" integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
+
+
+
+
+
+
+
+    
+        
+
+        
+        
+
+        
+        
+            
+        
+
+        <script defer src="/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js" integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt&#43;erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
+    
+
+
+
+    
+    
+    
+    <script defer src="/js/search-en.677e05c714f837051483647d736c45051126c22a2696ca5f981b59da962d48962f3ea71150f559ba84884fd1aadf1c7aadce55bb31a3e5b75c0f173b763c109a.js" integrity="sha512-Z34FxxT4NwUUg2R9c2xFBREmwiomlspfmBtZ2pYtSJYvPqcRUPVZuoSIT9Gq3xx6rc5VuzGj5bdcDxc7djwQmg=="></script>
+
+
+
+
+    
+    
+    
+    
+    <script defer src="/js/emgithub-prism.5fa45050fe1c2ef69805405b29adfff90fc26de3d7e5dfdd7eb41005f074efa76cf0ff40ba6b64ea6a013c19fa3c63809f2c445cea94de2c0a529f096c6a4d8c.js" integrity="sha512-X6RQUP4cLvaYBUBbKa3/&#43;Q/CbePX5d/dfrQQBfB076ds8P9Aumtk6moBPBn6PGOAnyxEXOqU3iwKUp8JbGpNjA==" data-manual></script>
+
+</head>
+<body>
+        <main><header>
+    <div class="brand">
+        <div id="sidebar_btn">
+            <svg id="menu_icon" width="26px" height="26px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></svg>
+        </div>
+
+        <div>
+            <a href="/">@carlogilmar</a>
+        </div>
+    </div>
+
+    <div class="toolbox">
+        <div id="theme_tool">
+            <svg id="dark_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></svg>
+            <svg id="light_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></svg>
+        </div>
+
+        
+            <div id="search_tool">
+                <svg id="search_btn" class="toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></svg><div id="search_menu_wrapper" class="hidden">
+    <div id="search_menu">
+        <div id="search_menu_toolbar">
+            <div id="search_menu_input_wrapper">
+                <input id="search_menu_input" type="text" placeholder='Search Posts'>
+            </div>
+            <div id="search_menu_close_btn">
+                <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></svg>
+            </div>
+        </div>
+        <div id="search_menu_results">
+        </div>
+    </div>
 </div>
-<div>
-<a href=/>@carlogilmar</a>
 </div>
-</div>
-<div class=toolbox>
-<div id=theme_tool>
-<svg id="dark_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></svg>
-<svg id="light_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></svg>
-</div>
-<div id=search_tool>
-<svg id="search_btn" class="toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></svg><div id=search_menu_wrapper class=hidden>
-<div id=search_menu>
-<div id=search_menu_toolbar>
-<div id=search_menu_input_wrapper>
-<input id=search_menu_input type=text placeholder="Search Posts">
-</div>
-<div id=search_menu_close_btn>
-<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></svg>
-</div>
-</div>
-<div id=search_menu_results>
-</div>
-</div>
-</div>
-</div>
-<div id=translation_tool class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
-<ul class=pure-menu-list>
-<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-<div class="dropdown-btn pure-menu-link">
-<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3.0 014 10 15.3 15.3.0 01-4 10A15.3 15.3.0 018 12a15.3 15.3.0 014-10z"/></svg></svg>
-<span class=dropdown-desc>English</span>
-</div>
-<ul class=pure-menu-children>
-<li class=pure-menu-item>
-<a href=https://carlogilmar.xyz/ class=pure-menu-link>English</a>
-</li>
-<li class=pure-menu-item>
-<a href=https://carlogilmar.xyz/es/ class=pure-menu-link>Spanish</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+        
+
+        
+            <div id="translation_tool" class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                        <div class="dropdown-btn pure-menu-link">
+                            <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></svg>
+                            <span class="dropdown-desc">English</span>
+                        </div>
+                        <ul class="pure-menu-children">
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/" class="pure-menu-link">English</a>
+                            </li>
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/es/" class="pure-menu-link">Spanish</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </div>
 </header>
-<nav id=navbar class=pure-menu><ul class=pure-menu-list><li class="navbar-item pure-menu-item">
-<a href=/posts/ class=pure-menu-link>Posts</a>
-</li></ul>
+<nav id="navbar" class="pure-menu"><ul class="pure-menu-list"><li class="navbar-item pure-menu-item ">
+                    
+                        <a href="/posts/" class="pure-menu-link">Posts</a>
+                    
+                </li></ul>
 </nav>
-<div id=sidebar_canvas_overlay class=hidden></div>
-<div id=sidebar class=close>
-<ul><li>
-<a href=/posts/>Posts</a>
-</li></ul>
-</div><div id=content class=content-margin>
-<div class=collapsible-menu-wrapper><div class=collapsible-menu-type><span>Table of contents</span></div><div class=collapsible-menu>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#usage>Usage</a></li>
-<li><a href=#examples>Examples</a></li>
-</ul>
+<div id="sidebar_canvas_overlay" class="hidden"></div>
+<div id="sidebar" class="close">
+    <ul><li>
+                    <a href="/posts/">Posts</a>
+                </li></ul>
+</div><div id="content" class="content-margin">
+                
+    
+    <div class="collapsible-menu-wrapper"><div class="collapsible-menu-type"><span>Table of contents</span></div><div class="collapsible-menu">
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#examples">Examples</a></li>
+  </ul>
 </nav>
-</div></div>
-<div class=content-margin>
-<article>
-<h1 id=embed-github>Embed github</h1>
+        
+    </div></div>
+
+
+
+    <div class="content-margin">
+
+<article >
+    
+    
+        
+        
+    
+    <h1 id="embed-github">Embed github</h1>
 <p>Directly embed github source code like gist with Prism.js syntax highlight.</p>
-<h2 id=usage>Usage</h2>
-<pre class="mc-prism hide language-text"><code>{{&lt; emgithub target=&quot;&quot; lang=&quot;&quot; hl=&quot;&quot; tab_size=&quot;&quot; /&gt;}}
+<h2 id="usage">Usage</h2>
+<pre  class="mc-prism hide language-text" ><code>{{&lt; emgithub target=&quot;&quot; lang=&quot;&quot; hl=&quot;&quot; tab_size=&quot;&quot; /&gt;}}
 </code></pre>
 <p>Paramters:</p>
 <ul>
 <li><code>target</code> (required): A valid github file url, for example:
 <ul>
-<li><a href=https://github.com/torvalds/linux/blob/v5.4/README>https://github.com/torvalds/linux/blob/v5.4/README</a></li>
-<li><a href=https://github.com/torvalds/linux/blob/v5.4/README#L1>https://github.com/torvalds/linux/blob/v5.4/README#L1</a></li>
-<li><a href=https://github.com/torvalds/linux/blob/v5.4/README#L1-L7>https://github.com/torvalds/linux/blob/v5.4/README#L1-L7</a></li>
+<li><a href="https://github.com/torvalds/linux/blob/v5.4/README">https://github.com/torvalds/linux/blob/v5.4/README</a></li>
+<li><a href="https://github.com/torvalds/linux/blob/v5.4/README#L1">https://github.com/torvalds/linux/blob/v5.4/README#L1</a></li>
+<li><a href="https://github.com/torvalds/linux/blob/v5.4/README#L1-L7">https://github.com/torvalds/linux/blob/v5.4/README#L1-L7</a></li>
 </ul>
 </li>
 <li><code>lang</code> (optional): Which language should use for syntax highlighting? <code>text</code> will be applied by default.</li>
-<li><code>hl</code> (optional): Line highlight settings. For details, please refer <a href=https://prismjs.com/plugins/line-highlight/>Prism.js Line Highlight Plugin</a></li>
+<li><code>hl</code> (optional): Line highlight settings. For details, please refer <a href="https://prismjs.com/plugins/line-highlight/">Prism.js Line Highlight Plugin</a></li>
 <li><code>tab_size</code> (optional): Default setting is 4 characters.</li>
 </ul>
-<h2 id=examples>Examples</h2>
-<pre class="mc-prism hide language-text"><code class=language-html>{{&lt; emgithub target=&quot;https://github.com/torvalds/linux/blob/v5.4/README&quot; /&gt;}}
+<h2 id="examples">Examples</h2>
+<pre  class="mc-prism hide language-text" ><code class="language-html">{{&lt; emgithub target=&quot;https://github.com/torvalds/linux/blob/v5.4/README&quot; /&gt;}}
 </code></pre>
-<div id=emgithub_0 class=emgithub-container>
-<div class=emgithub-code>
-<div class=emgithub-loading><svg role="status" class="mr-2 w-8 h-8 text-gray-200 animate-spin fill-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1e2 50.5908c0 27.6143-22.3858 50.0002-50 50.0002-27.6142.0-50-22.3859-50-50.0002C0 22.9766 22.3858.59082 50 .59082S1e2 22.9766 1e2 50.5908zm-90.91856.0C9.08144 73.1895 27.4013 91.5094 50 91.5094c22.5987.0 40.9186-18.3199 40.9186-40.9186C90.9186 27.9921 72.5987 9.67226 50 9.67226c-22.5987.0-40.91856 18.31984-40.91856 40.91854z" fill="currentcolor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539 95.2932 28.8227 92.871 24.3692 89.8167 20.348 85.8452 15.1192 80.8826 10.7238 75.2124 7.41289 69.5422 4.10194 63.2754 1.94025 56.7698 1.05124 51.7666.367541 46.6976.446843 41.7345 1.27873 39.2613 1.69328 37.813 4.19778 38.4501 6.62326c.6372 2.42548 3.1193 3.84844 5.6004 3.48384C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491 60.8642 10.7766 65.9928 12.5457 70.6331 15.2552c4.6404 2.7096 8.7016 6.3067 11.9518 10.5858 2.3326 3.0711 4.2148 6.4503 5.5962 10.0348C89.083 38.2158 91.5421 39.6781 93.9676 39.0409z" fill="currentfill"/></svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+<div id="emgithub_0" class="emgithub-container">
+    <div class="emgithub-code">
+        <div class="emgithub-loading">
+            <svg role="status" class="mr-2 w-8 h-8 text-gray-200 animate-spin fill-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+            </svg>
+        </div>
+        <pre style="tab-size: 4"  class="mc-prism hide emgithub-pre line-numbers loading" data-start="0"  ></pre>
+    </div>
+    <div class="emgithub-toolbar">
+        <a target="_blank" href="https://github.com/torvalds/linux/blob/v5.4/README">README</a>
+        <a target="_blank" href="https://cdn.jsdelivr.net/gh/torvalds/linux@v5.4/README">view raw</a>
+    </div>
 </div>
-<pre style=tab-size:4 class="mc-prism hide emgithub-pre line-numbers loading" data-start=0></pre>
-</div>
-<div class=emgithub-toolbar>
-<a target=_blank href=https://github.com/torvalds/linux/blob/v5.4/README>README</a>
-<a target=_blank href=https://cdn.jsdelivr.net/gh/torvalds/linux@v5.4/README>view raw</a>
-</div>
-</div>
-<script defer src="/js/emgithub.e0d729dcb6a7623ffe10d5d889c1f085f1dcbf83c8d47bccdc7b387b60bc3698fb4f681dcadd3f285a2fb664bd94f1ed7afff876b5c71c2666dd662e102a7a60.js?raw_file_url=https%3a%2f%2fcdn.jsdelivr.net%2fgh%2ftorvalds%2flinux%40v5.4%2fREADME&lang=text&line_begin=0&line_end=0&id=emgithub_0" integrity="sha512-4Ncp3LanYj/+ENXYicHwhfHcv4PI1HvM3Hs4e2C8Npj7T2gdyt0/KFovtmS9lPHtev/4drXHHCZm3WYuECp6YA=="></script>
-<pre class="mc-prism hide language-text"><code class=language-html>{{&lt; emgithub target=&quot;https://github.com/torvalds/linux/blob/v5.4/arch/arm64/kernel/stacktrace.c#L171-L199&quot; lang=c tab_size=8 hl=&quot;172-173,192&quot; /&gt;}}
+
+<script defer src='/js/emgithub.e0d729dcb6a7623ffe10d5d889c1f085f1dcbf83c8d47bccdc7b387b60bc3698fb4f681dcadd3f285a2fb664bd94f1ed7afff876b5c71c2666dd662e102a7a60.js?raw_file_url=https%3a%2f%2fcdn.jsdelivr.net%2fgh%2ftorvalds%2flinux%40v5.4%2fREADME&lang=text&line_begin=0&line_end=0&id=emgithub_0' integrity="sha512-4Ncp3LanYj/&#43;ENXYicHwhfHcv4PI1HvM3Hs4e2C8Npj7T2gdyt0/KFovtmS9lPHtev/4drXHHCZm3WYuECp6YA=="></script>
+
+<pre  class="mc-prism hide language-text" ><code class="language-html">{{&lt; emgithub target=&quot;https://github.com/torvalds/linux/blob/v5.4/arch/arm64/kernel/stacktrace.c#L171-L199&quot; lang=c tab_size=8 hl=&quot;172-173,192&quot; /&gt;}}
 </code></pre>
-<div id=emgithub_1 class=emgithub-container>
-<div class=emgithub-code>
-<div class=emgithub-loading><svg role="status" class="mr-2 w-8 h-8 text-gray-200 animate-spin fill-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1e2 50.5908c0 27.6143-22.3858 50.0002-50 50.0002-27.6142.0-50-22.3859-50-50.0002C0 22.9766 22.3858.59082 50 .59082S1e2 22.9766 1e2 50.5908zm-90.91856.0C9.08144 73.1895 27.4013 91.5094 50 91.5094c22.5987.0 40.9186-18.3199 40.9186-40.9186C90.9186 27.9921 72.5987 9.67226 50 9.67226c-22.5987.0-40.91856 18.31984-40.91856 40.91854z" fill="currentcolor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539 95.2932 28.8227 92.871 24.3692 89.8167 20.348 85.8452 15.1192 80.8826 10.7238 75.2124 7.41289 69.5422 4.10194 63.2754 1.94025 56.7698 1.05124 51.7666.367541 46.6976.446843 41.7345 1.27873 39.2613 1.69328 37.813 4.19778 38.4501 6.62326c.6372 2.42548 3.1193 3.84844 5.6004 3.48384C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491 60.8642 10.7766 65.9928 12.5457 70.6331 15.2552c4.6404 2.7096 8.7016 6.3067 11.9518 10.5858 2.3326 3.0711 4.2148 6.4503 5.5962 10.0348C89.083 38.2158 91.5421 39.6781 93.9676 39.0409z" fill="currentfill"/></svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="emgithub_1" class="emgithub-container">
+    <div class="emgithub-code">
+        <div class="emgithub-loading">
+            <svg role="status" class="mr-2 w-8 h-8 text-gray-200 animate-spin fill-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+            </svg>
+        </div>
+        <pre style="tab-size: 8"  class="mc-prism hide emgithub-pre line-numbers loading" data-start="171" data-line="171-172,192" data-line-offset="171" ></pre>
+    </div>
+    <div class="emgithub-toolbar">
+        <a target="_blank" href="https://github.com/torvalds/linux/blob/v5.4/arch/arm64/kernel/stacktrace.c#L171-L199">arch/arm64/kernel/stacktrace.c</a>
+        <a target="_blank" href="https://cdn.jsdelivr.net/gh/torvalds/linux@v5.4/arch/arm64/kernel/stacktrace.c">view raw</a>
+    </div>
 </div>
-<pre style=tab-size:8 class="mc-prism hide emgithub-pre line-numbers loading" data-start=171 data-line=171-172,192 data-line-offset=171></pre>
-</div>
-<div class=emgithub-toolbar>
-<a target=_blank href=https://github.com/torvalds/linux/blob/v5.4/arch/arm64/kernel/stacktrace.c#L171-L199>arch/arm64/kernel/stacktrace.c</a>
-<a target=_blank href=https://cdn.jsdelivr.net/gh/torvalds/linux@v5.4/arch/arm64/kernel/stacktrace.c>view raw</a>
-</div>
-</div>
-<script defer src="/js/emgithub.e0d729dcb6a7623ffe10d5d889c1f085f1dcbf83c8d47bccdc7b387b60bc3698fb4f681dcadd3f285a2fb664bd94f1ed7afff876b5c71c2666dd662e102a7a60.js?raw_file_url=https%3a%2f%2fcdn.jsdelivr.net%2fgh%2ftorvalds%2flinux%40v5.4%2farch%2farm64%2fkernel%2fstacktrace.c&lang=c&line_begin=171&line_end=199&id=emgithub_1" integrity="sha512-4Ncp3LanYj/+ENXYicHwhfHcv4PI1HvM3Hs4e2C8Npj7T2gdyt0/KFovtmS9lPHtev/4drXHHCZm3WYuECp6YA=="></script>
+
+<script defer src='/js/emgithub.e0d729dcb6a7623ffe10d5d889c1f085f1dcbf83c8d47bccdc7b387b60bc3698fb4f681dcadd3f285a2fb664bd94f1ed7afff876b5c71c2666dd662e102a7a60.js?raw_file_url=https%3a%2f%2fcdn.jsdelivr.net%2fgh%2ftorvalds%2flinux%40v5.4%2farch%2farm64%2fkernel%2fstacktrace.c&lang=c&line_begin=171&line_end=199&id=emgithub_1' integrity="sha512-4Ncp3LanYj/&#43;ENXYicHwhfHcv4PI1HvM3Hs4e2C8Npj7T2gdyt0/KFovtmS9lPHtev/4drXHHCZm3WYuECp6YA=="></script>
+
+
 </article>
 </div>
-</div>
+
+
+                
+                    
+                
+            </div>
 <footer>
-<article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
+    <article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
 </footer>
+
 </main>
-</body>
+    </body>
 </html>

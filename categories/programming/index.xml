@@ -1,10 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>programming on 🎨 Blog de @carlogilmar</title><link>https://carlogilmar.xyz/categories/programming/</link><description>Recent content in programming on 🎨 Blog de @carlogilmar</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 06 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://carlogilmar.xyz/categories/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Phoenix Live Views</title><link>https://carlogilmar.xyz/posts/live_views/</link><pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate><guid>https://carlogilmar.xyz/posts/live_views/</guid><description>The content below was generated for prepare a talk for the Elixir Meetup in CDMX 🇲🇽
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on 🎨 Blog de @carlogilmar</title>
+    <link>https://carlogilmar.xyz/categories/programming/</link>
+    <description>Recent content in programming on 🎨 Blog de @carlogilmar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 06 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://carlogilmar.xyz/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Phoenix Live Views</title>
+      <link>https://carlogilmar.xyz/posts/live_views/</link>
+      <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://carlogilmar.xyz/posts/live_views/</guid>
+      <description>The content below was generated for prepare a talk for the Elixir Meetup in CDMX 🇲🇽
 All the drawings were drew my me.
 The Phoenix Live Views is an open-source project created since last October, 2018. The core maintainers are Chris McCord, Jose Valim, Alex Garibay, Gary Rennie and Scott Newcomer. Join to the Elixir Community Slack!
-In the next sections I&amp;rsquo;ll explain what is and how I understood that this works 😅.</description></item><item><title>Learning IoT: First Steps with Elixir</title><link>https://carlogilmar.xyz/posts/learning-iot/</link><pubDate>Wed, 12 Sep 2018 00:00:00 +0000</pubDate><guid>https://carlogilmar.xyz/posts/learning-iot/</guid><description>Recently I have the opportunity to give a conference in the Startup Week in Mexico City. So I decided talk about Internet of things, because I was learning this using an Arduino and a Raspberry Pi.
+In the next sections I&amp;rsquo;ll explain what is and how I understood that this works 😅.</description>
+    </item>
+    
+    <item>
+      <title>Learning IoT: First Steps with Elixir</title>
+      <link>https://carlogilmar.xyz/posts/learning-iot/</link>
+      <pubDate>Wed, 12 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://carlogilmar.xyz/posts/learning-iot/</guid>
+      <description>Recently I have the opportunity to give a conference in the Startup Week in Mexico City. So I decided talk about Internet of things, because I was learning this using an Arduino and a Raspberry Pi.
 DEMO Connect Everything! The project is create a simple web application for create distribuid music. I was inspired in the Launchpad App and the Smartphone Symphony.
-I planned make this using Phoenix Framework, and connect an Arduino for play the music.</description></item><item><title>Learning Swift</title><link>https://carlogilmar.xyz/posts/learning-swift/</link><pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate><guid>https://carlogilmar.xyz/posts/learning-swift/</guid><description>Learning Swift Recently I have been studying about Swift. I think that the learning experience is a wonderful resource for other persons who are in the same situation, so I consider valuable talk about this. First Steps When I start to learn swift I decide to watch videos and demonstrations about how to use the Xcode for build iOS apps, but, for be honest, I couldn’t understand some things: optionals, constrains, auto layout… This was my first experience.</description></item><item><title>Learning Ember JS</title><link>https://carlogilmar.xyz/posts/learning-ember/</link><pubDate>Wed, 11 Apr 2018 00:00:00 +0000</pubDate><guid>https://carlogilmar.xyz/posts/learning-ember/</guid><description>Follow with learning more about Ember Js as our JS framework, I have to talk about my learning experience.
+I planned make this using Phoenix Framework, and connect an Arduino for play the music.</description>
+    </item>
+    
+    <item>
+      <title>Learning Swift</title>
+      <link>https://carlogilmar.xyz/posts/learning-swift/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://carlogilmar.xyz/posts/learning-swift/</guid>
+      <description>Learning Swift Recently I have been studying about Swift. I think that the learning experience is a wonderful resource for other persons who are in the same situation, so I consider valuable talk about this. First Steps When I start to learn swift I decide to watch videos and demonstrations about how to use the Xcode for build iOS apps, but, for be honest, I couldn’t understand some things: optionals, constrains, auto layout… This was my first experience.</description>
+    </item>
+    
+    <item>
+      <title>Learning Ember JS</title>
+      <link>https://carlogilmar.xyz/posts/learning-ember/</link>
+      <pubDate>Wed, 11 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://carlogilmar.xyz/posts/learning-ember/</guid>
+      <description>Follow with learning more about Ember Js as our JS framework, I have to talk about my learning experience.
 When I was searching about Ember I found a lot of resources: posts, books, videos, courses and more. Everything looks good, until I had to start my first projects.
-Before to start I think that is good to know the context about it. Ember JS was born as a fork from SproutCore Framework.</description></item><item><title>Process in Elixir: A Simple Example</title><link>https://carlogilmar.xyz/posts/elixir-process/</link><pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate><guid>https://carlogilmar.xyz/posts/elixir-process/</guid><description>In the last days I have been learning about Process in Elixir. After doing some exercises and understand some things about it, I can explain how to create a simple example about process.
+Before to start  I think that is good to know the context about it. Ember JS was born as a fork from SproutCore Framework.</description>
+    </item>
+    
+    <item>
+      <title>Process in Elixir: A Simple Example</title>
+      <link>https://carlogilmar.xyz/posts/elixir-process/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://carlogilmar.xyz/posts/elixir-process/</guid>
+      <description>In the last days I have been learning about Process in Elixir. After doing some exercises and understand some things about it, I can explain how to create a simple example about process.
 The Process Work with process in Elixir is so common, so, it’s important know how to use it. For create a process you can use spawn (which takes a function).
-The process structure is very simple: you have a mailbox, created within a function and by the word receive, and you can manage different messages and do something.</description></item></channel></rss>
+ The process structure is very simple: you have a mailbox, created within a function and by the word receive, and you can manage different messages and do something.</description>
+    </item>
+    
+  </channel>
+</rss>

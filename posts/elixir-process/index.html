@@ -1,123 +1,235 @@
-<!doctype html><html lang=en><head>
-<meta charset=utf-8>
-<link rel="shortcut icon" href=/favicon.ico type=image/x-icon>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Process in Elixir: A Simple Example - 🎨 Blog de @carlogilmar</title>
-<meta name=author content="carlogilmar">
-<meta property="og:title" content="Process in Elixir: A Simple Example">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='en'><head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Process in Elixir: A Simple Example - 🎨 Blog de @carlogilmar</title>
+
+    
+
+    
+
+    
+    <meta name="author" content="carlogilmar" />
+    
+
+    
+        <meta property="og:title" content="Process in Elixir: A Simple Example" />
 <meta property="og:description" content="In the last days I have been learning about Process in Elixir. After doing some exercises and understand some things about it, I can explain how to create a simple example about process.
 The Process Work with process in Elixir is so common, so, it’s important know how to use it. For create a process you can use spawn (which takes a function).
- The process structure is very simple: you have a mailbox, created within a function and by the word receive, and you can manage different messages and do something.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://carlogilmar.xyz/posts/elixir-process/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2018-04-02T00:00:00+00:00">
-<meta property="article:modified_time" content="2018-04-02T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Process in Elixir: A Simple Example">
-<meta name=twitter:description content="In the last days I have been learning about Process in Elixir. After doing some exercises and understand some things about it, I can explain how to create a simple example about process.
+ The process structure is very simple: you have a mailbox, created within a function and by the word receive, and you can manage different messages and do something." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://carlogilmar.xyz/posts/elixir-process/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-04-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-04-02T00:00:00+00:00" />
+
+
+    
+
+    
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Process in Elixir: A Simple Example"/>
+<meta name="twitter:description" content="In the last days I have been learning about Process in Elixir. After doing some exercises and understand some things about it, I can explain how to create a simple example about process.
 The Process Work with process in Elixir is so common, so, it’s important know how to use it. For create a process you can use spawn (which takes a function).
- The process structure is very simple: you have a mailbox, created within a function and by the word receive, and you can manage different messages and do something.">
-<link rel=stylesheet href=/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
-<link rel=stylesheet href=/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn+PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','G-CJXJL083W7','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<script>localStorage.theme==='dark'||!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches?document.documentElement.setAttribute("data-theme","dark"):document.documentElement.setAttribute("data-theme","light")</script>
-<script defer src=/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js integrity="sha512-eioQnsN4LFe60DMrZi+KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
-<script defer src=/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
-<script defer src=/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt+erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
-<script defer src=/js/search-en.677e05c714f837051483647d736c45051126c22a2696ca5f981b59da962d48962f3ea71150f559ba84884fd1aadf1c7aadce55bb31a3e5b75c0f173b763c109a.js integrity="sha512-Z34FxxT4NwUUg2R9c2xFBREmwiomlspfmBtZ2pYtSJYvPqcRUPVZuoSIT9Gq3xx6rc5VuzGj5bdcDxc7djwQmg=="></script>
-</head><body>
-<main><header>
-<div class=brand>
-<div id=sidebar_btn>
-<svg id="menu_icon" width="26" height="26" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></svg>
+ The process structure is very simple: you have a mailbox, created within a function and by the word receive, and you can manage different messages and do something."/>
+
+    <link rel="stylesheet" href="/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css" integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
+
+
+
+    <link rel="stylesheet" href="/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css" integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn&#43;PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
+
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJXJL083W7"></script>
+    <script>
+        console.log("::Visual Partner-Ship::");
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CJXJL083W7');
+    </script>
+    
+
+    
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+<script defer src="/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js" integrity="sha512-eioQnsN4LFe60DMrZi&#43;KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
+
+
+
+    <script defer src="/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js" integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
+
+
+
+
+
+
+
+    
+        
+
+        
+        
+
+        
+        
+            
+        
+
+        <script defer src="/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js" integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt&#43;erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
+    
+
+
+
+    
+    
+    
+    <script defer src="/js/search-en.677e05c714f837051483647d736c45051126c22a2696ca5f981b59da962d48962f3ea71150f559ba84884fd1aadf1c7aadce55bb31a3e5b75c0f173b763c109a.js" integrity="sha512-Z34FxxT4NwUUg2R9c2xFBREmwiomlspfmBtZ2pYtSJYvPqcRUPVZuoSIT9Gq3xx6rc5VuzGj5bdcDxc7djwQmg=="></script>
+
+
+
+
+</head>
+<body>
+        <main><header>
+    <div class="brand">
+        <div id="sidebar_btn">
+            <svg id="menu_icon" width="26px" height="26px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></svg>
+        </div>
+
+        <div>
+            <a href="/">@carlogilmar</a>
+        </div>
+    </div>
+
+    <div class="toolbox">
+        <div id="theme_tool">
+            <svg id="dark_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></svg>
+            <svg id="light_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></svg>
+        </div>
+
+        
+            <div id="search_tool">
+                <svg id="search_btn" class="toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></svg><div id="search_menu_wrapper" class="hidden">
+    <div id="search_menu">
+        <div id="search_menu_toolbar">
+            <div id="search_menu_input_wrapper">
+                <input id="search_menu_input" type="text" placeholder='Search Posts'>
+            </div>
+            <div id="search_menu_close_btn">
+                <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></svg>
+            </div>
+        </div>
+        <div id="search_menu_results">
+        </div>
+    </div>
 </div>
-<div>
-<a href=/>@carlogilmar</a>
 </div>
-</div>
-<div class=toolbox>
-<div id=theme_tool>
-<svg id="dark_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></svg>
-<svg id="light_mode_btn" class="hidden toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></svg>
-</div>
-<div id=search_tool>
-<svg id="search_btn" class="toolbox-btn" width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></svg><div id=search_menu_wrapper class=hidden>
-<div id=search_menu>
-<div id=search_menu_toolbar>
-<div id=search_menu_input_wrapper>
-<input id=search_menu_input type=text placeholder="Search Posts">
-</div>
-<div id=search_menu_close_btn>
-<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></svg>
-</div>
-</div>
-<div id=search_menu_results>
-</div>
-</div>
-</div>
-</div>
-<div id=translation_tool class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
-<ul class=pure-menu-list>
-<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-<div class="dropdown-btn pure-menu-link">
-<svg width="18" height="18" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3.0 014 10 15.3 15.3.0 01-4 10A15.3 15.3.0 018 12a15.3 15.3.0 014-10z"/></svg></svg>
-<span class=dropdown-desc>English</span>
-</div>
-<ul class=pure-menu-children>
-<li class=pure-menu-item>
-<a href=https://carlogilmar.xyz/ class=pure-menu-link>English</a>
-</li>
-<li class=pure-menu-item>
-<a href=https://carlogilmar.xyz/es/ class=pure-menu-link>Spanish</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+        
+
+        
+            <div id="translation_tool" class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                        <div class="dropdown-btn pure-menu-link">
+                            <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></svg>
+                            <span class="dropdown-desc">English</span>
+                        </div>
+                        <ul class="pure-menu-children">
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/" class="pure-menu-link">English</a>
+                            </li>
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/es/" class="pure-menu-link">Spanish</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </div>
 </header>
-<nav id=navbar class=pure-menu><ul class=pure-menu-list><li class="navbar-item pure-menu-item insection">
-<a href=/posts/ class=pure-menu-link>Posts</a>
-</li></ul>
+<nav id="navbar" class="pure-menu"><ul class="pure-menu-list"><li class="navbar-item pure-menu-item insection">
+                    
+                        <a href="/posts/" class="pure-menu-link">Posts</a>
+                    
+                </li></ul>
 </nav>
-<div id=sidebar_canvas_overlay class=hidden></div>
-<div id=sidebar class=close>
-<ul><li>
-<a href=/posts/>Posts</a>
-</li></ul>
-</div><div id=content class=content-margin>
-<div class=collapsible-menu-wrapper><div class=collapsible-menu-type><span>Table of contents</span></div><div class=collapsible-menu>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#the-process>The Process</a></li>
-<li><a href=#ping-pong-example-with-a-process>Ping Pong Example With a Process</a></li>
-<li><a href=#process-alive>Process Alive</a></li>
-<li><a href=#ping-pong-in-the-same-process>Ping Pong in the same Process</a></li>
-<li><a href=#ping-pong-with-two-process>Ping Pong with Two Process</a>
-<ul>
-<li></li>
-<li><a href=#thanks-for-reading>Thanks for reading!</a></li>
-</ul>
-</li>
-</ul>
+<div id="sidebar_canvas_overlay" class="hidden"></div>
+<div id="sidebar" class="close">
+    <ul><li>
+                    <a href="/posts/">Posts</a>
+                </li></ul>
+</div><div id="content" class="content-margin">
+                
+    
+    <div class="collapsible-menu-wrapper"><div class="collapsible-menu-type"><span>Table of contents</span></div><div class="collapsible-menu">
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-process">The Process</a></li>
+    <li><a href="#ping-pong-example-with-a-process">Ping Pong Example With a Process</a></li>
+    <li><a href="#process-alive">Process Alive</a></li>
+    <li><a href="#ping-pong-in-the-same-process">Ping Pong in the same Process</a></li>
+    <li><a href="#ping-pong-with-two-process">Ping Pong with Two Process</a>
+      <ul>
+        <li></li>
+        <li><a href="#thanks-for-reading">Thanks for reading!</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
-</div></div>
-<div class=content-margin>
-<article>
-<p>In the last days I have been learning about Process in Elixir. After doing some exercises and understand some things about it, I can explain how to create a simple example about process.</p>
-<h2 id=the-process>The Process</h2>
+        
+    </div></div>
+
+
+
+    <div class="content-margin">
+
+<article >
+    
+    
+        
+        
+    
+    <p>In the last days I have been learning about Process in Elixir. After doing some exercises and understand some things about it, I can explain how to create a simple example about process.</p>
+<h2 id="the-process">The Process</h2>
 <p>Work with process in Elixir is so common, so, it’s important know how to use it. For create a process you can use <code>spawn</code> (which takes a function).</p>
 <blockquote>
-<p>The process structure is very simple: you have a mailbox, created within a function and by the word <code>receive</code>, and you can manage different messages and do something. When you create a process with <code>spawn</code>, you will get a Process ID, and also you can know if this process is alive.</p>
+<p>The process structure is very simple: you have a mailbox, created within a function and by the word <code>receive</code>, and you can manage different messages and do something.  When you create a process with <code>spawn</code>, you will get a Process ID, and also you can know if this process is alive.</p>
 </blockquote>
 <p>When you have a process alive, you can send it messages, for do this you only have to send with the process ID and a message (a data structure, a tuple, an atom…) .</p>
-<p><img src=/blog/blog/process/duno.png alt></p>
+<p><img src="/blog/blog/process/duno.png" alt=""></p>
 <p>For make this more clearly I will show how to create an example.</p>
-<h2 id=ping-pong-example-with-a-process>Ping Pong Example With a Process</h2>
+<h2 id="ping-pong-example-with-a-process">Ping Pong Example With a Process</h2>
 <p>We have to create a simple function and create a <code>receiver</code>, within this, we are going to use the patter matching for receive different types of messages, in this case we are to receive two atoms: <code>:ping</code>and <code>:pong</code>. When we receive this, we will print a message.</p>
-<p><img src=/blog/blog/process/ddos.png alt></p>
-<pre class="mc-prism hide language-text"><code class=language-elixir>defmodule Pingpong do
+<p><img src="/blog/blog/process/ddos.png" alt=""></p>
+<pre  class="mc-prism hide language-text" ><code class="language-elixir">defmodule Pingpong do
 
   def mailbox() do
     receive do
@@ -131,13 +243,13 @@ The Process Work with process in Elixir is so common, so, it’s important know 
 end
 </code></pre>
 <p>If we run the <code>iex</code>shell we can create a process with this function and send it a messages for print the <code>ping</code>and <code>pong</code>:</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/uno.png alt></p>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/uno.png" alt=""></p>
 <p>You will see that only in the first message sent we can see the printed message</p>
-<h2 id=process-alive>Process Alive</h2>
+<h2 id="process-alive">Process Alive</h2>
 <p>This happens because the process created was killed after receive the first message. We can know if the process is alive in the <code>iex</code>shell:</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/dos.png alt></p>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/dos.png" alt=""></p>
 <p>The solution for avoid this is call the same function in the receiver, with this the process won’t be killed after receive a message.</p>
-<pre class="mc-prism hide language-text"><code class=language-elixir>  def mailbox() do
+<pre  class="mc-prism hide language-text" ><code class="language-elixir">  def mailbox() do
     receive do
       {:ping} -&gt;
         IO.puts &quot; Ping !!&quot;
@@ -149,13 +261,13 @@ end
   end
 </code></pre>
 <p>We are sending a message to a process alive. Now I want that this process send messages to the same process for do the <code>ping-pong</code>.</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/tres.png alt></p>
-<h2 id=ping-pong-in-the-same-process>Ping Pong in the same Process</h2>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/tres.png" alt=""></p>
+<h2 id="ping-pong-in-the-same-process">Ping Pong in the same Process</h2>
 <p>My first try is that when the process receive a message, send the other message to the same process.</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/dtres.png alt></p>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/dtres.png" alt=""></p>
 <p>For this we only have to include the process ID in the tuple, and make a send with the other message.</p>
 <p>I’m going to print the process id in the function using <code>self()</code> .</p>
-<pre class="mc-prism hide language-text"><code>  def mailbox() do
+<pre  class="mc-prism hide language-text" ><code>  def mailbox() do
     IO.inspect self()
     receive do
       {:ping, pid} -&gt;
@@ -172,12 +284,12 @@ end
     end
   end
 </code></pre>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/cuatro.png alt></p>
-<h2 id=ping-pong-with-two-process>Ping Pong with Two Process</h2>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/cuatro.png" alt=""></p>
+<h2 id="ping-pong-with-two-process">Ping Pong with Two Process</h2>
 <p>Now we have to create the <code>ping-pong</code> example with two process.</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/dcuatro.png alt></p>
-<p>For do this we can create two process of the same function. Instead of get a single process id in the <code>receiver</code>we can receive two process Id.</p>
-<pre class="mc-prism hide language-text"><code>  def mailbox() do
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/dcuatro.png" alt=""></p>
+<p>For do this we can create two process of the same function.  Instead of get a single process id in the <code>receiver</code>we can receive two process Id.</p>
+<pre  class="mc-prism hide language-text" ><code>  def mailbox() do
     IO.inspect self()
     receive do
       {:ping, process1, process2} -&gt;
@@ -195,16 +307,23 @@ end
   end
 </code></pre>
 <p>We can see which process are print the <code>ping</code>or <code>pong</code> message.</p>
-<p><img src=https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/cinco.png alt></p>
-<h4 id=with-simple-exercise-i-understand-how-to-create-process-and-send-messages>With simple exercise I understand how to create process and send messages</h4>
-<h5 id=its-important-because-elixir-use-it-a-lot>It&rsquo;s important because Elixir use it a lot!</h5>
-<h3 id=thanks-for-reading>Thanks for reading!</h3>
+<p><img src="https://raw.githubusercontent.com/carlogilmar/site/master/static/blog/process/cinco.png" alt=""></p>
+<h4 id="with-simple-exercise-i-understand-how-to-create-process-and-send-messages">With simple exercise I understand how to create process and send messages</h4>
+<h5 id="its-important-because-elixir-use-it-a-lot">It&rsquo;s important because Elixir use it a lot!</h5>
+<h3 id="thanks-for-reading">Thanks for reading!</h3>
+
 </article>
 </div>
-</div>
+
+
+                
+                    
+                
+            </div>
 <footer>
-<article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
+    <article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
 </footer>
+
 </main>
-</body>
+    </body>
 </html>
