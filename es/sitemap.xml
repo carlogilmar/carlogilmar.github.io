@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://carlogilmar.xyz/es/</loc>
-    <lastmod>2022-03-03T09:13:50-06:00</lastmod>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,8 +15,11 @@
                 href="https://carlogilmar.xyz/es/"
                 />
   </url><url>
+    <loc>https://carlogilmar.xyz/es/categories/beam/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://carlogilmar.xyz/es/categories/</loc>
-    <lastmod>2022-03-03T09:13:50-06:00</lastmod>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -28,8 +31,14 @@
                 href="https://carlogilmar.xyz/es/categories/"
                 />
   </url><url>
+    <loc>https://carlogilmar.xyz/es/tags/code/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://carlogilmar.xyz/es/posts/process_part1/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://carlogilmar.xyz/es/categories/elixir/</loc>
-    <lastmod>2022-03-03T09:13:50-06:00</lastmod>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -41,8 +50,11 @@
                 href="https://carlogilmar.xyz/es/categories/elixir/"
                 />
   </url><url>
+    <loc>https://carlogilmar.xyz/es/categories/erlang/</loc>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://carlogilmar.xyz/es/posts/</loc>
-    <lastmod>2022-03-03T09:13:50-06:00</lastmod>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -54,21 +66,8 @@
                 href="https://carlogilmar.xyz/es/posts/"
                 />
   </url><url>
-    <loc>https://carlogilmar.xyz/es/tags/programming/</loc>
-    <lastmod>2022-03-03T09:13:50-06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://carlogilmar.xyz/tags/programming/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://carlogilmar.xyz/es/tags/programming/"
-                />
-  </url><url>
     <loc>https://carlogilmar.xyz/es/tags/</loc>
-    <lastmod>2022-03-03T09:13:50-06:00</lastmod>
+    <lastmod>2022-07-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -80,11 +79,21 @@
                 href="https://carlogilmar.xyz/es/tags/"
                 />
   </url><url>
-    <loc>https://carlogilmar.xyz/es/posts/elixir/</loc>
-    <lastmod>2022-03-03T09:13:50-06:00</lastmod>
-  </url><url>
     <loc>https://carlogilmar.xyz/es/posts/elixir_first/</loc>
     <lastmod>2018-03-03T09:13:50-06:00</lastmod>
+  </url><url>
+    <loc>https://carlogilmar.xyz/es/tags/programming/</loc>
+    <lastmod>2018-03-03T09:13:50-06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://carlogilmar.xyz/tags/programming/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://carlogilmar.xyz/es/tags/programming/"
+                />
   </url><url>
     <loc>https://carlogilmar.xyz/es/tags/community/</loc>
     <lastmod>2018-02-15T09:13:50-06:00</lastmod>

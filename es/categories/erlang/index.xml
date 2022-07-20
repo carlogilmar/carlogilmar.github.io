@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>erlang on 🎨 Blog de @carlogilmar</title>
+    <link>https://carlogilmar.xyz/es/categories/erlang/</link>
+    <description>Recent content in erlang on 🎨 Blog de @carlogilmar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Wed, 20 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://carlogilmar.xyz/es/categories/erlang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comprendiendo Procesos en la BEAM con Elixir 🔮</title>
+      <link>https://carlogilmar.xyz/es/posts/process_part1/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://carlogilmar.xyz/es/posts/process_part1/</guid>
+      <description>Comprendiendo Procesos en la BEAM con Elixir  Este post es para todos los developers que quieren experimentar con Elixir, o bien que están en los primeros pasos con esta tecnología. Este tema requiere que tengas un conocimiento básico de Elixir y Erlang, al menos para comprender por qué es importante dedicarle tiempo de calidad a este tema, porque es sin duda alguna uno de los conceptos centrales de la máquina virtual de Erlang BEAM.</description>
+    </item>
+    
+  </channel>
+</rss>

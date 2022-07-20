@@ -1,0 +1,451 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='es'><head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comprendiendo Procesos en la BEAM con Elixir 🔮 - 🎨 Blog de @carlogilmar</title>
+
+    
+
+    
+
+    
+    <meta name="author" content="carlogilmar" />
+    
+
+    
+        <meta property="og:title" content="Comprendiendo Procesos en la BEAM con Elixir 🔮" />
+<meta property="og:description" content="Comprendiendo Procesos en la BEAM con Elixir  Este post es para todos los developers que quieren experimentar con Elixir, o bien que están en los primeros pasos con esta tecnología. Este tema requiere que tengas un conocimiento básico de Elixir y Erlang, al menos para comprender por qué es importante dedicarle tiempo de calidad a este tema, porque es sin duda alguna uno de los conceptos centrales de la máquina virtual de Erlang BEAM." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://carlogilmar.xyz/es/posts/process_part1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-20T00:00:00+00:00" />
+
+
+    
+
+    
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Comprendiendo Procesos en la BEAM con Elixir 🔮"/>
+<meta name="twitter:description" content="Comprendiendo Procesos en la BEAM con Elixir  Este post es para todos los developers que quieren experimentar con Elixir, o bien que están en los primeros pasos con esta tecnología. Este tema requiere que tengas un conocimiento básico de Elixir y Erlang, al menos para comprender por qué es importante dedicarle tiempo de calidad a este tema, porque es sin duda alguna uno de los conceptos centrales de la máquina virtual de Erlang BEAM."/>
+
+    <link rel="stylesheet" href="/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css" integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
+
+
+
+    <link rel="stylesheet" href="/lib/css/prism.min.6226f06f992e0d6166b0e26724efd050dcc381202a752892ba523b1b865de2ea5e427f8f7d10de682fc35d6e7444018247d1f25db5e1e3bab17068ce191c5886.css" integrity="sha512-Yibwb5kuDWFmsOJnJO/QUNzDgSAqdSiSulI7G4Zd4upeQn&#43;PfRDeaC/DXW50RAGCR9HyXbXh47qxcGjOGRxYhg==">
+
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJXJL083W7"></script>
+    <script>
+        console.log("::Visual Partner-Ship::");
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CJXJL083W7');
+    </script>
+    
+
+    
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+<script defer src="/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js" integrity="sha512-eioQnsN4LFe60DMrZi&#43;KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
+
+
+
+    <script defer src="/js/zooming.fc76b730bcba24949cb337c58c5e935f727dbea8418e918e3b1794f0707d130aadf4ead341e9305a2c6045f7bc66700d73cc5c7f5d8f6ae2c7631e095f4e18ae.js" integrity="sha512-/Ha3MLy6JJScszfFjF6TX3J9vqhBjpGOOxeU8HB9Ewqt9OrTQekwWixgRfe8ZnANc8xcf12PauLHYx4JX04Yrg=="></script>
+
+
+
+
+
+
+
+    
+        
+
+        
+        
+
+        
+        
+            
+        
+
+        <script defer src="/js/prism.3113e52d215fde553c8747fb87544cc26ae5ab9b25e8ab7e7ab767824138bca8c0edb05a3c2d6dbcda075db565c7025817f6f6eea26a5d14c4e53397ae7748e2.js" integrity="sha512-MRPlLSFf3lU8h0f7h1RMwmrlq5sl6Kt&#43;erdngkE4vKjA7bBaPC1tvNoHXbVlxwJYF/b27qJqXRTE5TOXrndI4g==" data-manual></script>
+    
+
+
+
+    
+    
+    
+    <script defer src="/js/search-es.64db908cde868e00f376c3c9f689195d9ce0ae2aa0899cc3c009c492c55778efcd4fe312f0130a6d436752744619102b1fc90777faf20d4a357803771b75dfee.js" integrity="sha512-ZNuQjN6GjgDzdsPJ9okZXZzgriqgiZzDwAnEksVXeO/NT&#43;MS8BMKbUNnUnRGGRArH8kHd/ryDUo1eAN3G3Xf7g=="></script>
+
+
+
+
+</head>
+<body>
+        <main><header>
+    <div class="brand">
+        <div id="sidebar_btn">
+            <svg id="menu_icon" width="26px" height="26px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></svg>
+        </div>
+
+        <div>
+            <a href="/es/">@carlogilmar</a>
+        </div>
+    </div>
+
+    <div class="toolbox">
+        <div id="theme_tool">
+            <svg id="dark_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></svg>
+            <svg id="light_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></svg>
+        </div>
+
+        
+            <div id="search_tool">
+                <svg id="search_btn" class="toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></svg><div id="search_menu_wrapper" class="hidden">
+    <div id="search_menu">
+        <div id="search_menu_toolbar">
+            <div id="search_menu_input_wrapper">
+                <input id="search_menu_input" type="text" placeholder='Search Posts'>
+            </div>
+            <div id="search_menu_close_btn">
+                <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></svg>
+            </div>
+        </div>
+        <div id="search_menu_results">
+        </div>
+    </div>
+</div>
+</div>
+        
+
+        
+            <div id="translation_tool" class="dropdown-wrapper pure-menu pure-menu-horizontal toolbox-btn">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                        <div class="dropdown-btn pure-menu-link">
+                            <svg width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></svg>
+                            <span class="dropdown-desc">Spanish</span>
+                        </div>
+                        <ul class="pure-menu-children">
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/" class="pure-menu-link">English</a>
+                            </li>
+                            
+                            <li class="pure-menu-item">
+                                <a href="https://carlogilmar.xyz/es/" class="pure-menu-link">Spanish</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </div>
+</header>
+<nav id="navbar" class="pure-menu"><ul class="pure-menu-list"><li class="navbar-item pure-menu-item insection">
+                    
+                        <a href="/es/posts/" class="pure-menu-link">⭐️ Contenido</a>
+                    
+                </li></ul>
+</nav>
+<div id="sidebar_canvas_overlay" class="hidden"></div>
+<div id="sidebar" class="close">
+    <ul><li>
+                    <a href="/es/posts/">⭐️ Contenido</a>
+                </li></ul>
+</div><div id="content" class="content-margin">
+                
+    
+    <div class="collapsible-menu-wrapper"><div class="collapsible-menu-type"><span>Table of contents</span></div><div class="collapsible-menu">
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#por-qué-entender-los-procesos">¿Por qué entender los procesos?</a></li>
+    <li><a href="#qué-es-un-proceso-en-el-ecosistema-de-erlang">¿Qué es un proceso en el ecosistema de Erlang?</a></li>
+    <li><a href="#anatomía-de-un-proceso">Anatomía de un Proceso</a></li>
+    <li><a href="#ciclo-de-vida">Ciclo de Vida</a></li>
+    <li><a href="#creación-de-un-proceso">Creación de un Proceso</a></li>
+    <li><a href="#interacción-entre-procesos-recepción-de-mensajes">Interacción entre Procesos: Recepción de Mensajes</a></li>
+    <li><a href="#mantener-un-proceso-activo">Mantener un Proceso Activo</a></li>
+    <li><a href="#mantener-un-estado">Mantener un Estado</a></li>
+    <li><a href="#dónde-están-los-procesos">¿Dónde están los procesos?</a></li>
+    <li><a href="#processes-everywhere">Processes Everywhere</a></li>
+  </ul>
+</nav>
+        
+    </div></div>
+
+
+
+    <div class="content-margin">
+
+<article >
+    
+    
+        
+        
+    
+    <p><img src="https://user-images.githubusercontent.com/17634377/180091201-272c9504-dfef-441c-86b6-96753ae81b9d.png" alt="image"></p>
+<h1 id="comprendiendo-procesos-en-la-beam-con-elixir">Comprendiendo Procesos en la BEAM con Elixir</h1>
+<blockquote>
+<p>Este post es para todos los developers que quieren experimentar con Elixir, o bien que están en los primeros pasos con esta tecnología. Este tema requiere que tengas un conocimiento básico de Elixir y Erlang, al menos para comprender por qué es importante dedicarle tiempo de calidad a este tema, porque es sin duda alguna uno de los conceptos centrales de la máquina virtual de Erlang BEAM.</p>
+</blockquote>
+<p>Aunque Elixir es considerado un lenguaje de propósito general, no es necesario que tengas que meterte con este tipo de temas al inicio. Pero si quieres conocer porqué la BEAM y sus lenguajes son tan populares en el mundo de concurrencia y paralelismo, este post es para ayudarte a comprender cómo diseñar software en el ecosistema de Erlang.</p>
+<h2 id="por-qué-entender-los-procesos">¿Por qué entender los procesos?</h2>
+<p>Seguramente al buscar información sobre <strong>Elixir</strong> encontrarás grandes características como: sistemas altamente escalables, tolerancia a fallos, sistemas concurrentes y distribuidos, etc. Pues bien, todas estas ventajas vienen directamente de la Máquina Virtual de Erlang (mejor conocida como <strong>BEAM Björn&rsquo;s Erlang Abstract Machine</strong>).</p>
+<p>Elixir, de nuevo, es un lenguaje de propósito general. Esto quiere decir que puedes aprender a usarlo mediante su paradigma funcional, resolver algunos problemas del día a día, y no tener que meterte con el tema de <strong>procesos</strong> si así lo deseas. Pero precisamente entender los <strong>procesos</strong> es una gran forma de entender qué es lo que hace a Elixir un lenguaje tan poderoso y cómo comenzar a aprovechar todas las ventajas de su ecosistema, mismas que lo hacen diferente de otros lenguajes y plataformas.</p>
+<h2 id="qué-es-un-proceso-en-el-ecosistema-de-erlang">¿Qué es un proceso en el ecosistema de Erlang?</h2>
+<blockquote>
+<p>Un proceso es una entidad aislada donde ocurre la ejecución de código.</p>
+</blockquote>
+<p>Los <strong>procesos</strong> están en todos lados en cualquier sistema creado en la BEAM, podrías usar cualquier lenguaje como <strong>Erlang</strong>, <strong>Elixir</strong>, <strong>Gleam</strong> o b, y podrás encontrar el mismo concepto. Por ejemplo la shell interactiva iex, o los patrones de OTP son ejemplos de <strong>procesos</strong>.</p>
+<p>Los <strong>procesos</strong> son parte central para crear programas concurrentes y construir diseños distribuidos y tolerantes a fallos. Aunque, como mencioné anteriormente, podrías solo escribir módulos y funciones, y no tener que preocuparte de cómo funcionan hasta cierto punto.</p>
+<p>Quienes están empezando a aprender <strong>Elixir</strong> seguramente hemos escuchado hablar de <strong>OTP &ldquo;The Open Telecom Platform&rdquo;</strong>, una serie de abstracciones que nos permite explotar las capacidaddes de la <strong>BEAM</strong>. Entender el tema de <strong>procesos</strong> es también entender qué pasa &ldquo;behind the scenes&rdquo; de estas abstracciones, esto te ayudará a comprender cómo aprovechar estas ventajas al momento de diseñar algún componente de software.</p>
+<h2 id="anatomía-de-un-proceso">Anatomía de un Proceso</h2>
+<p><img src="https://user-images.githubusercontent.com/17634377/180091218-d7668ea8-daf4-4564-98e1-39e9d536712e.png" alt="image"></p>
+<p>Un <strong>proceso</strong> es una entidad aislada que permite la <strong>ejecución de código</strong>, es la base para diseñar software y aprovechar las ventajas que brinda la BEAM.</p>
+<p>Un <strong>proceso</strong>, a nivel de memoria, esta compuesto de <strong>cuatro bloques</strong> donde se guarda toda la información que permite su ejecución:</p>
+<ol>
+<li><strong>Stack</strong>: almacena las variables locales.</li>
+<li><strong>Heap</strong>: almacena estructuras de datos largas.</li>
+<li><strong>Mailbox</strong>: guarda los mensajes recividos.</li>
+<li><strong>Process Control Block</strong>: Permite hacer el tracking del estado interno del proceso.</li>
+</ol>
+<h2 id="ciclo-de-vida">Ciclo de Vida</h2>
+<p><img src="https://user-images.githubusercontent.com/17634377/180091244-96a32a8f-7d8c-4b8c-ad91-37eae985e293.png" alt="image"></p>
+<p>Podemos definir de momento el ciclo de vida de un <strong>proceso</strong> en las siguientes fases:</p>
+<ol>
+<li>Creación</li>
+<li>Ejecución de código</li>
+<li>Finalización (<code>termination</code>)</li>
+</ol>
+<h2 id="creación-de-un-proceso">Creación de un Proceso</h2>
+<p>La función <code>spawn</code> nos permite crear un proceso, solo necesitaremos pasarle una función que guardará el código que se va a ejecutar dentro del proceso.</p>
+<p>Al crear un proceso, obtendremos un <code>process identifier</code> con el que podremos identificar nuestro proceso. Esto será posible con functiones provistar por el módulo <code>Process</code>.</p>
+<p>Veamos un ejemplo en la <code>iex</code>:</p>
+<ol>
+<li>Se crea una función para imprimir un <code>string</code>. Esta será el código a ejecutar dentro de un proceso.</li>
+</ol>
+<pre  class="mc-prism hide language-text" ><code class="language-elixir">execute_fun = fn -&gt; IO.puts &quot;Hi! ⭐️  I'm the process #{inspect(self())}.&quot; end
+</code></pre>
+<ol start="2">
+<li><strong>Creación de un proceso:</strong> Invoca la función <code>spawn</code> con la función <code>execute_fun</code> como parámetro único. Esto creará un nuevo proceso y regresará un <code>PID</code>.</li>
+</ol>
+<pre  class="mc-prism hide language-text" ><code class="language-elixir">pid = spawn(execute_fun)
+</code></pre>
+<ol start="3">
+<li>
+<p><strong>Ejecución de código:</strong> inmediatamente al crear el proceso, se ejecutará la función que recibió como parámetro.</p>
+</li>
+<li>
+<p><strong>Terminación:</strong> Después de la ejecución de código, el proceso terminará su ejecución. Para verificar esto puedes usar la función <code>Process.alive?/1</code> que te regresará un valor booleano para indicar si el proceso sigue vivo o no.</p>
+</li>
+</ol>
+<pre  class="mc-prism hide language-text" ><code class="language-elixir">Process.alive?(pid)
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/17634377/180091343-76cecd9f-d9bf-45fe-848b-ab7a405c8880.gif" alt="blogpost1"></p>
+<h2 id="interacción-entre-procesos-recepción-de-mensajes">Interacción entre Procesos: Recepción de Mensajes</h2>
+<p>Es común entonces diseñar código para ejecutarse dentro de un proceso de forma individual, así es que será común tener que ejecutar diferentes funcionalidades en procesos por serapado que tendrán que interactuar entre sí en algún punto en el tiempo, para ello existen <strong>los mensajes.</strong></p>
+<p>Un <strong>proceso</strong> es capaz de ejecutar código de forma aislada así como de recibir mensajes provenientes de otros procesos. Los mensajes son la única forma de <strong>comunicarse entre ellos</strong>, estos se guardan en el <strong>mailbox</strong>, uno de los cuatro bloques de memoria que componen a un proceso.</p>
+<p>Es importante aclarar que los mensajes recibidos o enviados son independientes del código que se ejecuta.</p>
+<p>Para procesar los mensajes recibidos es necesario usar la sentencia <code>receive</code>. Mientras que podrás enviar mensajes con la sentencia <code>send</code>. Para ello nos sirve el <code>Process Identifier</code>, pues es la forma de identificar cada proceso y poder comunicarse con él. Veamos el siguiente ejemplo:</p>
+<ol>
+<li>Se creará una función dentro de un módulo <code>MyProcess.awaiting_for_receive_messages/0</code> que implementará la sentencia <code>receive</code>. Esto nos ayudará a indicarle al proceso que ejecuta ciertas acciones al recibir cierto tipo de mensajes provenientes de otro proceso.</li>
+</ol>
+<pre  class="mc-prism hide language-text" ><code class="language-elixir">defmodule MyProcess do
+  def awaiting_for_receive_messages do
+    IO.puts &quot;Process #{inspect(self())}, waiting to process a message!&quot;
+    receive do
+      &quot;Hi&quot; -&gt;
+        IO.puts &quot;Hi from me&quot;
+      &quot;Bye&quot; -&gt;
+        IO.puts &quot;Bye, bye from me&quot;
+      _ -&gt;
+        IO.puts &quot;Processing something&quot;
+    end
+    IO.puts &quot;Process #{inspect(self())}, message processed. Terminating...&quot;
+  end
+end
+</code></pre>
+<p>Este código puedes copiar y pegar directamente sobre la <code>iEx</code>.</p>
+<ol start="2">
+<li><strong>Creación de un proceso:</strong> Tomaremos la función anterior para crear un nuevo proceso, esto hará
+que la función <code>receive</code> se ejecute <code>solo al recibir un mensaje</code>, entonces terminará la ejecución
+y terminará. De lo contrario el proceso no morirá, mientras la sentencia <code>receive</code> espera a ejecutarse.</li>
+</ol>
+<pre  class="mc-prism hide language-text" ><code class="language-elixir">pid = spawn(MyProcess, :awaiting_for_receive_messages, [])
+</code></pre>
+<ol start="3">
+<li><strong>Envío de mensajes:</strong> Cabe señalar que la <code>iEx</code> es un proceso en sí, por lo que podemos enviar mensajes desde aquí al proceso que acabamos de crear. Usaremos la sentencia <code>send</code>, enviaremos el <code>PID</code> del proceso al que le vamos a enviar el mensaje, y el segundo parámetro será el contenido del mismo, que para este caso será un string pero podría ser otro dato.</li>
+</ol>
+<pre  class="mc-prism hide language-text" ><code class="language-elixir">send(pid, &quot;Hi&quot;)
+</code></pre>
+<ol start="4">
+<li>
+<p><strong>Ejecución de código:</strong> Al recibir el mensaje, inmediatamente se ejecutará nuestra función con el <code>receive</code>.</p>
+</li>
+<li>
+<p><strong>Terminación:</strong> Al recibir el mensaje y procesarlo, nuestro proceso habrá concluido. ¿Pero y qué pasa si queremos mantener ese proceso aún con vida?</p>
+</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/17634377/180094062-491064b8-7555-4a1b-a7da-1834bb4861f3.gif" alt="blogpost2"></p>
+<h2 id="mantener-un-proceso-activo">Mantener un Proceso Activo</h2>
+<p>En el ejemplo anterior, nuestro proceso terminará su vida al procesar el mensaje. Es posible que un proceso siga activo incluso después de procesar un mensaje, para ello podemos hacer uso de la recursividad para volver a invocar la función con el <code>receive</code>. Esto nos ayudará también a poder conservar un estado, como lo veremos más adelante.</p>
+<pre  class="mc-prism hide language-text" ><code class="language-elixir">defmodule MyProcess do
+  def awaiting_for_receive_messages do
+    IO.puts &quot;Process #{inspect(self())}, waiting to process a message!&quot;
+    receive do
+      &quot;Hi&quot; -&gt;
+        IO.puts &quot;Hi from me&quot;
+        awaiting_for_receive_messages()
+      &quot;Bye&quot; -&gt;
+        IO.puts &quot;Bye, bye from me&quot;
+        awaiting_for_receive_messages()
+      _ -&gt;
+        IO.puts &quot;Processing something&quot;
+        awaiting_for_receive_messages()
+    end
+    IO.puts &quot;Process #{inspect(self())}, message processed. Terminating...&quot;
+  end
+end
+</code></pre>
+<h2 id="mantener-un-estado">Mantener un Estado</h2>
+<p>Retomando el ejemplo anterior, es posible conservar un estado que puede ir transformándose. A continuación te muestro un ejemplo de cómo quedaría nuestro módulo de ejemplo:</p>
+<pre  class="mc-prism hide language-text" ><code class="language-elixir">defmodule MyProcess do
+  def awaiting_for_receive_messages(messages_received \\ []) do
+    receive do
+      &quot;Hi&quot; = msg -&gt;
+        IO.puts &quot;Hi from me&quot;
+        [msg|messages_received]
+        |&gt; IO.inspect(label: &quot;MESSAGES RECEIVED: &quot;)
+        |&gt; awaiting_for_receive_messages()
+
+      &quot;Bye&quot; = msg -&gt;
+        IO.puts &quot;Bye, bye from me&quot;
+        [msg|messages_received]
+        |&gt; IO.inspect(label: &quot;MESSAGES RECEIVED: &quot;)
+        |&gt; awaiting_for_receive_messages()
+
+      msg -&gt;
+        IO.puts &quot;Processing something&quot;
+        [msg|messages_received]
+        |&gt; IO.inspect(label: &quot;MESSAGES RECEIVED: &quot;)
+        |&gt; awaiting_for_receive_messages()
+    end
+  end
+end
+</code></pre>
+<p>En este caso ahora nuestra función <code>awaiting_for_receive_messages</code> reciben una lista vacía donde guardaremos los mensajes recibidos.</p>
+<ol>
+<li>Creación del proceso: <code>pid = spawn(MyProcess, :awaiting_for_receive_messages, [])</code></li>
+<li>Recepción de un mensaje: <code>send(pid, &quot;Hi&quot;)</code> después de invocar esto, podemos verificar que el proceso siga activo.</li>
+<li>Recepción de más mensajes: podremos repetir el paso anterior muchas veces.</li>
+</ol>
+<pre  class="mc-prism hide language-text" ><code class="language-elixir">iex(3)&gt; pid = spawn(MyProcess, :awaiting_for_receive_messages, [])
+#PID&lt;0.132.0&gt;
+
+iex(4)&gt; Process.alive?(pid)
+true
+
+iex(5)&gt; send(pid, &quot;Hi&quot;)
+Hi from me
+&quot;Hi&quot;
+MESSAGES RECEIVED: : [&quot;Hi&quot;]
+
+
+iex(6)&gt; send(pid, &quot;Bye&quot;)
+Bye, bye from me
+&quot;Bye&quot;
+MESSAGES RECEIVED: : [&quot;Bye&quot;, &quot;Hi&quot;]
+
+
+iex(7)&gt; send(pid, &quot;Heeeey!&quot;)
+Processing something
+&quot;Heeeey!&quot;
+MESSAGES RECEIVED: : [&quot;Heeeey!&quot;, &quot;Bye&quot;, &quot;Hi&quot;]
+</code></pre>
+<h2 id="dónde-están-los-procesos">¿Dónde están los procesos?</h2>
+<p>Muy bien, si me acompañaste hasta este punto hemos recorrido algunas nociones básicas sobre qué es un proceso y cómo funciona. Si te preguntas dónde puedes ver hasta donde llegar con estas implementaciones te doy un gran spoiler: <code>processes everywhere</code>.</p>
+<p>Veamos un ejemplo de Phoenix Live Views, este es un módulo que tiene efecto sobre un template de html (no te preocupes por el nombre de las funciones):</p>
+<pre  class="mc-prism hide language-text" ><code class="language-elixir">defmodule DemoWeb.ClockLive do
+  use DemoWeb, :live_view
+
+  def render(assigns) do
+    ~H&quot;&quot;&quot;
+    &lt;div&gt;
+      &lt;h2&gt;It's &lt;%= NimbleStrftime.format(@date, &quot;%H:%M:%S&quot;) %&gt;&lt;/h2&gt;
+      &lt;%= live_render(@socket, DemoWeb.ImageLive, id: &quot;image&quot;) %&gt;
+    &lt;/div&gt;
+    &quot;&quot;&quot;
+  end
+
+  def mount(_params, _session, socket) do
+    if connected?(socket), do: Process.send_after(self(), :tick, 1000)
+
+    {:ok, put_date(socket)}
+  end
+
+  def handle_info(:tick, socket) do
+    Process.send_after(self(), :tick, 1000)
+    {:noreply, put_date(socket)}
+  end
+
+  def handle_event(&quot;nav&quot;, _path, socket) do
+    {:noreply, socket}
+  end
+
+  defp put_date(socket) do
+    assign(socket, date: NaiveDateTime.local_now())
+  end
+end
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/17634377/180096050-b5a27195-ed76-45f7-8809-58715853f47b.png" alt="image"></p>
+<p>No me gustaría entrar en mucho detalle con los Live Views, pero si contarte que este módulo sirve para dos cosas, por un lado las funciones <code>render/1</code> y <code>mount/3</code> sirven para hacer el setup de la <code>Live View</code>, las funciones <code>handle_info</code> y <code>handle_event</code> permiten mantener activa la conexión del socket y un estado interno ¿te suena esto familiar? ¡Es un proceso! Un <code>Live View</code> es una abstracción de OTP para crear un proceso.</p>
+<h2 id="processes-everywhere">Processes Everywhere</h2>
+<p>Entender cómo funcionan los procesos te dará mejores conceptos para entender cómo funciona el Ecosistema de Erlang y para diseñar mejores programas. Muchas bibliotecas y proyectos escritos en Elixir usan estos conceptos, entonces la próxima vez que uses algún proyecto, piensa que probablemente estarás usando abstracciones de procesos por debajo.</p>
+<p>Si quieres conocer más de este tema te sugiero probar el código de ejemplo en este post, y buscar los apartados de procesos dentro de los libros de Elixir o Erlang. Probablemente también la documentación de Erlang te dará aún más conceptos sobre este gran tema.</p>
+<p>Muchas gracias por llegar hasta aquí, si quieres conocer más de este gran mundo puedes ver las opciones de training y las próximas charlas de la <a href="https://codebeamamerica.com/">Code Beam América</a>.</p>
+
+</article>
+</div>
+
+
+                
+                    
+                
+            </div>
+<footer>
+    <article>Carlo Gilmar ❤️ Rights Reserved © 2022</article>
+</footer>
+
+</main>
+    </body>
+</html>
